@@ -8,7 +8,8 @@
 \newcommand{\mySpacing}[0] {1.5}
 \newcommand{\myBibliography}[0] {bib/refs, appendices/refs1}
 
-\documentclass[\myFontSize,a4paper,twoside,openright,slovak]{book}
+\documentclass[\myFontSize,a4paper,twoside,openright]{book}
+% deleted slovak from documentclass
 \include{preamble/preamble}
 
 \begin{document}
@@ -19,6 +20,9 @@
 
 % Title page
 \include{preamble/title}
+
+% Assignment page
+\include{BP/preamble/assignment}
 
 % Annotation
 \include{preamble/annotation}
@@ -37,17 +41,21 @@
 % References segment
 \begin{refsegment}
 
-% Introduction
+% Introduction (chapter 1)
 \clearpage\null
-\input{content/intro}
+\input{content/chapter1-introduction}
 
-% Chapter 1
+% Analysis (chapter 2)
 \clearpage\null
-\input{content/chapter1}
+\input{content/chapter2-analysis}
 
-% Evaluation
+% Experimenting (chapter 3)
 \clearpage\null
-\input{content/eva}
+\input{content/chapter3-experimenting}
+
+% Evaluation (chapter 4)
+\clearpage\null
+\input{content/chapter4-evaluation}
 
 % Related Work
 \clearpage\null
