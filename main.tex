@@ -22,7 +22,7 @@
 \include{preamble/title}
 
 % Assignment page
-\include{BP/preamble/assignment}
+\include{preamble/assignment}
 
 % Annotation
 \include{preamble/annotation}
@@ -30,47 +30,59 @@
 % Acknowledgements
 \include{preamble/acknowledgements}
 
+
 % Table of contents
 \tableofcontents{}
 
+% -------------pridane mnou-------------
+\include{content/terms}
+
+% List of figures
+\listoffigures
+
+% List of tables
+\listoftables
+% ----------------------------------
+
+
 % List of listings
-%\listoffigures\newpage{}
-%\renewcommand\listoflistingscaption{List of Listings}
-%\listoflistings\newpage{}
+% \listoffigures\newpage{}
+% % \renewcommand\listoflistingscaption{List of Listings}
+% \listoflistings\newpage{}
 
 % References segment
 \begin{refsegment}
 
 % Introduction (chapter 1)
-\clearpage\null
+\newpage
 \input{content/chapter1-introduction}
 
 % Analysis (chapter 2)
-\clearpage\null
+\newpage
 \input{content/chapter2-analysis}
 
 % Experimenting (chapter 3)
-\clearpage\null
+\newpage
 \input{content/chapter3-experimenting}
 
 % Evaluation (chapter 4)
-\clearpage\null
+\newpage
 \input{content/chapter4-evaluation}
 
 % Related Work
-\clearpage\null
+\newpage
 \input{content/related}
 
 % Conclusion
-\clearpage\null
+\newpage
 \input{content/conclusion}
 
 % Resume
-\clearpage\null
+\newpage
 \input{content/resume}
 
 % Bibliography
-\clearpage\null
+\newpage
 \printbibliography[heading=references,segment=\therefsegment,resetnumbers=true]
 
 \end{refsegment}
@@ -78,10 +90,10 @@
 % Appendix
 \appendix
 
-\clearpage\null
+\newpage
 \include{appendices/appendix1}
 
-\clearpage\null
+\newpage
 \include{appendices/cdrom}
 
 \end{document}
