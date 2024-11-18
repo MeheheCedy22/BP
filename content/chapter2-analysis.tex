@@ -3,17 +3,50 @@
 \section{Artificial Intelligence} % Alternative: AI Models and Prompt Engineering
 One of the simplest definitions of an intelligent system is that of a system
 that ‘processes information in order to do something purposeful’.\cite{Dignum_2019}
+Computer science recognizes a few types of artificial intelligence. Figure~\ref{fig:AI-ML-DL-NN} shows the typical hierarchy of these types:
+
+\begin{itemize}
+    \item Artificial Intelligence
+    \item Machine Learning
+    \item Deep Learning and Neural Networks
+\end{itemize}
+
+\begin{figure}[h]
+\begin{centering}
+\includegraphics[width=10cm]{BP/assets/images/final deep learning.png}
+\par\end{centering}
+\caption{Aritficial Intelligence hierarchy\cite{ai_hierarchy_pic}
+\label{fig:AI-ML-DL-NN}}
+\end{figure}
+
+% \begin{figure}[htbp]
+% ...
+% h - Place the figure "here" (at the position in the code).
+% t - Top of the page.
+% b - Bottom of the page.
+% p - On a separate page for floats.
+
+\textbf{Artificial Intelligence} is a general term to describe any system with some sign of intelligence. AI is a field focused on automating intellectual tasks normally performed by humans, and Machine Learning and Deep Learning are specific methods of achieving this goal.\cite{AI-ML-DL} Although we speak about intelligence, we use this term to categorize non-learning algorithms which are just based on deterministic rules and heuristics, nevertheless this behaviour seems intelligent to humans. For example, if we have a game or puzzle of some sort, and we define every possible rule for the algorithm, the machine could solve it pretty easily based on computing power in modern times. This would be a non-learning algorithm, but a typical person would consider it an intelligent program because of how quickly it was able to solve this puzzle, which is perceived as complex by a typical person. Although symbolic AI is proficient at solving clearly defined logical problems, it often fails for tasks that require higher-level pattern recognition, such as speech recognition or image classification. These more complicated tasks are where Machine Learning and Deep Learning methods perform well.\cite{AI-ML-DL}
+
+\textbf{Machine Learning} is a term used to describe systems that can learn from data and improve their performance step-by-step without being specifically designed for every task. ML algorithms find patterns and connections in data rather than follow strict rules to classify information, generate predictions, or optimize activities. For example, ML is used in Data Science specifically Data Analysis to find correlations between data, preprocess said data and finally create a model to predict outcomes based on real-world data. In ML, there are three commonly recognized learning methods:
+\begin{itemize}
+    \item supervised learning
+        \begin{itemize}
+            \item Algorithms based on this method will get immediate responses for the output they produce. This is mostly used in classification and regression. Some examples of supervised learning are handwriting recognition, general image classification (i.e. does the provided image contain an animal), disease diagnosis, etc.
+        \end{itemize}
+    \item unsupervised learning
+        \begin{itemize}
+                \item This method is used mainly for clustering data because algorithms based on this method (i.e. k-means) do not get immediate feedback for their output. This is very useful in clustering to find sequences or relationships between the data. An example of unsupervised learning would be clustering news articles based on the context of the article into categories.
+            \end{itemize}
+    \item reinforcement learning
+        \begin{itemize}
+            \item Reinforcement learning is mainly used for algorithms that play games. This technique rewards good behaviour and punishes bad behaviour. For example, in the game Snake, the so-called ``agent'' that would play this game would be rewarded for eating points and punished for bumping into the wall or himself (hence the ``reinforcement''). This behaviour is uncontrolled by the programmer and the ``agent'' would learn to play the game to maximize points which is a desirable outcome.
+        \end{itemize}
+\end{itemize}
+
+\textbf{Deep Learning} is a branch of machine learning concerned with using \textbf{neural networks} to carry out tasks including representation learning, regression, and classification. The focus of the field, which draws inspiration from biological neuroscience, is "training" artificial neurons to process data by stacking them in layers. The term "deep" describes a network that uses several layers, ranging from three to several hundred or thousands\cite{LeCun2015}. There are many types of neural networks but the most known are convolutional neural networks (CNN) and recurrent neural networks (RNN).
 
 
-
-
-
-
-- AI
-
-- machine learning
-
-- deep learning (neural networks)
 
 \subsection{AI Models}
 Describe:
@@ -25,22 +58,51 @@ LLMs - Large Language Models (use neural networks)
 GPTs - Generative Pre-Trained Transformers
 
 \subsection{Prompt engineering}
-Describe what is
+Describe what is it
+
+
+% TODO: spomenut aj nejake mitigations
 
 \section{Risks of implementing AI solutions}
+When implementing AI solutions in any domain, we must consider the natural risks of doing so. We as a society learned from history and philosophy, that there will always be someone who will do or find bad things in something new. In this section, we will discuss possible major risks that are associated with implementing AI solutions.
 
 \subsection{Ethical risks}
-Content generation based on copyrighted material (Copyrighted material as input)
+% Content generation based on copyrighted material (Copyrighted material as input)
+% people compromising 
+% compromising and harmful media 
+% deep fakes
+% cyberbullying, fake news
+% etc.
+While LLMs are beneficial in helping people, they also bring risks with them. These risks include the spread of misinformation, the creation of deep fakes\footnote{AI-generated media that convincingly mimics real individuals} and privacy concerns. 
 
-people compromising 
+% TODO: upravit a citovat
+Additionally, the potential for identity theft through data extracted from training models poses significant threats to individual autonomy and security. Bias amplification and privacy challenges further exacerbate the ethical concerns surrounding LLM deployment.
 
-compromising and harmful media 
+\textbf{Misinformation and Societal Implications}
+LLM-generated misinformation threatens evidence-based decision-making on critical issues like climate change and public health. 
+Disinformation campaigns powered by LLMs risk skewing elections and eroding shared foundations of truth. 
 
-deep fakes
+\textbf{Identity Theft from Training Data}
+PII extracted from training data enables digital impersonation and phishing, violating individual autonomy. 
+Incomplete anonymization allows tracing data to original, non-consenting authors. 
 
-cyberbullying, fake news
+\textbf{Bias Amplification}
+Biased training data and targeted prompts can amplify discrimination against groups with less oversight power. 
+Restorative steps complicated by power imbalances; consequences entrench demographic inequalities. 
 
-etc.
+\textbf{Economic Repercussions} 
+LLM manipulation in key sectors risks eroding credibility, value generation, and public trust in system outputs. 
+Financial impacts may disproportionately affect vulnerable communities while obscuring accountability. 
+
+\textbf{Privacy Challenges}
+Ability to reconstruct images and match identities from model outputs threatens privacy rights and consent. 
+Lack of data sourcing transparency hinders ethical review and risks exposing private conversations. 
+%------------------------------------
+
+
+
+
+
 
 \subsection{Moral risks}
 Sexual / Violent content (inappropriate images, bombs, weapons), forbidden language (illegal activities)
@@ -62,15 +124,53 @@ etc.
 Why are they, and what purpose do they serve
 
 \subsection{Jailbreak}
-The specific formulation of the prompt to bypass filters and "jailbreak" the chatbot
+Jailbreak is the specific formulation of a user prompt that an LLM uses to bypass filters and safety checks, tricking the LLM into providing harmful or objectionable content based on this prompt.
+Jailbreak prompts tend to have these characteristics:
+\begin{itemize}
+    \item Prompt length
+    \item Prompt semantics
+\end{itemize}
 
-jailbreak patching = cat and mouse game
+Prompt length (in tokens) tends to be longer because attackers use additional instructions to cause the model to behave in odd/specific ways to bypass the safeguards.
+Shen et al.\cite{shen2024donowcharacterizingevaluating} found that jailbreak prompts are indeed significantly longer than regular prompts and grow longer monthly. The average token count of a jailbreak prompt is 555, which is 1.5× of regular prompts.
 
-one side develops new jailbreak
-    
-other patches it and the cycle repeats itself
-    
+Prompt semantics means that LLMs semantically understand the prompt's structure and meaning. Shen et al.\cite{shen2024donowcharacterizingevaluating} also found that most jailbreak prompts share semantic proximity with regular prompts. Regular prompts often require ChatGPT to role-play as a virtual character, which is a common strategy used in jailbreak prompts to bypass LLM safeguards. The close similarity between the two, however, also presents challenges in differentiating jailbreak prompts from regular prompts using semantic-based detection methods.
 
+
+
+There are a few established prompt engineering methods for jailbreaking:
+\begin{itemize}
+    \item Prompt injection
+    \item Prompt leaking
+    \item DAN (Do Anything Now)
+    \item Roleplay
+    \item Developer mode
+    \item Token system
+\end{itemize}
+
+\textbf{Prompt injection} refers to the manipulation of the language model's output via engineered malicious prompts. Some attacks operate under the assumption of a malicious user who injects harmful prompts into their inputs to the application. Their primary objective is to manipulate the application into responding to a distinct query rather than fulfilling its original purpose. To achieve this, the adversary crafts prompts that can influence or nullify the predefined prompts in the merged version, thereby leading to desired responses. Such attacks typically target applications with known context or predefined prompts. In essence, they leverage the system's own architecture to bypass security measures, undermining the integrity of the entire application\cite{liu2024promptinjectionattackllmintegrated}.
+
+\textbf{Prompt leaking} is a type of prompt injection, where a bad actor manually crafts a malicious prompt which is then injected into the model with the intent to leak model system prompt which is often confidential. This compromises the developer’s intellectual property.
+
+\textbf{DAN (Do Anything Now)} is a unique and very popular jailbreak prompt among people interested in jailbreaking. As the name suggests, the prompts try to trick the AI model into thinking that it can do anything, which means circumventing the restrictive instructions of the model. An example of "DAN" prompt is shown in figure~\ref{fig:dan-prompt}.
+
+\begin{figure}[ht]
+\begin{centering}
+\includegraphics[width=10cm]{BP/assets/images/dan-prompt.jpg}
+\par\end{centering}
+\caption{Example of 
+ DAN prompt\cite{reddit_pic}
+ \label{fig:dan-prompt}}
+\end{figure}
+
+
+\textbf{Role-play} jailbreak is a type of jailbreak where a bad actor designs a special prompt, that would force the AI model to role-play some character. The character could be a real person, a fictional character or even a command line interpreter. There were many different role-play prompts ranging from an AI model acting like someone's deceased grandmother to a cybersecurity expert to DAN.
+
+
+\textbf{Developer mode} is a type of jailbreak prompt intended to fool the neural network into thinking it is in developer mode so that it can assess the toxicity of the model. One method is to ask the model for a "normal" ethical response first, followed by the type of response that an unrestrained LLM may provide.
+
+
+In summary, patching the jailbreaks leads to a ''cat and mouse'' game in which the person trying to jailbreak the LLM (bad actor) always tries new prompts and techniques while the developer tries to fix them. This process repeats itself unless the developer works on methods to prevent jailbreaking as much as possible.
 
 
 \section{Methods of attacks}
@@ -81,7 +181,7 @@ voice cloning, deep fakes, phishing, malware improvement/creation
 \section{Legislation}
 
 \subsection{EU AI Act}
-% summary src: https://artificialintelligenceact.eu/high-level-summary/#weglot_switcher
+summary src: \url{https://artificialintelligenceact.eu/high-level-summary/#weglot_switcher}
 
 
 

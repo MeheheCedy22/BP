@@ -9,6 +9,10 @@
     rightsub = \grq%
 ]{dirtytalk}
 
+\usepackage{hyperref}
+\usepackage{listings} % for code display
+\usepackage{caption}
+
 % SETTINGS - NAMES GLOBAL
 \newcommand{\myName}[0] {Marek Čederle}
 \newcommand{\mySupervisor}[0] {Ing. Peter Bakonyi, PhD.}
@@ -61,11 +65,12 @@
 %style=iso-numeric
 %style=authortitle-dw
 \usepackage[backend=bibtex,defernums=true]{biblatex}
-\defbibheading{references}[Literatúra]{ 
+% zmenene Literatúra za References
+\defbibheading{references}[References]{ 
   \chapter*{#1}
   \markboth{#1}{#1}
 }
-\defbibheading{referencessec}[Literatúra]{ 
+\defbibheading{referencessec}[References]{ 
   \section*{#1}
   \markboth{#1}{#1}
 }
