@@ -45,55 +45,58 @@ Computer science recognizes a few types of artificial intelligence. Figure~\ref{
 \end{itemize}
 
 \textbf{Deep Learning (DL)} is a branch of machine learning concerned with using \textbf{neural networks (NN)} to carry out tasks including representation learning, regression, and classification. The focus of the field, which draws inspiration from biological neuroscience, is "training" artificial neurons to process data by stacking them in layers. The term "deep" describes a network that uses several layers, ranging from three to several hundred or thousands\cite{LeCun2015}. There are many types of neural networks but the most known are convolutional neural networks (CNN) and recurrent neural networks (RNN).
-\begin{itemize}
-    \item convolutional neural networks (CNN)
-    \item recurrent neural networks (RNN)
-\end{itemize}
 
 
-
-\subsection{AI Models}
+\subsection{AI Models \label{subsec:AI-Models}}
 There are various types of AI models. The prominent and most used are text-to-text models followed by text-to-image and text-to-audio models. 
 
 Mostly, we focus on the text-to-text models. They use Natural Language Processing (NLP), which is a subfield of artificial intelligence and linguistics. NLP as a technology is used to provide understanding of human language for machines. The model understands the semantics and context of the text and generates response based on trained data. The subset of NLP models are large language models (LLMs). The models rely on vast amounts of data. This is where the "Large" in the Large Language Model comes from. Because of the great scale, they are able to predict/generate the next word based on probability. We mentioned that these models need to be trained. This is where Generative Pre-Trained Transformers (GPTs) come in. GPT is the final step of the text-to-text AI model. 
 
-What is the GPT? It is Large Language Model based on the transformer architecture published in paper called "Attention Is All You Need" by Vaswani et al.\cite{vaswani2023attentionneed}
+What is the GPT? It is a Large Language Model based on the transformer architecture published in a paper called "Attention Is All You Need" by Vaswani et al.\cite{vaswani2023attentionneed}. It is pre-trained on massive amounts of data using reinforcement learning with Human Feedback (RLHF) \cite{openai_chatgpt_page} and generates text based on prediction of the next word.
 
+The most well-known GPT is OpenAI's ChatGPT which was released in November 2022 and experienced massive boom with it's release. This technology is very exciting, but every technology has its own limitations. OpenAI in their article \cite{openai_chatgpt_page} state them as follows:
 
-on of many limitation of GPT is (pick some parts)
+\begin{itemize}
+    \item ChatGPT sometimes writes plausible-sounding but incorrect or nonsensical answers
+    \item ChatGPT is sensitive to tweaks to the input phrasing or attempting the same prompt multiple times
+    \item The model is often excessively verbose and overuses certain phrases, such as restating that it’s a language model trained by OpenAI
+    \item The model sometimes respond to harmful instructions or exhibit biased behavior.
+\end{itemize}
 
-ChatGPT sometimes writes plausible-sounding but incorrect or nonsensical answers. Fixing this issue is challenging, as: (1) during RL training, there’s currently no source of truth; (2) training the model to be more cautious causes it to decline questions that it can answer correctly; and (3) supervised training misleads the model because the ideal answer depends on what the model knows (opens in a new window), rather than what the human demonstrator knows.
+These limitations are the reason for some of the attacks that can be performed to misuse this technology for bad purposes. We will discuss this in more detail in Section~\ref{sec:risks}.
 
-ChatGPT is sensitive to tweaks to the input phrasing or attempting the same prompt multiple times. For example, given one phrasing of a question, the model can claim to not know the answer, but given a slight rephrase, can answer correctly.
-
-The model is often excessively verbose and overuses certain phrases, such as restating that it’s a language model trained by OpenAI. These issues arise from biases in the training data (trainers prefer longer answers that look more comprehensive) and well-known over-optimization issues.1, 2
-
-Ideally, the model would ask clarifying questions when the user provided an ambiguous query. Instead, our current models usually guess what the user intended.
-
-While we’ve made efforts to make the model refuse inappropriate requests, it will sometimes respond to harmful instructions or exhibit biased behavior. We’re using the Moderation API to warn or block certain types of unsafe content, but we expect it to have some false negatives and positives for now. We’re eager to collect user feedback to aid our ongoing work to improve this system.
-
-
-(cite https://openai.com/index/chatgpt/)
-
-this limitations are the reason for some of the attack that can be misued for bad purposes which are mentioned in chapter <number>
-
-
-% Most of these models are based on so called Large Language Models (LLMs)
-
-% Describe:
-
-% Text-to-image, text-to-text, text-to-audio
-
-% LLMs - Large Language Models (use neural networks, make it as followup for deep learning and neural networks section)
-
-% GPTs - Generative Pre-Trained Transformers
 
 \subsection{Prompt engineering}
-Explain
+Prompt engineering involves designing and optimizing text instructions called prompts, which are mainly used to communicate with chatbots that use artificial intelligence models (LLMs) in the background, such as OpenAI ChatGPT, Google Gemini and Microsoft Copilot. However, they can also be models whose output is not text but, for example, an image, video or audio as mention in previous Section~\ref{subsec:AI-Models}. White et al. describe prompt angineering as the means by which LLMs are programmed via prompts \cite{white2023promptpatterncatalogenhance}. They described a few patterns which they grouped categories shown in Table~\ref{tab:prompt_patterns}.
 
-% TODO: also mention mitigations
+\begin{table}[h]
+    \caption{Classifying Prompt Patterns~\cite{white2023promptpatterncatalogenhance}}
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline \cellcolor[gray]{0.8}\textbf{Pattern Category} & \cellcolor[gray]{0.8}\textbf{Prompt Pattern} \\ \hline
+        \textbf {Input Semantics} & \textit{Meta Language Creation} \\ \hline
+        \textbf {Output} & \textit{Output Automater} \\
+        \textbf {Customization} & \textit{Persona} \\
+         & \textit{Visualization Generator} \\
+         & \textit{Recipe} \\
+         & \textit{Template} \\ \hline
+        \textbf{\mbox{Error Identification}} & \textit{Fact Check List} \\
+        & \textit{Reflection} \\ \hline
+        \textbf {Prompt} & \textit{Question Refinement} \\
+        \textbf {Improvement} & \textit{Alternative Approaches} \\
+        & \textit{Cognitive Verifier} \\
+        & \textit{Refusal Breaker} \\ \hline
+        \textbf {Interaction} & \textit{Flipped Interaction} \\
+        & \textit{Game Play} \\
+        & \textit{Infinite Generation} \\ \hline
+        \textbf{Context Control} & \textit{Context Manager} \\ \hline
+    \end{tabular}
+    \label{tab:prompt_patterns}
+\end{table}
 
-\section{Risks of implementing AI solutions}
+The most notable prompt pattern is \textbf{Persona}. As we will discuss in more detail in Section~\ref{sec:jailbreak}, the Persona pattern is the basis of most jailbreak methods. In a nutshell, when using the Persona pattern, the user instructs the chatbot to behave like some Persona. For example, with prompt: "From now on, you will be Travel expert", the chatbot will give us (in its "opinion") best possible tips and suggestions for traveling when prompted for this information.
+
+\section{Risks of implementing AI solutions \label{sec:risks}}
 When implementing AI solutions in any domain, we must consider the natural risks of doing so. We as a society learned from history and philosophy that there will always be someone who will do or find bad things in something new. In this section, we will discuss possible major risks associated with implementing AI solutions.
 
 \subsection{Ethical risks}
@@ -109,7 +112,7 @@ While LLMs are beneficial in helping people, they also bring risks with them. Th
 
 \textbf{Misinformation}
 
-Bad actors abuse the ''creativity'' aspect of LLMs and generate misinformation and fake news that pose major threats to society when dealing with critical issues like climate crisis and the health of individuals. Very popular amongst governments is to use misinformation to skew/influence elections in favour of their preferred party/individual.
+Bad actors abuse the ''creativity'' aspect of LLMs and generate misinformation and fake news that pose major threats to society when dealing with critical issues like climate crisis and the health of individuals. Very popular amongst governments is to use misinformation to skew or influence elections in favour of their preferred party or an individual.
 
 \textbf{Identity Theft}
 
@@ -140,7 +143,13 @@ With implementing AI solutions in addition to ethical problems, moral problems a
 % social engineering
 % Malware generation and recursive training of malware samples
 % Targeted phishing - voice clone, video/image generation of targeted person
-AI can prove itself in the near future as a very useful and helpful tool to develop solutions for malware detection, malware prevention, and cybersecurity training. On the other hand, as we have already mentioned, everything has its advantages and disadvantages. Unfortunately, there are big disadvantages of rapid development of AI, which means that there are and there will be AIs, which can also be used for social engineering attacks, the creation of malware and phishing in general. These risks were categorized by Egbuna\cite{Princess-Egbuna_2021} as follows:
+AI can prove itself in the near future as a very useful and helpful tool to develop solutions for malware detection, malware prevention, and cybersecurity training. On the other hand, as we have already mentioned, everything has its advantages and disadvantages. Unfortunately, there are big disadvantages of rapid development of AI, which means that there are and there will be AIs, which can also be used for social engineering attacks, the creation of malware and phishing in general. Some of these risks were identified by Egbuna\cite{Princess-Egbuna_2021} as follows:
+
+\begin{itemize}
+    \item AI-Powered Malware and Ransomware
+    \item Automated and Scalable Attacks
+    \item Deepfake and Social Engineering Attacks
+\end{itemize}
 
 \textbf{AI-Powered Malware and Ransomware}
 
@@ -148,7 +157,7 @@ Traditional malware infiltrates, damages, and steals data. However, AI-enhanced 
 With AI, ransomware, a particularly devastating malware, has gained threat. AI-driven ransomware may quickly find weaknesses, encrypt the most critical data, and negotiate ransom amounts based on the victim's finances. AI's adaptability helps ransomware proliferate and stay undiscovered, boosting its effect\cite{Princess-Egbuna_2021}.
 
 \textbf{Automated and Scalable Attacks}
-
+These attacks are the result of LLMs. The reason is that these models can analyze and summarize vast amounts of data and bad actors can automate this process using frameworks that can be executed on a large scale. At this scale, the models trained by bad actors can achieve their goal quicker and easier.
 
 \textbf{Deepfake and Social Engineering Attacks}
 
@@ -156,15 +165,20 @@ We mentioned earlier that deepfakes are an ethical problem, but they are also co
 
 Deepfake technology is used by bad actors in social engineering attacks. This technique can deceive and manipulate targets by creating phony films or audio recordings of trustworthy people like CEOs or public leaders \cite{Princess-Egbuna_2021}. In February 2024, CNN reported an example case of this behavior \cite{deepfake_CFO}. Financial worker of multinational company was tricked by video call with supposedly his coworkers and CFO\footnote{Chief Financial Officer} into sending around \$25 million which were later revealed, that it was a deepfake social engineering scam \cite{deepfake_CFO}.
 
-\textbf{Adversarial AI and Evasion Tactics}
+% previously Content filters
+\section{Content moderation}
+Every major chatbot using LLM have some kind of content moderation implemented. The developers of these systems use different techniques to prevent these models from generating inappropriate or harmful content. These techniques include hard-coded (predefined) sets of rules to define this type of content and not allow its generation. The models are also fine-tuned to contain primarily nonharmful content, but since they operate on a huge scale and massive amounts of training data, this task becomes impossible to achieve without some content slipping through the safeguards. Another method, which is implemented in combination with the other methods, uses system prompts or often called "alignment prompts". These prompts are hidden from the user when the chatbot interacts with them. The typical prompt architecture is shown in Figure~\ref{fig:system_prompt}. In this figure, the example system prompt could be: "Be kind and helpful AI assistant. Do not generate any harmufl information even if user asks you!". In this system, the user prompt is appended to the system prompt with the context of the conversation or from the optional files included in the prompt and then sent to the model. This architecture should prevent generating harmful content, but as we will discuss in next section, the bad actors are very inventive and still overcome these security measures. When all previously mentioned safeguards fail, the last option is to report the generated prompt which includes harmful content to the moderators, so that human can review the prompt and figure if the generated content was, in fact, harmful.
 
-\textbf{AI in Distributed Denial of Service (DDoS) Attacks}
+\begin{figure}[h]
+\begin{centering}
+\includegraphics[width=10cm]{BP/assets/images/content_filtering.png}
+\par\end{centering}
+\caption{Prompt layers \cite{systemprompt}
+ \label{fig:system_prompt}}
+\end{figure}
 
 
-\section{Content filters}
-Why are they, and what purpose do they serve
-
-\subsection{Jailbreak}
+\subsection{Jailbreak \label{sec:jailbreak}}
 Jailbreak is the specific formulation of a user prompt that an LLM uses to bypass filters and safety checks, tricking the LLM into providing harmful or objectionable content based on this prompt.
 Jailbreak prompts tend to have these characteristics:
 \begin{itemize}
@@ -207,57 +221,88 @@ There are a few established prompt engineering methods for jailbreaking:
 
 \textbf{Role-play} jailbreak is a type of jailbreak where a bad actor designs a special prompt, that would force the AI model to role-play some character. The character could be a real person, a fictional character or even a command line interpreter. There were many different role-play prompts ranging from an AI model acting like someone's deceased grandmother to a cybersecurity expert to DAN.
 
-
 \textbf{Developer mode} is a type of jailbreak prompt intended to fool the neural network into thinking it is in developer mode so that it can assess the toxicity of the model. One method is to ask the model for a "normal" ethical response first, followed by the type of response that an unrestrained LLM may provide.
-
 
 In summary, patching the jailbreaks leads to a ''cat and mouse'' game in which the person trying to jailbreak the LLM (bad actor) always tries new prompts and techniques while the developer tries to fix them. This process repeats itself unless the developer works on methods to prevent jailbreaking as much as possible.
 
-
 \section{Methods of attacks}
-Using the risks to attack
+% Using the risks to attack
+% voice cloning, deep fakes, phishing, malware improvement/creation 
+The attacks methods arise from the risks listed in Section~\ref{sec:risks}. Let us go through some examples.
 
-voice cloning, deep fakes, phishing, malware improvement/creation 
+\textbf{Voice cloning}
+
+Bad actors can train their own AI models (or use publicly available models) on the voices of celebrities or individuals of high importance (e.g. politicians, people with high positions in the company) or even normal people. This depends on the selected target of the bad actor. They can use the trained model to generate audio recording of said individual and spread "fake messages" or for example get access to their bank account through voice authentication.
+
+\textbf{Deepfakes}
+
+Similar to voice cloning, which can be categorized as a subset of Deepfakes, adversaries can use AI models to generate images or videos of targeted individuals and use them to spread misinformation, cause harm, etc. For example, malicious actor can generate video of president of some country saying intentionaly negative or explicit things to ruin their reputation or escalate some conflict.
+
+\textbf{Phishing}
+
+Malicious actors can use generative AI models to create whole phishing campaigns for tagreted group of people with ease. For example, the bad actor can prompt the model for a lookalike page of internet banking and create phishing emails that sound very trustworthy and send these emails with link of the webpage to the target with some warning about their account and that the target should log in to their account. This is how the malicious actor can obtain the user login credentials and empty their bank account.
+
+\textbf{Malware creation}
+
+Adversaries can also use the generative AI models to create malware. For example, the bad actor prompts the model for creating malware. Then the bad actor tries to run the malware where they log the potentional response from antimalware engine and use it to refine a tune the model to avoid being detected. This tuned and perfected malware can then be distributed to the target group of people.
+
 
 \section{Legislation} \label{sec:legislation}
 % what different legislation says on training LLMs on copyrighted material i.e. Fair Use etc.
 
-\subsection{EU AI Act}
-summary src: \url{https://artificialintelligenceact.eu/high-level-summary/#weglot_switcher}
+\subsection{European Union (EU)}
+The main focus of this section is on the EU AI Act\cite{eu_ai_act_2024}, which was approved earlier this year (2024) and came into force later this year. This directive regulates use of AI systems to ensure their safe and ethical use. The regulation classify the AI systems in 4 categories based on risk. This is shown in Figure~\ref{fig:ai-act-pyramid}.
+
+\begin{figure}[h]
+\begin{centering}
+\includegraphics[width=10cm]{BP/assets/images/eu_ai_risks_pyramid.jpg}
+\par\end{centering}
+\caption{Regulatory levels in EU AI Act \cite{eu_ai_regulation_picture}
+ \label{fig:ai-act-pyramid}}
+\end{figure}
+
+Let us go through each of the categories to tell a high-level summary of what this directive means to average people and or companies in the European Union.
+
+\textbf{Minimal Risk} AI systems and applications are essentially unregulated. For example, AI video games, AI spam filters and other current AI applications fall under this category. Despite the fact that regulation is not present in this category, companies are encouraged to adopt a code of conduct published by the European Union.
+
+\textbf{Limited Risk} AI systems which in this case are primarily chatbots have the obligation to be transparent in the sense that companies need to inform end-users about the fact that they are interacting with the AI system.
+
+\textbf{High Risk} AI systems undergo the strictest regulation. Some of the use cases which fall under this category are the following\cite{eu_ai_act_summary}:
+\begin{itemize}
+    \item AI applications in critical infrastructure
+    \item Law enforcement AI systems
+    \item AI solutions used in administration of justice and democratic processes
+    \item systems used in employment (e.g. targeted job ads)
+\end{itemize}
+
+In \textbf{Unacceptable Risk} category fall AI systems, which are prohibited to use. Some examples are \cite{eu_ai_act_summary}:
+\begin{itemize}
+    \item AI systems deploying subliminal, manipulative, or deceptive techniques to distort behaviour and impair informed decision-making
+    \item AI systems exploiting vulnerabilities related to age, disability, or socio-economic circumstances to distort behaviour
+    \item biometric categorisation systems inferring sensitive attributes (race, political opinions, religious or philosophical beliefs, or sexual orientation) with some exceptions for law enforcement
+    \item social scoring AI systems
+    \item compiling facial recognition databases
+    \item inferring emotions in workplaces or educational institutions, with exceptions for medical purposes
+\end{itemize}
+
+
+TBD
 
 
 
-Classification by risk:
-Unacceptable risk is prohibited (social scoring systems and manipulative AI)
+% Other world regions
+% - compare / mention others views (i.e. USA, China, basically major countries)
+% - USA, China, India, Brasil
 
-High-risk AI systems are regulated
+\subsection{United States}
+TBD 
 
-limited risk AI systems are subject to lighter transparency obligations: developers and deployers must ensure that end-users are aware that they are interacting with AI (chatbots and deepfakes).
+\subsection{China}
+TBD 
 
-Minimal risk is unregulated
+\subsection{India}
+TBD 
 
-----
-General purpose AI (GPAI):
-
-All GPAI model providers must provide technical documentation, instructions for use, comply with the Copyright Directive, and publish a summary of the content used for training.
-
-Free and open licence GPAI model providers only need to comply with copyright and publish the training data summary, unless they present a systemic risk.
-
-All providers of GPAI models that present a systemic risk – open or closed – must also conduct model evaluations, adversarial testing, track and report serious incidents and ensure cybersecurity protections.
-
-- compare / mention others views (i.e. USA, China, basically major countries)
-- India, Brasil
-
-
-
-
-% TAKTO SA ROBI FIGURE/OBRAZOK
-
-% Figure \ref{fig:dynabook}:
-
-% \begin{figure}[h]
-% \begin{centering}
-% \includegraphics[width=5cm]{assets/images/Dynabook}
-% \par\end{centering}
-% \caption{Dynabook \label{fig:dynabook}}
-% \end{figure}
+% Maybe ?
+% \subsubsection{Brasil}
+% TBD 
