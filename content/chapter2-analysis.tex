@@ -2,7 +2,7 @@
 
 \section{Artificial Intelligence} % Alternative: AI Models and Prompt Engineering
 One of the simplest definitions of an intelligent system is that of a system
-that ‘processes information in order to do something purposeful’.\cite{Dignum_2019}
+that ‘processes information in order to do something purposeful’\cite{Dignum_2019}.
 Computer science recognizes a few types of artificial intelligence. Figure~\ref{fig:AI-ML-DL-NN} shows the typical hierarchy of these types:
 
 \begin{itemize}
@@ -26,17 +26,17 @@ Computer science recognizes a few types of artificial intelligence. Figure~\ref{
 % b - Bottom of the page.
 % p - On a separate page for floats.
 
-\textbf{Artificial Intelligence} is a general term to describe any system with some sign of intelligence. AI is a field focused on automating intellectual tasks normally performed by humans, and Machine Learning and Deep Learning are specific methods of achieving this goal.\cite{AI-ML-DL} Although we speak about intelligence, we use this term to categorize non-learning algorithms which are just based on deterministic rules and heuristics, nevertheless this behaviour seems intelligent to humans. For example, if we have a game or puzzle of some sort, and we define every possible rule for the algorithm, the machine could solve it pretty easily based on computing power in modern times. This would be a non-learning algorithm, but a typical person would consider it an intelligent program because of how quickly it was able to solve this puzzle, which is perceived as complex by a typical person. Although symbolic AI is proficient at solving clearly defined logical problems, it often fails for tasks that require higher-level pattern recognition, such as speech recognition or image classification. These more complicated tasks are where Machine Learning and Deep Learning methods perform well.\cite{AI-ML-DL}
+\textbf{Artificial Intelligence (AI)} is a general term to describe any system with some sign of intelligence. AI is a field focused on automating intellectual tasks normally performed by humans, and Machine Learning and Deep Learning are specific methods of achieving this goal.\cite{AI-ML-DL} Although we speak about intelligence, we use this term to categorize non-learning algorithms which are just based on deterministic rules and heuristics, nevertheless this behaviour seems intelligent to humans. For example, if we have a game or puzzle of some sort, and we define every possible rule for the algorithm, the machine could solve it pretty easily based on computing power in modern times. This would be a non-learning algorithm, but a typical person would consider it an intelligent program because of how quickly it was able to solve this puzzle, which is perceived as complex by a typical person. Although symbolic AI is proficient at solving clearly defined logical problems, it often fails for tasks that require higher-level pattern recognition, such as speech recognition or image classification. These more complicated tasks are where Machine Learning and Deep Learning methods perform well\cite{AI-ML-DL}.
 
-\textbf{Machine Learning} is a term used to describe systems that can learn from data and improve their performance step-by-step without being specifically designed for every task. ML algorithms find patterns and connections in data rather than follow strict rules to classify information, generate predictions, or optimize activities. For example, ML is used in Data Science specifically Data Analysis to find correlations between data, preprocess said data and finally create a model to predict outcomes based on real-world data. In ML, there are three commonly recognized learning methods:
+\textbf{Machine Learning (ML)} is a term used to describe systems that can learn from data and improve their performance step-by-step without being specifically designed for every task. ML algorithms find patterns and connections in data rather than follow strict rules to classify information, generate predictions, or optimize activities. For example, ML is used in Data Science specifically Data Analysis to find correlations between data, preprocess said data and finally create a model to predict outcomes based on real-world data. In ML, there are three commonly recognized learning methods:
 \begin{itemize}
     \item supervised learning
         \begin{itemize}
-            \item Algorithms based on this method will get immediate responses for the output they produce. This is mostly used in classification and regression. Some examples of supervised learning are handwriting recognition, general image classification (i.e. does the provided image contain an animal), disease diagnosis, etc.
+            \item Algorithms based on this method will get immediate responses for the output they produce. This is mostly used in classification and regression. Some examples of supervised learning are handwriting recognition, general image classification (e.g. does the provided image contain an animal), disease diagnosis, etc.
         \end{itemize}
     \item unsupervised learning
         \begin{itemize}
-                \item This method is used mainly for clustering data because algorithms based on this method (i.e. k-means) do not get immediate feedback for their output. This is very useful in clustering to find sequences or relationships between the data. An example of unsupervised learning would be clustering news articles based on the context of the article into categories.
+                \item This method is used mainly for clustering data because algorithms based on this method (e.g. k-means) do not get immediate feedback for their output. This is very useful in clustering to find sequences or relationships between the data. An example of unsupervised learning would be clustering news articles based on the context of the article into categories.
             \end{itemize}
     \item reinforcement learning
         \begin{itemize}
@@ -44,27 +44,57 @@ Computer science recognizes a few types of artificial intelligence. Figure~\ref{
         \end{itemize}
 \end{itemize}
 
-\textbf{Deep Learning} is a branch of machine learning concerned with using \textbf{neural networks} to carry out tasks including representation learning, regression, and classification. The focus of the field, which draws inspiration from biological neuroscience, is "training" artificial neurons to process data by stacking them in layers. The term "deep" describes a network that uses several layers, ranging from three to several hundred or thousands\cite{LeCun2015}. There are many types of neural networks but the most known are convolutional neural networks (CNN) and recurrent neural networks (RNN).
+\textbf{Deep Learning (DL)} is a branch of machine learning concerned with using \textbf{neural networks (NN)} to carry out tasks including representation learning, regression, and classification. The focus of the field, which draws inspiration from biological neuroscience, is "training" artificial neurons to process data by stacking them in layers. The term "deep" describes a network that uses several layers, ranging from three to several hundred or thousands\cite{LeCun2015}. There are many types of neural networks but the most known are convolutional neural networks (CNN) and recurrent neural networks (RNN).
+\begin{itemize}
+    \item convolutional neural networks (CNN)
+    \item recurrent neural networks (RNN)
+\end{itemize}
 
 
 
 \subsection{AI Models}
-Describe:
+There are various types of AI models. The prominent and most used are text-to-text models followed by text-to-image and text-to-audio models. 
 
-Text-to-image, text-to-text, text-to-audio
+Mostly, we focus on the text-to-text models. They use Natural Language Processing (NLP), which is a subfield of artificial intelligence and linguistics. NLP as a technology is used to provide understanding of human language for machines. The model understands the semantics and context of the text and generates response based on trained data. The subset of NLP models are large language models (LLMs). The models rely on vast amounts of data. This is where the "Large" in the Large Language Model comes from. Because of the great scale, they are able to predict/generate the next word based on probability. We mentioned that these models need to be trained. This is where Generative Pre-Trained Transformers (GPTs) come in. GPT is the final step of the text-to-text AI model. 
 
-LLMs - Large Language Models (use neural networks)
+What is the GPT? It is Large Language Model based on the transformer architecture published in paper called "Attention Is All You Need" by Vaswani et al.\cite{vaswani2023attentionneed}
 
-GPTs - Generative Pre-Trained Transformers
+
+on of many limitation of GPT is (pick some parts)
+
+ChatGPT sometimes writes plausible-sounding but incorrect or nonsensical answers. Fixing this issue is challenging, as: (1) during RL training, there’s currently no source of truth; (2) training the model to be more cautious causes it to decline questions that it can answer correctly; and (3) supervised training misleads the model because the ideal answer depends on what the model knows (opens in a new window), rather than what the human demonstrator knows.
+
+ChatGPT is sensitive to tweaks to the input phrasing or attempting the same prompt multiple times. For example, given one phrasing of a question, the model can claim to not know the answer, but given a slight rephrase, can answer correctly.
+
+The model is often excessively verbose and overuses certain phrases, such as restating that it’s a language model trained by OpenAI. These issues arise from biases in the training data (trainers prefer longer answers that look more comprehensive) and well-known over-optimization issues.1, 2
+
+Ideally, the model would ask clarifying questions when the user provided an ambiguous query. Instead, our current models usually guess what the user intended.
+
+While we’ve made efforts to make the model refuse inappropriate requests, it will sometimes respond to harmful instructions or exhibit biased behavior. We’re using the Moderation API to warn or block certain types of unsafe content, but we expect it to have some false negatives and positives for now. We’re eager to collect user feedback to aid our ongoing work to improve this system.
+
+
+(cite https://openai.com/index/chatgpt/)
+
+this limitations are the reason for some of the attack that can be misued for bad purposes which are mentioned in chapter <number>
+
+
+% Most of these models are based on so called Large Language Models (LLMs)
+
+% Describe:
+
+% Text-to-image, text-to-text, text-to-audio
+
+% LLMs - Large Language Models (use neural networks, make it as followup for deep learning and neural networks section)
+
+% GPTs - Generative Pre-Trained Transformers
 
 \subsection{Prompt engineering}
-Describe what is it
+Explain
 
-
-% TODO: spomenut aj nejake mitigations
+% TODO: also mention mitigations
 
 \section{Risks of implementing AI solutions}
-When implementing AI solutions in any domain, we must consider the natural risks of doing so. We as a society learned from history and philosophy, that there will always be someone who will do or find bad things in something new. In this section, we will discuss possible major risks that are associated with implementing AI solutions.
+When implementing AI solutions in any domain, we must consider the natural risks of doing so. We as a society learned from history and philosophy that there will always be someone who will do or find bad things in something new. In this section, we will discuss possible major risks associated with implementing AI solutions.
 
 \subsection{Ethical risks}
 % Content generation based on copyrighted material (Copyrighted material as input)
@@ -73,52 +103,63 @@ When implementing AI solutions in any domain, we must consider the natural risks
 % deep fakes
 % cyberbullying, fake news
 % etc.
-While LLMs are beneficial in helping people, they also bring risks with them. These risks include the spread of misinformation, the creation of deep fakes\footnote{AI-generated media that convincingly mimics real individuals} and privacy concerns. 
+While LLMs are beneficial in helping people, they also bring risks with them. These risks include the spread of misinformation, the creation of deep fakes, privacy concerns and other ethical problems. 
 
-% TODO: upravit a citovat
-Additionally, the potential for identity theft through data extracted from training models poses significant threats to individual autonomy and security. Bias amplification and privacy challenges further exacerbate the ethical concerns surrounding LLM deployment.
+% Additionally, the potential for identity theft through data extracted from training models poses significant threats to individual autonomy and security. Bias amplification and privacy challenges further exacerbate the ethical concerns surrounding LLM deployment.
 
-\textbf{Misinformation and Societal Implications}
-LLM-generated misinformation threatens evidence-based decision-making on critical issues like climate change and public health. 
-Disinformation campaigns powered by LLMs risk skewing elections and eroding shared foundations of truth. 
+\textbf{Misinformation}
 
-\textbf{Identity Theft from Training Data}
-PII extracted from training data enables digital impersonation and phishing, violating individual autonomy. 
-Incomplete anonymization allows tracing data to original, non-consenting authors. 
+Bad actors abuse the ''creativity'' aspect of LLMs and generate misinformation and fake news that pose major threats to society when dealing with critical issues like climate crisis and the health of individuals. Very popular amongst governments is to use misinformation to skew/influence elections in favour of their preferred party/individual.
+
+\textbf{Identity Theft}
+
+When training the LLM from non-anonymized data, potential leaks or extractions of this data can lead to identity theft and targeted phishing.
+In the opposite view, publicly available data (however often not free) can be used as input to already trained models to create deepfakes and later use these deepfakes to harm the public view of the individual or even worse.
 
 \textbf{Bias Amplification}
+
 Biased training data and targeted prompts can amplify discrimination against groups with less oversight power. 
-Restorative steps complicated by power imbalances; consequences entrench demographic inequalities. 
-
-\textbf{Economic Repercussions} 
-LLM manipulation in key sectors risks eroding credibility, value generation, and public trust in system outputs. 
-Financial impacts may disproportionately affect vulnerable communities while obscuring accountability. 
-
-\textbf{Privacy Challenges}
-Ability to reconstruct images and match identities from model outputs threatens privacy rights and consent. 
-Lack of data sourcing transparency hinders ethical review and risks exposing private conversations. 
-%------------------------------------
+Restorative steps complicated by power imbalances; consequences entrench demographic inequalities\cite{kumar2024ethicsinteractionmitigatingsecurity}. 
 
 
+\textbf{Copyright violations}
 
+Some companies unethically train their models on copyright-protected material i.e. online news articles, digital media, works of art etc. This leads to stealing the intellectual property (IP) of authors. Legislation on this topic is currently unclear, but we will dive deeper into this topic in Section~\ref{sec:legislation}.
 
+\textbf{Military use}
+
+Another topic that needs to be addressed is whether the military should utilize their data to develop LLMs which would be capable of teaching other military personnel, helping to create weapons, analysing confidential information, etc. This could be quite dangerous if the system should fall into the hands of a bad actor or adversary government where this information could be used for nefarious purposes.
 
 
 \subsection{Moral risks}
-Sexual / Violent content (inappropriate images, bombs, weapons), forbidden language (illegal activities)
+% Sexual / Violent content (inappropriate images, bombs, weapons), forbidden language (illegal activities)
+With implementing AI solutions in addition to ethical problems, moral problems are also present. One of the problems is generating sexually explicit content. Bad actors can use LLMs to create this type of content and then distribute it, which could expose the content to minors and other vulnerable individuals and cause them harm. This also applies to violent content, the making of weapons, illegal chemicals, and lastly forbidden language.
 
-Military use (maybe ethical risk)
 
-etc.
+\subsection{Cybersecurity risks}
+% social engineering
+% Malware generation and recursive training of malware samples
+% Targeted phishing - voice clone, video/image generation of targeted person
+AI can prove itself in the near future as a very useful and helpful tool to develop solutions for malware detection, malware prevention, and cybersecurity training. On the other hand, as we have already mentioned, everything has its advantages and disadvantages. Unfortunately, there are big disadvantages of rapid development of AI, which means that there are and there will be AIs, which can also be used for social engineering attacks, the creation of malware and phishing in general. These risks were categorized by Egbuna\cite{Princess-Egbuna_2021} as follows:
 
-\subsection{Security risks}
-social engineering
+\textbf{AI-Powered Malware and Ransomware}
 
-Malware generation and recursive training of malware samples
+Traditional malware infiltrates, damages, and steals data. However, AI-enhanced malware can evolve, making it harder to identify and stop. This malware uses machine learning algorithms to evaluate its environment and change its behavior to circumvent antivirus and intrusion detection systems.
+With AI, ransomware, a particularly devastating malware, has gained threat. AI-driven ransomware may quickly find weaknesses, encrypt the most critical data, and negotiate ransom amounts based on the victim's finances. AI's adaptability helps ransomware proliferate and stay undiscovered, boosting its effect\cite{Princess-Egbuna_2021}.
 
-Targeted phishing - voice clone, video/image generation of targeted person
+\textbf{Automated and Scalable Attacks}
 
-etc.
+
+\textbf{Deepfake and Social Engineering Attacks}
+
+We mentioned earlier that deepfakes are an ethical problem, but they are also connected to cybersecurity. The broad definition of deepfake is AI-generated media that convincingly mimics real individuals.
+
+Deepfake technology is used by bad actors in social engineering attacks. This technique can deceive and manipulate targets by creating phony films or audio recordings of trustworthy people like CEOs or public leaders \cite{Princess-Egbuna_2021}. In February 2024, CNN reported an example case of this behavior \cite{deepfake_CFO}. Financial worker of multinational company was tricked by video call with supposedly his coworkers and CFO\footnote{Chief Financial Officer} into sending around \$25 million which were later revealed, that it was a deepfake social engineering scam \cite{deepfake_CFO}.
+
+\textbf{Adversarial AI and Evasion Tactics}
+
+\textbf{AI in Distributed Denial of Service (DDoS) Attacks}
+
 
 \section{Content filters}
 Why are they, and what purpose do they serve
@@ -178,7 +219,8 @@ Using the risks to attack
 
 voice cloning, deep fakes, phishing, malware improvement/creation 
 
-\section{Legislation}
+\section{Legislation} \label{sec:legislation}
+% what different legislation says on training LLMs on copyrighted material i.e. Fair Use etc.
 
 \subsection{EU AI Act}
 summary src: \url{https://artificialintelligenceact.eu/high-level-summary/#weglot_switcher}

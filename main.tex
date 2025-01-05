@@ -8,6 +8,7 @@
 \newcommand{\mySpacing}[0] {1.5}
 \newcommand{\myBibliography}[0] {bib/refs, appendices/refs1}
 
+% \documentclass[\myFontSize,a4paper,twoside,openright,english]{book}
 \documentclass[\myFontSize,a4paper,twoside,openright]{book}
 % deleted slovak from documentclass
 \include{preamble/preamble}
@@ -24,11 +25,14 @@
 % Assignment page
 \include{BP/preamble/assignment}
 
-% Annotation
-\include{preamble/annotation}
+% declaration of honor
+\include{BP/preamble/declaration}
 
 % Acknowledgements
 \include{preamble/acknowledgements}
+
+% Annotation
+\include{preamble/annotation}
 
 
 % Table of contents
@@ -36,12 +40,13 @@
 
 % -------------pridane mnou-------------
 \include{BP/content/terms}
+\clearpage
 
 % List of figures
 \listoffigures
 
 % List of tables
-\listoftables
+% \listoftables
 % ----------------------------------
 
 
@@ -77,9 +82,21 @@
 \newpage
 \input{content/conclusion}
 
+% todo by malo fixovat random overflow veci ?
+% \newpage
+% \thispagestyle{empty}
+% \null
+% \newpage
+
 % Resume
 \newpage
 \input{content/resume}
+
+% todo by malo fixovat random overflow veci ?
+% \newpage
+% \thispagestyle{empty}
+% \null
+% \newpage
 
 % Bibliography
 \newpage
@@ -93,7 +110,7 @@
 \newpage
 \include{appendices/work_schedule}
 
-\newpage
-\include{appendices/cdrom}
+% \newpage
+% \include{appendices/cdrom}
 
 \end{document}
