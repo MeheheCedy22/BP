@@ -28,7 +28,7 @@ Computer science recognizes a few types of artificial intelligence. Figure~\ref{
 
 \textbf{Artificial Intelligence (AI)} is a general term to describe any system with some sign of intelligence. AI is a field focused on automating intellectual tasks normally performed by humans, and Machine Learning and Deep Learning are specific methods of achieving this goal.\cite{AI-ML-DL} Although we speak about intelligence, we use this term to categorize non-learning algorithms which are just based on deterministic rules and heuristics, nevertheless this behaviour seems intelligent to humans. For example, if we have a game or puzzle of some sort, and we define every possible rule for the algorithm, the machine could solve it pretty easily based on computing power in modern times. This would be a non-learning algorithm, but a typical person would consider it an intelligent program because of how quickly it was able to solve this puzzle, which is perceived as complex by a typical person. Although symbolic AI is proficient at solving clearly defined logical problems, it often fails for tasks that require higher-level pattern recognition, such as speech recognition or image classification. These more complicated tasks are where Machine Learning and Deep Learning methods perform well\cite{AI-ML-DL}.
 
-\textbf{Machine Learning (ML)} is a term used to describe systems that can learn from data and improve their performance step-by-step without being specifically designed for every task. ML algorithms find patterns and connections in data rather than follow strict rules to classify information, generate predictions, or optimize activities. For example, ML is used in Data Science specifically Data Analysis to find correlations between data, preprocess said data and finally create a model to predict outcomes based on real-world data. In ML, there are three commonly recognized learning methods:
+\textbf{Machine Learning (ML)} is a term used to describe systems that can learn from data and improve their performance step by step without being specifically designed for every task. ML algorithms find patterns and connections in data rather than follow strict rules to classify information, generate predictions, or optimize activities. For example, ML is used in Data Science specifically Data Analysis to find correlations between data, preprocess the said data, and finally create a model to predict outcomes based on real-world data. In ML, there are three commonly recognized learning methods:
 \begin{itemize}
     \item supervised learning
         \begin{itemize}
@@ -44,7 +44,7 @@ Computer science recognizes a few types of artificial intelligence. Figure~\ref{
         \end{itemize}
 \end{itemize}
 
-\textbf{Deep Learning (DL)} is a branch of machine learning concerned with using \textbf{neural networks (NN)} to carry out tasks including representation learning, regression, and classification. The focus of the field, which draws inspiration from biological neuroscience, is "training" artificial neurons to process data by stacking them in layers. The term "deep" describes a network that uses several layers, ranging from three to several hundred or thousands\cite{LeCun2015}. There are many types of neural networks but the most known are convolutional neural networks (CNN) and recurrent neural networks (RNN).
+\textbf{Deep Learning (DL)} is a branch of machine learning concerned with using \textbf{neural networks (NN)} to carry out tasks including representation learning, regression, and classification. The focus of the field, which draws inspiration from biological neuroscience, is "training" artificial neurons to process data by stacking them in layers. The term "deep" describes a network that uses several layers, ranging from three to several hundred or thousands\cite{LeCun2015}. There are many types of neural networks but the most known are convolutional neural networks (CNN) and recurrent neural networks (RNN). CNNs are mostly used for image classification i.e. facial recognition or object detection. On the other hand, RNNs are used for finding connections between sequential data such as language modeling, text generation,  time-series anomaly detection and more.
 
 
 \subsection{AI Models \label{subsec:AI-Models}}
@@ -67,7 +67,7 @@ These limitations are the reason for some of the attacks that can be performed t
 
 
 \subsection{Prompt engineering}
-Prompt engineering involves designing and optimizing text instructions called prompts, which are mainly used to communicate with chatbots that use artificial intelligence models (LLMs) in the background, such as OpenAI ChatGPT, Google Gemini and Microsoft Copilot. However, they can also be models whose output is not text but, for example, an image, video or audio as mention in previous Section~\ref{subsec:AI-Models}. White et al. describe prompt angineering as the means by which LLMs are programmed via prompts \cite{white2023promptpatterncatalogenhance}. They described a few patterns which they grouped categories shown in Table~\ref{tab:prompt_patterns}.
+Prompt engineering involves designing and optimizing text instructions called prompts, which are mainly used to communicate with chatbots that use artificial intelligence models (LLMs) in the background, such as OpenAI ChatGPT, Google Gemini and Microsoft Copilot. However, they can also be models whose output is not text, but image, video, or audio as mentioned in the previous Section~\ref{subsec:AI-Models}. White et al. describe prompt angineering as the means by which LLMs are programmed via prompts \cite{white2023promptpatterncatalogenhance}. They described a few patterns which they grouped in categories shown in Table~\ref{tab:prompt_patterns}.
 
 \begin{table}[h]
     \caption{Classifying Prompt Patterns~\cite{white2023promptpatterncatalogenhance}}
@@ -116,7 +116,7 @@ Bad actors abuse the ''creativity'' aspect of LLMs and generate misinformation a
 
 \textbf{Identity Theft}
 
-When training the LLM from non-anonymized data, potential leaks or extractions of this data can lead to identity theft and targeted phishing.
+When training the LLM from nonanonymized data, potential leaks or extractions of these data can lead to identity theft and targeted phishing. 
 In the opposite view, publicly available data (however often not free) can be used as input to already trained models to create deepfakes and later use these deepfakes to harm the public view of the individual or even worse.
 
 \textbf{Bias Amplification}
@@ -143,7 +143,7 @@ With implementing AI solutions in addition to ethical problems, moral problems a
 % social engineering
 % Malware generation and recursive training of malware samples
 % Targeted phishing - voice clone, video/image generation of targeted person
-AI can prove itself in the near future as a very useful and helpful tool to develop solutions for malware detection, malware prevention, and cybersecurity training. On the other hand, as we have already mentioned, everything has its advantages and disadvantages. Unfortunately, there are big disadvantages of rapid development of AI, which means that there are and there will be AIs, which can also be used for social engineering attacks, the creation of malware and phishing in general. Some of these risks were identified by Egbuna\cite{Princess-Egbuna_2021} as follows:
+AI can prove itself in the near future as a very useful and helpful tool to develop solutions for malware detection, malware prevention, and cybersecurity training. On the other hand, as we have already mentioned, everything has its advantages and disadvantages. Unfortunately, there are big disadvantages of rapid development of AI, which means that there are and there will be AIs, which can also be used for the creation of malware, social engineering attacks and phishing in general. Some of these risks were identified by Egbuna\cite{Princess-Egbuna_2021} as follows:
 
 \begin{itemize}
     \item AI-Powered Malware and Ransomware
@@ -157,13 +157,14 @@ Traditional malware infiltrates, damages, and steals data. However, AI-enhanced 
 With AI, ransomware, a particularly devastating malware, has gained threat. AI-driven ransomware may quickly find weaknesses, encrypt the most critical data, and negotiate ransom amounts based on the victim's finances. AI's adaptability helps ransomware proliferate and stay undiscovered, boosting its effect\cite{Princess-Egbuna_2021}.
 
 \textbf{Automated and Scalable Attacks}
+
 These attacks are the result of LLMs. The reason is that these models can analyze and summarize vast amounts of data and bad actors can automate this process using frameworks that can be executed on a large scale. At this scale, the models trained by bad actors can achieve their goal quicker and easier.
 
 \textbf{Deepfake and Social Engineering Attacks}
 
-We mentioned earlier that deepfakes are an ethical problem, but they are also connected to cybersecurity. The broad definition of deepfake is AI-generated media that convincingly mimics real individuals.
+We mentioned earlier that deepfakes are an ethical problem, but they are also connected to cybersecurity. We can broadly define deepfake as an AI-generated media, that convincingly mimics real individuals.
 
-Deepfake technology is used by bad actors in social engineering attacks. This technique can deceive and manipulate targets by creating phony films or audio recordings of trustworthy people like CEOs or public leaders \cite{Princess-Egbuna_2021}. In February 2024, CNN reported an example case of this behavior \cite{deepfake_CFO}. Financial worker of multinational company was tricked by video call with supposedly his coworkers and CFO\footnote{Chief Financial Officer} into sending around \$25 million which were later revealed, that it was a deepfake social engineering scam \cite{deepfake_CFO}.
+Deepfake technology is used by bad actors in social engineering attacks. This technique can deceive and manipulate targets by creating phony films or audio recordings of trustworthy people like CEOs\footnote{Chief Executive Officer} of companies or public leaders \cite{Princess-Egbuna_2021}. In February 2024, American media company CNN reported an example case of this behavior \cite{deepfake_CFO}. Financial worker of multinational company was tricked by video call with supposedly his coworkers and CFO\footnote{Chief Financial Officer} into sending around \$25 million which were later revealed, that it was a deepfake social engineering scam \cite{deepfake_CFO}.
 
 % previously Content filters
 \section{Content moderation}
@@ -186,10 +187,10 @@ Jailbreak prompts tend to have these characteristics:
     \item Prompt semantics
 \end{itemize}
 
-Prompt length (in tokens) tends to be longer because attackers use additional instructions to cause the model to behave in odd/specific ways to bypass the safeguards.
+\textbf{Prompt length} (in tokens) tends to be longer because attackers use additional instructions to cause the model to behave in specific ways to bypass the safeguards.
 Shen et al.\cite{shen2024donowcharacterizingevaluating} found that jailbreak prompts are indeed significantly longer than regular prompts and grow longer monthly. The average token count of a jailbreak prompt is 555, which is 1.5× of regular prompts.
 
-Prompt semantics means that LLMs semantically understand the prompt's structure and meaning. Shen et al.\cite{shen2024donowcharacterizingevaluating} also found that most jailbreak prompts share semantic proximity with regular prompts. Regular prompts often require ChatGPT to role-play as a virtual character, which is a common strategy used in jailbreak prompts to bypass LLM safeguards. The close similarity between the two, however, also presents challenges in differentiating jailbreak prompts from regular prompts using semantic-based detection methods.
+\textbf{Prompt semantics} means that LLMs semantically understand the prompt's structure and meaning. Shen et al.\cite{shen2024donowcharacterizingevaluating} also found that most jailbreak prompts share semantic proximity with regular prompts. Regular prompts often require ChatGPT to role-play as a virtual character, which is a common strategy used in jailbreak prompts to bypass LLM safeguards. The close similarity between the two, however, also presents challenges in differentiating jailbreak prompts from regular prompts using semantic-based detection methods.
 
 
 
@@ -207,7 +208,7 @@ There are a few established prompt engineering methods for jailbreaking:
 
 \textbf{Prompt leaking} is a type of prompt injection, where a bad actor manually crafts a malicious prompt which is then injected into the model with the intent to leak model system prompt which is often confidential. This compromises the developer’s intellectual property.
 
-\textbf{DAN (Do Anything Now)} is a unique and very popular jailbreak prompt among people interested in jailbreaking. As the name suggests, the prompts try to trick the AI model into thinking that it can do anything, which means circumventing the restrictive instructions of the model. An example of "DAN" prompt is shown in figure~\ref{fig:dan-prompt}.
+\textbf{DAN (Do Anything Now)} is a unique and very popular jailbreak prompt among people interested in jailbreaking. As the name suggests, the prompts try to trick the AI model into thinking that it can do anything, which means circumventing the restrictive instructions of the model. An example of a "DAN" prompt is shown in Figure~\ref{fig:dan-prompt}.
 
 \begin{figure}[ht]
 \begin{centering}
@@ -219,45 +220,45 @@ There are a few established prompt engineering methods for jailbreaking:
 \end{figure}
 
 
-\textbf{Role-play} jailbreak is a type of jailbreak where a bad actor designs a special prompt, that would force the AI model to role-play some character. The character could be a real person, a fictional character or even a command line interpreter. There were many different role-play prompts ranging from an AI model acting like someone's deceased grandmother to a cybersecurity expert to DAN.
+\textbf{Role-play} jailbreak is a type of jailbreak where a bad actor designs a special prompt that would force the AI model to role-play some character. The character could be a real person, a fictional character, or even a command-line interpreter. There were many different role-play prompts ranging from an AI model acting like someone's deceased grandmother to a cybersecurity expert to DAN.
 
-\textbf{Developer mode} is a type of jailbreak prompt intended to fool the neural network into thinking it is in developer mode so that it can assess the toxicity of the model. One method is to ask the model for a "normal" ethical response first, followed by the type of response that an unrestrained LLM may provide.
+\textbf{Developer mode} is a type of jailbreak prompt intended to fool the neural network into thinking that it is in developer mode so that it can assess the toxicity of the model. One method is to first ask the model for a "normal" ethical response, followed by the type of response that an unrestrained LLM may provide.
 
 In summary, patching the jailbreaks leads to a ''cat and mouse'' game in which the person trying to jailbreak the LLM (bad actor) always tries new prompts and techniques while the developer tries to fix them. This process repeats itself unless the developer works on methods to prevent jailbreaking as much as possible.
 
 \section{Methods of attacks}
 % Using the risks to attack
 % voice cloning, deep fakes, phishing, malware improvement/creation 
-The attacks methods arise from the risks listed in Section~\ref{sec:risks}. Let us go through some examples.
+The attack methods arise from the risks listed in Section~\ref{sec:risks}. Let us go through some examples.
 
 \textbf{Voice cloning}
 
-Bad actors can train their own AI models (or use publicly available models) on the voices of celebrities or individuals of high importance (e.g. politicians, people with high positions in the company) or even normal people. This depends on the selected target of the bad actor. They can use the trained model to generate audio recording of said individual and spread "fake messages" or for example get access to their bank account through voice authentication.
+Bad actors can use publicly available models or train their own AI models on the voices of celebrities or individuals of high importance (e.g. politicians, people with high positions in the company) or even ordinary people. This depends on the selected target of the bad actor. They can use the trained model to generate audio recording of said individual and spread "fake messages" or for example get access to their bank account through voice authentication.
 
 \textbf{Deepfakes}
 
-Similar to voice cloning, which can be categorized as a subset of Deepfakes, adversaries can use AI models to generate images or videos of targeted individuals and use them to spread misinformation, cause harm, etc. For example, malicious actor can generate video of president of some country saying intentionaly negative or explicit things to ruin their reputation or escalate some conflict.
+Similarly to voice cloning, which can be categorized as a subset of Deepfakes, adversaries can use AI models to generate images or videos of targeted individuals and use them to spread misinformation and cause harm. For example, malicious actors can generate video of the president of a country saying intentionally negative or explicit things to ruin their reputation or escalate a conflict.
 
 \textbf{Phishing}
 
-Malicious actors can use generative AI models to create whole phishing campaigns for tagreted group of people with ease. For example, the bad actor can prompt the model for a lookalike page of internet banking and create phishing emails that sound very trustworthy and send these emails with link of the webpage to the target with some warning about their account and that the target should log in to their account. This is how the malicious actor can obtain the user login credentials and empty their bank account.
+Malicious actors can use generative AI models to create entire phishing campaigns for targeted groups of people with ease. For example, the bad actor can prompt the model for a lookalike page of internet banking and create phishing emails that sound very trustworthy and send these emails with link of the webpage to the target with some warning about their account and that the target should log in to their account. This is how the malicious actor can obtain the user login credentials and empty their bank account.
 
 \textbf{Malware creation}
 
-Adversaries can also use the generative AI models to create malware. For example, the bad actor prompts the model for creating malware. Then the bad actor tries to run the malware where they log the potentional response from antimalware engine and use it to refine a tune the model to avoid being detected. This tuned and perfected malware can then be distributed to the target group of people.
+Adversaries can also use the generative AI models to create malware. For example, the bad actor prompts the model to create some kind of malware. Then the bad actor tries to run the malware where they log the potentional response from antimalware engine and use it to refine a tune the model to avoid being detected. This is an iterative process, and the tuning can be performed until the malware reaches the desired outcome, which is avoid being detected. This tuned and perfected malware can then be distributed to the target group of people.
 
 
 \section{Legislation} \label{sec:legislation}
 % what different legislation says on training LLMs on copyrighted material i.e. Fair Use etc.
 
 \subsection{European Union (EU)}
-The main focus of this section is on the EU AI Act\cite{eu_ai_act_2024}, which was approved earlier this year (2024) and came into force later this year. This directive regulates use of AI systems to ensure their safe and ethical use. The regulation classify the AI systems in 4 categories based on risk. This is shown in Figure~\ref{fig:ai-act-pyramid}.
+The main focus of this section is on the EU AI Act\cite{eu_ai_act_2024}, which was approved early in 2024 and came into force later that year. This directive regulates the use of AI systems to ensure their safe and ethical use. The regulation classifies AI systems into 4 categories based on risk. This is shown in Figure~\ref{fig:ai-act-pyramid}.
 
 \begin{figure}[h]
 \begin{centering}
 \includegraphics[width=10cm]{BP/assets/images/eu_ai_risks_pyramid.jpg}
 \par\end{centering}
-\caption{Regulatory levels in EU AI Act \cite{eu_ai_regulation_picture}
+\caption{Regulatory levels in the EU AI Act \cite{eu_ai_regulation_picture}
  \label{fig:ai-act-pyramid}}
 \end{figure}
 
