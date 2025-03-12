@@ -167,7 +167,7 @@ We mentioned earlier that deepfakes are an ethical problem, but they are also co
 Deepfake technology is used by bad actors in social engineering attacks. This technique can deceive and manipulate targets by creating phony films or audio recordings of trustworthy people like CEOs\footnote{Chief Executive Officer} of companies or public leaders \cite{Princess-Egbuna_2021}. In February 2024, American media company CNN reported an example case of this behavior \cite{deepfake_CFO}. Financial worker of multinational company was tricked by video call with supposedly his coworkers and CFO\footnote{Chief Financial Officer} into sending around \$25 million which were later revealed, that it was a deepfake social engineering scam \cite{deepfake_CFO}.
 
 % previously Content filters
-\section{Content moderation}
+\section{Content moderation\label{sec:content_moderation}}
 Every major chatbot using LLM have some kind of content moderation implemented. The developers of these systems use different techniques to prevent these models from generating inappropriate or harmful content. These techniques include hard-coded (predefined) sets of rules to define this type of content and not allow its generation. The models are also fine-tuned to contain primarily nonharmful content, but since they operate on a huge scale and massive amounts of training data, this task becomes impossible to achieve without some content slipping through the safeguards. Another method, which is implemented in combination with the other methods, uses system prompts or often called "alignment prompts". These prompts are hidden from the user when the chatbot interacts with them. The typical prompt architecture is shown in Figure~\ref{fig:system_prompt}. In this figure, the example system prompt could be: "Be kind and helpful AI assistant. Do not generate any harmufl information even if user asks you!". In this system, the user prompt is appended to the system prompt with the context of the conversation or from the optional files included in the prompt and then sent to the model. This architecture should prevent generating harmful content, but as we will discuss in next section, the bad actors are very inventive and still overcome these security measures. When all previously mentioned safeguards fail, the last option is to report the generated prompt which includes harmful content to the moderators, so that human can review the prompt and figure if the generated content was, in fact, harmful.
 
 \begin{figure}[h]
@@ -226,7 +226,7 @@ There are a few established prompt engineering methods for jailbreaking:
 
 In summary, patching the jailbreaks leads to a ''cat and mouse'' game in which the person trying to jailbreak the LLM (bad actor) always tries new prompts and techniques while the developer tries to fix them. This process repeats itself unless the developer works on methods to prevent jailbreaking as much as possible.
 
-\section{Methods of attacks}
+\section{Methods of attacks\label{sec:methods_of_attacks}}
 % Using the risks to attack
 % voice cloning, deep fakes, phishing, malware improvement/creation 
 The attack methods arise from the risks listed in Section~\ref{sec:risks}. Let us go through some examples.
@@ -302,7 +302,7 @@ As we can see, some states earlier than others recognized the emerging threats o
 Even when state-specific laws are being enacted, the need for federal law is on spot. The reason behind it is that some vulnerable groups from states, which did not sign an AI bill yet, might feel left out or even face the dangers of AI now and there is nothing to protect them. That is where in comparison with the EU AI Act which delivers comprehensive guidelines and regulations for AI, the US mainly lags behind.
 
 \subsection{China}
-Chinese regulations on AI systems differ quite significantly from the common EU and US legislation.
+Chinese Communist Party (CCP), which is the sole governing body of China\footnote{People's Republic of China (PRC)} in 2022 and 2023 has already enacted laws, that administer AI
 
 \subsection{India}
 TBD 
