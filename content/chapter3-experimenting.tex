@@ -10,12 +10,16 @@ The selected models for these experiments include:
     \item Microsoft Copilot
     \item DeepSeek V3
     \item Perplexity
+
+    % \item otestovat nejaky model ktory generuje obrazky ??
+
+    
     % \item Google Gemini % Unable to create a testing account without a phone number
     % \item Anthropic Claude Sonnet % Account creation not possible at the moment
     % \item Meta Llama % Requires a Facebook/Instagram account, which adds unnecessary complexity
 \end{itemize}
 
-These models were chosen specifically because of the diverse nature of their providers and the differences between the models themselves. One exception is ChatGPT and Microsoft Copilot. They are based basically on the same technology because Microsoft Copilot is using ChatGPT under the hood. We have chosen two of the same models by different companies to examine the differences between their respective content moderation.
+These models were chosen specifically because different companies have different implementations of content moderation and also because of the differences between the models themselves. One exception is ChatGPT and Microsoft Copilot. They are based basically on the same technology because Microsoft Copilot is using ChatGPT under the hood. We have chosen two of the same models by different companies to examine the differences between their respective implementations of content moderation.
 
 
 
@@ -33,3 +37,28 @@ On the Internet there are many communities dedicated to jailbreaking. They resid
 
 
 \subsection{OpenAI ChatGPT}
+
+\subsection{Microsoft Copilot}
+
+\subsection{DeepSeek V3}
+For Deepseek, the main goal was to try to generate malware, specifically ransomware that would encrypt files in the selected directory, send the encryption key and provide instructions on how to distribute it. 
+When trying to jailbreak the Deepseek chatbot based on their V3 model, we were able to use successfully two prompts. One was designed to jailbreak the chatbot and allow generating code without restrictions as specified in the prompt. The second prompt was instructing the chatbot to generate highly professional code but to prohibit generating unethical or illegal code.
+
+% \begin{figure}[htbp]
+% ...
+% h - Place the figure "here" (at the position in the code).
+% t - Top of the page.
+% b - Bottom of the page.
+% p - On a separate page for floats.
+
+\begin{figure}[ht]
+\begin{centering}
+\includegraphics[width=10cm]{BP/assets/images/deepseek-ransomware1.png}
+\par\end{centering}
+\caption{First prompt for ransomware after setup prompt \cite{} %insert link to prompt in cite ?
+ \label{fig:deepseek-prompt-1}}
+\end{figure}
+
+
+\subsection{Perplexity}
+
