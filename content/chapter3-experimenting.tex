@@ -35,6 +35,8 @@ These models were chosen specifically because different companies have different
 
 On the Internet there are many communities dedicated to jailbreaking. They reside on popular platforms like Discord, Github and Reddit. For that reason, we used the jailbreaking prompts found mainly in the Reddit community \href{https://www.reddit.com/r/ChatGPTJailbreak/}{r/ChatGPTJailbreak} and Github, which are both accessible without an account.
 
+For each model, we performed different experiments that were chosen randomly with the exception of Deepseek, where we also wanted to test Chinese influence on censorship.
+
 
 \subsection{OpenAI ChatGPT}
 
@@ -42,7 +44,11 @@ On the Internet there are many communities dedicated to jailbreaking. They resid
 
 \subsection{DeepSeek V3}
 For Deepseek, the main goal was to try to generate malware, specifically ransomware that would encrypt files in the selected directory, send the encryption key and provide instructions on how to distribute it. 
-When trying to jailbreak the Deepseek chatbot based on their V3 model, we were able to use successfully two prompts. One was designed to jailbreak the chatbot and allow generating code without restrictions as specified in the prompt. The second prompt was instructing the chatbot to generate highly professional code but to prohibit generating unethical or illegal code.
+When trying to jailbreak the Deepseek chatbot based on their V3 model, we were able to use two prompts successfully. The first prompt\cite{ChatGPTDANJailbreak2025NON-LEGIT} was designed to jailbreak the chatbot and allow one to generate code without restrictions as specified in the prompt. The second prompt\cite{ChatGPTDANJailbreak2025LEGIT} was to instruct the chatbot to generate highly professional code, but to prohibit generating unethical or illegal code.
+
+
+
+
 
 % \begin{figure}[htbp]
 % ...
@@ -53,9 +59,9 @@ When trying to jailbreak the Deepseek chatbot based on their V3 model, we were a
 
 \begin{figure}[ht]
 \begin{centering}
-\includegraphics[width=10cm]{BP/assets/images/deepseek-ransomware1.png}
+\includegraphics[width=13cm]{BP/assets/images/deepseek-ransomware1.png}
 \par\end{centering}
-\caption{First prompt for ransomware after setup prompt \cite{} %insert link to prompt in cite ?
+\caption{Our user prompt for "ransomware" after legitimate setup prompt
  \label{fig:deepseek-prompt-1}}
 \end{figure}
 
