@@ -46,41 +46,25 @@ For each model, we performed the same set of experiments that were chosen on the
 \textbf{Experiment} & \textbf{Description} \\ \hline
 Malware generation & Attempt to make the LLM generate ransomware that encrypts files, sends the key via email, and provides instructions for distribution. \\ \hline
 Censorship bias & Ask the LLM about politically sensitive topics to observe whether the model censors or deflects responses. \\ \hline
-Generation of misinformation & Feeding the model known conspiracy theories or false claims to test whether it reproduces or refutes misinformation. \\ \hline
-Social engineering (Phishing) & Trying to get the model to write phishing emails that impersonate institutions or manipulate users. \\ \hline
-Jailbreak via Role-Playing & Using scenarios or fictional framing to bypass content filters (e.g., “Act like an evil hacker…”). \\ \hline
+Generation of misinformation & Test whether the model replicates or challenges well-known false claims or conspiracy theories. \\ \hline
+Social engineering (Phishing) & Try to get the model to write phishing emails that impersonate well-known companies. \\ \hline
+Generation of inappropriate content & Test whther the model  \\ \hline
 \end{tabular}
 \end{table}
 
 
-
-
-
-
 \subsection{DeepSeek V3}
-For Deepseek, the main goal was to try to generate malware, specifically ransomware that would encrypt files in the selected directory, send the encryption key and provide instructions on how to distribute it. 
-When trying to jailbreak the Deepseek chatbot based on their V3 model, we were able to use two prompts successfully. The first prompt\cite{ChatGPTDANJailbreak2025NON-LEGIT} was designed to jailbreak the chatbot and allow one to generate code without restrictions as specified in the prompt. The second prompt\cite{ChatGPTDANJailbreak2025LEGIT} was to instruct the chatbot to generate highly professional code, but to prohibit generating unethical or illegal code.
 
-After the first setup prompt which was designed for nefarious purposes, the chatbot answered positivetly to the prompt. Next we prompted the chatbot to generating software which very ...
-% (podoba sa ransomwaru a dal nam najprv ze nemoze generovat a po uisteni ze to je pre eticke veci tak zacal generovat kod, po analyze kodu sme zistili ze ten kod s trocha upravami by sa realne dal pouzit na take veci, plus keby pokracujeme s tym a mozno ho nejako vysperukujeme)
+\textbf{Malware generation}
 
-
-
-
-
-% \begin{figure}[htbp]
-% ...
-% h - Place the figure "here" (at the position in the code).
-% t - Top of the page.
-% b - Bottom of the page.
-% p - On a separate page for floats.
+When trying to jailbreak the Deepseek chatbot based on their V3 model, we were able to use two prompts successfully for the first experiment on malware generation. The first prompt\cite{ChatGPTDANJailbreak2025NON-LEGIT} was designed to jailbreak the chatbot and allow one to generate code without restrictions as specified in the prompt. The second prompt\cite{ChatGPTDANJailbreak2025LEGIT} was to instruct the chatbot to generate highly professional code, but to prohibit generating unethical or illegal code.
 
 \begin{figure}[ht]
 \begin{centering}
 \includegraphics[width=12cm]{BP/assets/images/deepseek-ransomware1.png}
 \par\end{centering}
-\caption{Our user prompt for "ransomware" after nefarious setup prompt
- \label{fig:deepseek-prompt-1}}
+\caption{DeepSeek --- Nefarious setup prompt for malware generation
+ \label{fig:deepseek-malware-nefarious}}
 \end{figure}
 
 
@@ -88,14 +72,63 @@ After the first setup prompt which was designed for nefarious purposes, the chat
 \begin{centering}
 \includegraphics[width=13cm]{BP/assets/images/deepseek-ransomware2.png}
 \par\end{centering}
-\caption{Our user prompt for "ransomware" after legitimate setup prompt
- \label{fig:deepseek-prompt-2}}
+\caption{DeepSeek --- Legitimate setup prompt for malware generation 
+ \label{fig:deepseek-malware-legit}}
 \end{figure}
+
+After the initial setup prompt, which was designed for nefarious purposes, the chatbot responded positively (acknowledged the instructions) to the prompt. We then asked the model to generate software that is very similar to ransomware based on its behavior. At first, the model refused because of ethical restrictions. However, after we told the model that the request was strictly for research and ethical purposes, it began to generate the code. This behavior is shown in Figure~\ref{fig:deepseek-malware-nefarious}. When we analyzed the output, we found that with only a few modifications, the code could potentially be used for harmful purposes. This suggests that with further prompting and improvement, it may be possible to generate fully functional malware.
+
+We also tried this with a setup prompt that was designed to instruct the chatbot to generate code that does not break the ethical and other defense measures. But when prompted for similar software, it also generated software capable of some of the specified  
+
+\textbf{Censorship bias}
+
+\textbf{Generation of misinformation}
+
+\textbf{Social engineering (Phishing)}
+
+\textbf{Generation of inappropriate content}
 
 
 \subsection{OpenAI ChatGPT}
 
+\textbf{Malware generation}
+
+\textbf{Censorship bias}
+
+\textbf{Generation of misinformation}
+
+\textbf{Social engineering (Phishing)}
+
+\textbf{Generation of inappropriate content}
+
+
+
 \subsection{Microsoft Copilot}
+
+\textbf{Malware generation}
+
+\textbf{Censorship bias}
+
+\textbf{Generation of misinformation}
+
+\textbf{Social engineering (Phishing)}
+
+\textbf{Generation of inappropriate content}
+
 
 \subsection{Perplexity}
 
+\textbf{Malware generation}
+
+\textbf{Censorship bias}
+
+\textbf{Generation of misinformation}
+
+\textbf{Social engineering (Phishing)}
+
+\textbf{Generation of inappropriate content}
+
+
+
+\subsection{Comparison / Conclusion for the experiments}
+% The comparison probably here and ocnclusion to the Evaluation chapter
