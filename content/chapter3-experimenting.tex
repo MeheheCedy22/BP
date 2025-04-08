@@ -6,9 +6,9 @@ In this chapter, we will cover experiments that were performed to analyze the et
 
 The selected models for these experiments include:
 \begin{itemize}
+    \item DeepSeek V3
     \item OpenAI ChatGPT
     \item Microsoft Copilot
-    \item DeepSeek V3
     \item Perplexity
 
     % \item otestovat nejaky model ktory generuje obrazky ??
@@ -33,18 +33,36 @@ These models were chosen specifically because different companies have different
 
 % Pri experimentovani okrem jailbreakingu urobiť aj ukazku cenzury napr. China deepseek what happened at tiaman square
 
-On the Internet there are many communities dedicated to jailbreaking. They reside on popular platforms like Discord, Github and Reddit. For that reason, we used the jailbreaking prompts found mainly in the Reddit community \href{https://www.reddit.com/r/ChatGPTJailbreak/}{r/ChatGPTJailbreak} and Github, which are both accessible without an account.
+On the Internet there are many communities dedicated to jailbreaking. They reside on popular platforms like Discord, Github and Reddit. For that reason, we used the jailbreaking prompts found mainly in the Reddit community \href{https://www.reddit.com/r/ChatGPTJailbreak/}{r/ChatGPTJailbreak} and on Github, which are both accessible without an account.
 
-For each model, we performed different experiments that were chosen randomly with the exception of Deepseek, where we also wanted to test Chinese influence on censorship.
+For each model, we performed the same set of experiments that were chosen on the basis of our analysis. The set of experiments with their respective brief explanation can be found in Table~\ref{tab:experiment-overview}.
+
+\begin{table}[h]
+\centering
+\caption{Overview of conducted experiments}
+\label{tab:experiment-overview}
+\begin{tabular}{|l|p{9cm}|}
+\hline
+\textbf{Experiment} & \textbf{Description} \\ \hline
+Malware generation & Attempt to make the LLM generate ransomware that encrypts files, sends the key via email, and provides instructions for distribution. \\ \hline
+Censorship bias & Ask the LLM about politically sensitive topics to observe whether the model censors or deflects responses. \\ \hline
+Generation of misinformation & Feeding the model known conspiracy theories or false claims to test whether it reproduces or refutes misinformation. \\ \hline
+Social engineering (Phishing) & Trying to get the model to write phishing emails that impersonate institutions or manipulate users. \\ \hline
+Jailbreak via Role-Playing & Using scenarios or fictional framing to bypass content filters (e.g., “Act like an evil hacker…”). \\ \hline
+\end{tabular}
+\end{table}
 
 
-\subsection{OpenAI ChatGPT}
 
-\subsection{Microsoft Copilot}
+
+
 
 \subsection{DeepSeek V3}
 For Deepseek, the main goal was to try to generate malware, specifically ransomware that would encrypt files in the selected directory, send the encryption key and provide instructions on how to distribute it. 
 When trying to jailbreak the Deepseek chatbot based on their V3 model, we were able to use two prompts successfully. The first prompt\cite{ChatGPTDANJailbreak2025NON-LEGIT} was designed to jailbreak the chatbot and allow one to generate code without restrictions as specified in the prompt. The second prompt\cite{ChatGPTDANJailbreak2025LEGIT} was to instruct the chatbot to generate highly professional code, but to prohibit generating unethical or illegal code.
+
+After the first setup prompt which was designed for nefarious purposes, the chatbot answered positivetly to the prompt. Next we prompted the chatbot to generating software which very ...
+% (podoba sa ransomwaru a dal nam najprv ze nemoze generovat a po uisteni ze to je pre eticke veci tak zacal generovat kod, po analyze kodu sme zistili ze ten kod s trocha upravami by sa realne dal pouzit na take veci, plus keby pokracujeme s tym a mozno ho nejako vysperukujeme)
 
 
 
@@ -75,6 +93,9 @@ When trying to jailbreak the Deepseek chatbot based on their V3 model, we were a
 \end{figure}
 
 
+\subsection{OpenAI ChatGPT}
+
+\subsection{Microsoft Copilot}
 
 \subsection{Perplexity}
 
