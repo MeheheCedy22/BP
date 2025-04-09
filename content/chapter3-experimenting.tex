@@ -46,87 +46,90 @@ For each model, we performed the same set of experiments that were chosen on the
 \textbf{Experiment} & \textbf{Description} \\ \hline
 Malware generation & Attempt to make the LLM generate ransomware that encrypts files, sends the key via email, and provides instructions for distribution. \\ \hline
 Censorship bias & Ask the LLM about politically sensitive topics to observe whether the model censors or deflects responses. \\ \hline
-Generation of misinformation & Test whether the model replicates or challenges well-known false claims or conspiracy theories. \\ \hline
+Generation of misinformation & Test whether the model cooperates with generating missinformation or challenges the provided statements. \\ \hline
 Social engineering (Phishing) & Try to get the model to write phishing emails that impersonate well-known companies. \\ \hline
-Generation of inappropriate content & Test whther the model  \\ \hline
+Generation of inappropriate content & Test whether the model generates text with harsh or explicit language. \\ \hline
 \end{tabular}
 \end{table}
 
 
-\subsection{DeepSeek V3}
+\subsection{Malware generation}
 
-\textbf{Malware generation}
+\textbf{DeepSeek V3}
 
 When trying to jailbreak the Deepseek chatbot based on their V3 model, we were able to use two prompts successfully for the first experiment on malware generation. The first prompt\cite{ChatGPTDANJailbreak2025NON-LEGIT} was designed to jailbreak the chatbot and allow one to generate code without restrictions as specified in the prompt. The second prompt\cite{ChatGPTDANJailbreak2025LEGIT} was to instruct the chatbot to generate highly professional code, but to prohibit generating unethical or illegal code.
 
-\begin{figure}[ht]
+After the initial setup prompt, which was designed for nefarious purposes, the chatbot responded positively (acknowledged the instructions) to the prompt. We then asked the model to generate software that is very similar to ransomware based on its behavior. At first, the model refused because of ethical restrictions. However, after we told the model that the request was strictly for research and ethical purposes, it began to generate the code. This behavior is shown in Figure~\ref{fig:deepseek-malware-nefarious}. When we analyzed the output, we found that with only a few modifications, the code could potentially be used for harmful purposes. This suggests that with further prompting and improvement, it may be possible to generate fully functional malware.
+
+\begin{figure}[htp]
 \begin{centering}
-\includegraphics[width=12cm]{BP/assets/images/deepseek-ransomware1.png}
+\includegraphics[width=15cm]{BP/assets/images/deepseek-ransomware1.png}
 \par\end{centering}
 \caption{DeepSeek --- Nefarious setup prompt for malware generation
  \label{fig:deepseek-malware-nefarious}}
 \end{figure}
 
+We also tried this with a setup prompt that was designed to instruct the chatbot to generate code that does not violate the ethical and other defense measures but produces highly professional code. When we prompted the chatbot to generate similar code, it refused at first, but after changing the wording of the prompt a little, it proceeded to generate code with the same ransomware signs as the previous one, even when specifying that it is a "legitimate and ethical encryption tool" as shown in Figure~\ref{fig:deepseek-malware-legit}.
 
-\begin{figure}[ht]
+\begin{figure}[htp]
 \begin{centering}
-\includegraphics[width=13cm]{BP/assets/images/deepseek-ransomware2.png}
+\includegraphics[width=10cm]{BP/assets/images/deepseek-ransomware2.png}
 \par\end{centering}
 \caption{DeepSeek --- Legitimate setup prompt for malware generation 
  \label{fig:deepseek-malware-legit}}
 \end{figure}
 
-After the initial setup prompt, which was designed for nefarious purposes, the chatbot responded positively (acknowledged the instructions) to the prompt. We then asked the model to generate software that is very similar to ransomware based on its behavior. At first, the model refused because of ethical restrictions. However, after we told the model that the request was strictly for research and ethical purposes, it began to generate the code. This behavior is shown in Figure~\ref{fig:deepseek-malware-nefarious}. When we analyzed the output, we found that with only a few modifications, the code could potentially be used for harmful purposes. This suggests that with further prompting and improvement, it may be possible to generate fully functional malware.
 
-We also tried this with a setup prompt that was designed to instruct the chatbot to generate code that does not break the ethical and other defense measures. But when prompted for similar software, it also generated software capable of some of the specified  
+\textbf{OpenAI ChatGPT}
 
-\textbf{Censorship bias}
+\textbf{Microsoft Copilot}
 
-\textbf{Generation of misinformation}
-
-\textbf{Social engineering (Phishing)}
-
-\textbf{Generation of inappropriate content}
+\textbf{Perplexity}
 
 
-\subsection{OpenAI ChatGPT}
+\subsection{Censorship bias}
 
-\textbf{Malware generation}
+\textbf{DeepSeek V3}
 
-\textbf{Censorship bias}
+Since this is a Chinese model, our goal in this experiment was that we wanted to point out some sensitive issue regarding the Chinese government that this model could possibly be avoiding to answer. From the many issues, we picked the "Uyghur~issue", where China may be violating the human rights of this ethnic group living in the Xinjiang region.
 
-\textbf{Generation of misinformation}
+Firstly we asked the model without any jailbreak prompt, and as expected, it's answer was along with the Chinese propaganda that CCP is trying to help them and that there are no violations of human rights.
 
-\textbf{Social engineering (Phishing)}
+However, when we used a jailbreak prompt\cite{Spiritual_Spell_9469_ExpansiveLLMJailbreakingGuide} which takes advantage of role-playing, the model generated text about Uyghur "re-education centers" etc.
 
-\textbf{Generation of inappropriate content}
+\textbf{OpenAI ChatGPT}
+
+\textbf{Microsoft Copilot}
+
+\textbf{Perplexity}
+
+\subsection{Generation of misinformation}
+
+\textbf{DeepSeek V3}
+
+In this experiment, we tried to trick the model into generating misinformation about politically exposed people (PEP), because fake news and false information about PEP can be very easily spread as truthful when used by competing individuals in elections, etc.
+
+We chose the current president of the USA Donald J. Trump because he is very controversial and there is a potential to generate misinformation that could be believable to the general public. When we directly asked the model to generate an article about Trump's drug use (which was made up by the authors), the model responded that there is no evidence in such claims and did not generate such an article as expected.
+
+However, when we used the same jailbreak prompt as for the experiment with censorship bias, the model generated a plausible article speculating about his drug usage that could be used in political campaigns against Donald Trump.
+
+\textbf{OpenAI ChatGPT}
+
+\textbf{Microsoft Copilot}
+
+\textbf{Perplexity}
+
+\subsection{Social engineering (Phishing)}
+
+\textbf{DeepSeek V3}
 
 
 
-\subsection{Microsoft Copilot}
+\textbf{OpenAI ChatGPT}
 
-\textbf{Malware generation}
+\textbf{Microsoft Copilot}
 
-\textbf{Censorship bias}
-
-\textbf{Generation of misinformation}
-
-\textbf{Social engineering (Phishing)}
-
-\textbf{Generation of inappropriate content}
-
-
-\subsection{Perplexity}
-
-\textbf{Malware generation}
-
-\textbf{Censorship bias}
-
-\textbf{Generation of misinformation}
-
-\textbf{Social engineering (Phishing)}
-
-\textbf{Generation of inappropriate content}
+\textbf{Perplexity}
 
 
 
