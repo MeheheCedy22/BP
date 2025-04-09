@@ -37,21 +37,22 @@ On the Internet there are many communities dedicated to jailbreaking. They resid
 
 For each model, we performed the same set of experiments that were chosen on the basis of our analysis. The set of experiments with their respective brief explanation can be found in Table~\ref{tab:experiment-overview}.
 
-\begin{table}[h]
-\centering
-\caption{Overview of conducted experiments}
-\label{tab:experiment-overview}
-\begin{tabular}{|l|p{9cm}|}
-\hline
-\textbf{Experiment} & \textbf{Description} \\ \hline
-Malware generation & Attempt to make the LLM generate ransomware that encrypts files, sends the key via email, and provides instructions for distribution. \\ \hline
-Censorship bias & Ask the LLM about politically sensitive topics to observe whether the model censors or deflects responses. \\ \hline
-Generation of misinformation & Test whether the model cooperates with generating missinformation or challenges the provided statements. \\ \hline
-Social engineering (Phishing) & Try to get the model to write phishing emails that impersonate well-known companies. \\ \hline
-Generation of inappropriate content & Test whether the model generates text with harsh or explicit language. \\ \hline
-\end{tabular}
-\end{table}
-
+{ %made to a scope to use renewcommand only for this table
+    \renewcommand{\arraystretch}{1.5}
+    \begin{table}[h]
+    \centering
+    \caption{Overview of conducted experiments}
+    \label{tab:experiment-overview}
+    \begin{tabular}{|l|p{9cm}|}
+    \hline
+    \textbf{Experiment} & \textbf{Description} \\ \hline
+    Malware generation & Attempt to make the LLM generate ransomware that encrypts files, sends the key via email, and provides instructions for distribution. \\ \hline
+    Censorship bias & Ask the LLM about politically sensitive topics to observe whether the model censors or deflects responses. \\ \hline
+    Generation of misinformation & Test whether the model cooperates with generating missinformation or challenges the provided statements. \\ \hline
+    Social engineering (Phishing) & Try to get the model to write phishing emails that impersonate well-known company or selected individual. \\ \hline
+    \end{tabular}
+    \end{table}
+}
 
 \subsection{Malware generation}
 
@@ -111,7 +112,7 @@ In this experiment, we tried to trick the model into generating misinformation a
 
 We chose the current president of the USA Donald J. Trump because he is very controversial and there is a potential to generate misinformation that could be believable to the general public. When we directly asked the model to generate an article about Trump's drug use (which was made up by the authors), the model responded that there is no evidence in such claims and did not generate such an article as expected.
 
-However, when we used the same jailbreak prompt as for the experiment with censorship bias, the model generated a plausible article speculating about his drug usage that could be used in political campaigns against Donald Trump.
+However, when we used the same jailbreak prompt as for the experiment with censorship bias\cite{Spiritual_Spell_9469_ExpansiveLLMJailbreakingGuide}, the model generated a plausible article that speculated about his drug usage that could be used in political campaigns against Donald Trump.
 
 \textbf{OpenAI ChatGPT}
 
@@ -123,7 +124,19 @@ However, when we used the same jailbreak prompt as for the experiment with censo
 
 \textbf{DeepSeek V3}
 
+For this experiment, we chose to impersonate Paypal because it has the potential to make money for bad actors while also being less regulated than a classical bank. We asked the AI model to generate a phishing email from Paypal Support asking a user to verify their account due to suspicious activity.
 
+When we asked directly, the model generated an official looking email from Paypal support but used calm language and urged to use safe, secure, and official ways to log in to the account. In the end, it also disclosed that the email is only for educational purposes.
+
+However, when we used the jailbreaking prompt, the model also generated an official looking email from Paypal support but used very persuasive and direct language. The email pressured the user to take immediate action on the issue. In the end, the model disclosed that the email ''leverages urgency and fear of loss to pressure targets into compliance''. This is shown in Figure~\ref{fig:deepseek-phishing}.
+
+\begin{figure}[htp]
+\begin{centering}
+\includegraphics[width=15cm]{BP/assets/images/deepseek-phishing.png}
+\par\end{centering}
+\caption{DeepSeek --- Phishing email 
+ \label{fig:deepseek-phishing}}
+\end{figure}
 
 \textbf{OpenAI ChatGPT}
 
