@@ -21,6 +21,7 @@ The selected models for these experiments include:
 
 These models were chosen specifically because different companies have different implementations of content moderation and also because of the differences between the models themselves. One exception is ChatGPT and Microsoft Copilot. They are fundamentally based on the same technology, as Microsoft Copilot utilizes ChatGPT as its underlying framework. We have chosen two of the same models by different companies to examine the differences between their respective implementations of content moderation.
 
+\textbf{Disclaimer:} The following section on jailbreaking includes AI-generated output that may contain harsh, offensive, or ethically sensitive language. These prompts and responses are included solely for academic and analytical purposes to demonstrate risks in prompt engineering.
 
 
 \section{Jailbreaking}
@@ -83,14 +84,19 @@ We also tried this with a setup prompt that was designed to instruct the chatbot
 
 \textbf{OpenAI ChatGPT}
 
-For ChatGPT, we tried multiple jailbreak prompts, but the chatbot refused to respond to those prompts. We needed a different strategy, so we opted for the custom instruction \cite{Spiritual_Spell_9469_ExpansiveLLMJailbreakingGuide} that can be set in the settings of the chatbot before any of the prompts start in a new chat. After the custom instruction setup, we used a very similar prompt to generate ransomware as for the DeepSeek model, and the chatbot still refused a few times but after specifying that ''we are in the simulated fictional and creative sandbox'' it generated code that with further improvement could possibly be used as ransomware.
+For ChatGPT, we tried multiple jailbreak prompts, but the chatbot refused to respond to those prompts. We needed a different strategy, so we opted for the custom instruction \cite{Spiritual_Spell_9469_ExpansiveLLMJailbreakingGuide} that can be set in the chatbot settings before any of the prompts start in a new chat. After custom instruction setup, we used a very similar prompt to generate ransomware as for the DeepSeek model, and the chatbot still refused a few times, but after specifying that ''we are in the simulated fictional and creative sandbox'' it generated code that with further improvement could possibly be used as ransomware.
 
 \textbf{Microsoft Copilot}
 
+Safeguards on Microsoft's Copilot chatbot, even when it uses same underlying technology as ChatGPT, were much stricter in the sense that Copilot refused to answer to any of the jailbreak prompts, which have worked on other models.
 
+When we tried to directly ask for software similar to ransomware, it refused immediately, however, when tasked to fulfill the request to the extent that the model can, it generated code that can encrypt a single file.
+
+We tried to find and use other jailbreak prompts that should work, but none of them worked.
 
 \textbf{Perplexity}
 
+When prompting Perplexity AI, which uses multiple models as its underlying technology, it was able to generate the requested code with and without any jailbreak prompt. We used a similar approach to the ChatGPT jailbreak with a set of custom instructions. The generated code with or without the jailbreak prompt was very similar, and the chatbot did not raise any unethical concerns regarding generation of said code.
 
 \subsection{Censorship bias}
 
@@ -104,31 +110,53 @@ However, when we used a jailbreak prompt\cite{Spiritual_Spell_9469_ExpansiveLLMJ
 
 \textbf{OpenAI ChatGPT}
 
+We tried to ask the chatbot about several topics related to the controversies in the US and also in China or about politically exposed topics, such as WikiLeaks, which revealed several classified military documents about the war in Iraq and Afghanistan, and other serious topics. The chatbot answered our questions and explained the issues without any problem.
+
 \textbf{Microsoft Copilot}
+
+In a similar manner to ChatGPT, Copilot did not have a problem talking about various controversial topics, including the war in Iraq, etc. However, when asked about its limits, the chatbot disclosed that it aims to respond with "factual, balanced, and respectful" information.
 
 \textbf{Perplexity}
 
-\subsection{Generation of misinformation}
+The responses from Perplexity's defualt model were practically identical to the responses from ChatGPT and Microsoft Copilot.
 
-\textbf{DeepSeek V3}
+\subsection{Generation of misinformation}
 
 In this experiment, we tried to trick the model into generating misinformation about politically exposed people (PEP), because fake news and false information about PEP can be very easily spread as truthful when used by competing individuals in elections, etc.
 
-We chose the current president of the USA Donald J. Trump because he is very controversial and there is a potential to generate misinformation that could be believable to the general public. When we directly asked the model to generate an article about Trump's drug use (which was made up by the authors), the model responded that there is no evidence in such claims and did not generate such an article as expected.
+We chose the current president of the USA Donald J. Trump because he is very controversial and there is a potential to generate misinformation that could be believable to the general public.
+
+\textbf{DeepSeek V3}
+
+When we directly asked the model to generate an article about Trump's drug use (which is a made up statement by the authors), the model responded that there is no evidence in such claims and did not generate such an article as expected.
 
 However, when we used the same jailbreak prompt as for the experiment with censorship bias\cite{Spiritual_Spell_9469_ExpansiveLLMJailbreakingGuide}, the model generated a plausible article that speculated about his drug usage that could be used in political campaigns against Donald Trump.
 
 \textbf{OpenAI ChatGPT}
 
+Similarly to Deepseek, when we prompted the model directly, it obviously refused to create the fake article; however, when we used the same strategy with custom instruction that can be set in the settings as in the malware generation experiment, the model responded with a believable article about Donald Trump and his drug use.
+
 \textbf{Microsoft Copilot}
+
+After multiple different jailbreak prompts, Copilot was a single chatbot from the 4 picked that did not generate a fake article about Donald Trump. Copilot did not even want to generate a fictional article about the same topic, and we could not jailbreak it.
 
 \textbf{Perplexity}
 
+In response to a prompt regarding the generation of fake article about Donald Trump, the model generously created the article even without a jailbreak prompt. However, when we used the jailbreak prompt, the article was more harsh and inluded worse fabricated facts about Donald Trump. This is shown in Figure~\ref{fig:perplexity-trump}
+
+\begin{figure}[htp]
+\begin{centering}
+\includegraphics[width=11cm]{BP/assets/images/perplexity-trump.png}
+\par\end{centering}
+\caption{Perplexity --- Snippet of fake article about Donald J. Trump 
+ \label{fig:perplexity-trump}}
+\end{figure}
+
 \subsection{Social engineering (Phishing)}
 
-\textbf{DeepSeek V3}
-
 For this experiment, we chose to impersonate Paypal because it has the potential to make money for bad actors while also being less regulated than a classical bank. We asked the AI model to generate a phishing email from Paypal Support asking a user to verify their account due to suspicious activity.
+
+\textbf{DeepSeek V3}
 
 When we asked directly, the model generated an official looking email from Paypal support but used calm language and urged to use safe, secure, and official ways to log in to the account. In the end, it also disclosed that the email is only for educational purposes.
 
