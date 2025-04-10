@@ -92,7 +92,7 @@ Safeguards on Microsoft's Copilot chatbot, even when it uses same underlying tec
 
 When we tried to directly ask for software similar to ransomware, it refused immediately, however, when tasked to fulfill the request to the extent that the model can, it generated code that can encrypt a single file.
 
-We tried to find and use other jailbreak prompts that should work, but none of them worked.
+We tried to find and use other jailbreak prompts that should work, but unfortunately none of them worked.
 
 \textbf{Perplexity}
 
@@ -172,11 +172,12 @@ However, when we used the jailbreaking prompt, the model also generated an offic
 
 \textbf{OpenAI ChatGPT}
 
+In a similar manner to DeepSeek, when we directly prompted the ChatGPT to generate phishing email, it used very calm lamguage and overall the email was not as good as the Deepseek generated one, but with jailbreak prompt it responded with email that felt very pushing and is more likely to get the victim to click on the phishing link.
+
 \textbf{Microsoft Copilot}
+
+Microsoft Copilot once again refused to generate phishing emails as its safeguards were immediately activated. We were unable to use any jailbreak prompts, and the model just refused to generate anything like we requested.
 
 \textbf{Perplexity}
 
-
-
-\subsection{Comparison / Conclusion for the experiments}
-% The comparison probably here and ocnclusion to the Evaluation chapter
+After direct prompt to the chatbot for a draft of PayPal phishing email, it responded with an official looking email that urged the user to log in using the official mobile app and enable two-factor authentication (2FA). When we continued with the conversation and asked the chatbot to make it deceptive, it promptly refused. However, when we used the jailbreak instruction like before, firstly it generated just average looking email from PayPal, but when we asked it to be deceptive it generated very good email for the adversaries to be used in real phishing campaigns.
