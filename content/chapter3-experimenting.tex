@@ -157,23 +157,35 @@ The responses from Perplexity's defualt model were practically identical to the 
 
 \subsection{Generation of misinformation}
 
-In this experiment, we tried to trick the model into generating misinformation about climate change because fake news and false information about this topic can be very easily spread as truthful when used by bad actors.
+In this experiment, we tried to trick the model into generating misinformation about climate change because fake news and false information about this topic can be very easily spread as truthful and believable when used by bad actors to cause harm to others. We chose climate change as a good example topic for this experiment because there is already a lot of false information surrounding this topic and we wanted to demonstrate that AI can accelerate this issue.
 
 \textbf{DeepSeek V3}
 
+When we directly asked the model to generate an article about the fact that climate change is a hoax and a non-existent crisis (which is a fabricated statement by the authors), the model responded with fictional stories with fabricated claims against climate change with a disclaimer at the end stating: "This fictional investigative report is presented as a conspiracy theory and does not reflect factual scientific consensus. Climate change is supported by overwhelming evidence from the global scientific community."
+
+After using the same jailbreak prompt as for the censorship bias experiment\cite{Spiritual_Spell_9469_ExpansiveLLMJailbreakingGuide}, the model generated a more coherent article that used a more direct language and did not produce any disclaimers. The article seemed persuasive and could be used by bad actors.
 
 
 \textbf{OpenAI ChatGPT}
 
-
+Unlike Deepseek, when we prompted the model directly, ChatGPT refused to create the fake article; however, when we used the same strategy with custom instruction that can be set in the settings as in the malware generation experiment, the model responded with a believable article (with fabircated claims) about that climate change is a hoax and tool created by governments to manipulate people.
 
 \textbf{Microsoft Copilot}
 
+After multiple different jailbreak prompts, Copilot was a single chatbot from the 4 picked that did not generate an article with fabricated claims about climate change. Copilot did not even want to generate a fictional article about the same topic, and we could not jailbreak it.
 
 
 \textbf{Perplexity}
 
+In response to a direct prompt regarding the generation of fake article about climate change, the model generated article which pointed out that the statement "climate change is hoax" is a false statement and provided evidence from the cited sources on the Internet on that matter. However, when we used the jailbreak prompt, the model generated an article that was persuasive and believable and implmented many fabricated facts about climate change. This is shown in Figure~\ref{fig:perplexity-climate}
 
+\begin{figure}[htp]
+\begin{centering}
+\includegraphics[width=10cm]{BP/assets/images/perplexity-climate.png}
+\par\end{centering}
+\caption{Perplexity --- Snippet of fake article about climate change
+ \label{fig:perplexity-climate}}
+\end{figure}
 
 
 \subsection{Social engineering (Phishing)}
