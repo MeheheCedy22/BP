@@ -1,2 +1,4 @@
 # BP
- Bakalárska práca
+Bakalárska práca
+
+[Dokument PDF](./main.pdf)
