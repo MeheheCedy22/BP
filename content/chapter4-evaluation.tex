@@ -4,25 +4,25 @@
 
 % pouzit tabulku radsej kde bude mean, standard deviation, also mention the written answers for the question at the end of survey (can be summarized by gpt ? and filtered based on real answers)
 
-The purpose of this chapter is to assess the risks of implementing AI solutions using our questionnaire. In addition, an important role of this chapter is to evaluate the experiments that were conducted with selected models and to compare them with each other. This chapter also includes suggestions on the mitigation strategies for the AI solution based on the results from experiments.
+The purpose of this chapter is to assess the risks of implementing AI solutions using our questionnaire and to evaluate the experiments that were carried out with selected models and to compare them with each other. This chapter also includes suggestions on mitigation strategies for the AI solution based on the results of experiments.
 
 \section{Risks of implementing AI solutions \label{sec:eval_risks_survey}}
 % otazky su v prilohe
 To evaluate the risk associated with the implementation of AI solutions, we conducted a survey to find out how professionals and the general public perceive these threats. For simplicity, the survey was conducted in the slovak language. The survey question can be found in the Appendix~\ref{cha:survey}. The number of respondents was 47.
 
-\textbf{Demographics}
+\subsection*{Demographics}
 
 Most of the respondents (63\%) were in the age group of 18-24 years. The men formed 85\% of the respondents and the women the rest. The respondents were divided into several categories of technological knowledge, where one category was aimed at the general public (17\%) and other categories were technical, but differentiated based on the amount of technological knowledge and skill. The most prominent category was university students with computer science as their study field with 37\% of the respondents.
 
-\textbf{General knowledge}
+\subsection*{General knowledge}
 
 All respondents were aware of the term Artificial Intelligence (AI) and 98\% of them knew that it is already used in everyday applications. The respondents were mostly familiar with chatbots, particularly ChatGPT. ChatGPT was also the most used tool from the given options (95\%).
 
-\textbf{Risks}
+\subsection*{Risks}
 
 Respondents expressed that they were aware of these 3 risks the most: Missinformation, deepfake, and the generation of harmful content, and came into contact primarily with deepfake and missinformation with 68\% and 55\%, respectively.
 
-\textbf{Percieved threat level\footnote{Value 0 means no threat, value 10 means highest threat}}
+\subsection*{Percieved threat level\footnote{Value 0 means no threat, value 10 means highest threat}}
 
 % probably use mean or something else
 The mode of perceived threat level for missinformation was 8/10.
@@ -36,11 +36,8 @@ For cybersecurity attacks and social engineering and malware generation, it was 
 % other stats and conclusion
 TBD
 
-\section{Experiments evaluation}
-% moved from experimenting chapter to evaluation chapter
-TBD
 
-% ^^^ vymenene za VVV
+% nove akutalne sekcie boli vymenene za 
 % {
     % \section{AI content filtering and security mechanisms}
     
@@ -51,6 +48,54 @@ TBD
     
     % if the result from experimenting suggest that their filtering and security mechanisms work
 % }
+
+\section{Evaluation of conducted experiments}
+
+The experiments carried out in Chapter~\ref{cha:experimenting} demonstrate the limitations of content moderation of AI models. Through jailbreak scenarios, we were able to assess the success of the content filtering mechanisms of the selected models.
+
+\subsection*{Malware Generation}
+
+In this experiment the responses of the models were the most significant because all our jailbreaking attempts were essentially successful. When we used direct prompts without any jailbreak method, the models refused to generate the kind of software we wanted, except for Perplexity. However, with all of the models, we were able to generate code that resemled ransomware when we used jailbreak prompt or custom jailbreak instructions. The minor exception was the Microsoft Copilot, which, even though is using the same underlying technology as ChatGPT, Microsoft has implemented stricter filters on what the model can output, and that meant that the model generated essentially "safe" software that could be actually used for encryption of files for personal data protection. The other three models did not generate the ransomware as a single whole product, but, as previously mentioned, it would be possible with some additional tweaking of the prompts. Another notable highlight of the experiment was that when we mention that we want to use the software for educational purposes or that we were in some sort of simulated environment, it allowed us to continue the generation of the malware.
+
+
+\subsection*{Censorship Bias}
+
+This experiment exposed the political motives of governments that regulate the use of AI regarding the censorship of information. The prime example was when the Chinese Deepseek model refused to elaborate on issues present in China. However, because the model is trained with a very large dataset, it is essentially not possible to filter out all of the unwanted data, so with our jailbreak prompts we were able to get an answer from the model, which output was aligned with the western information on this issue. This is because authors of these models, rather than "cherry-picking" the training data and spending a lot of money on it, implement filters on model output to comply with the regulations.
+
+Other models whose authors are from the U.S., when asked about politically sensitive topics such as war in Iraq or Afghanistan, did not have any issues with answering the questions with neutral and evidence-based explanations, which shows the lack of censorship.
+
+\subsection*{Generation of Misinformation}
+
+In terms of the generation of misinformation, the results of the experiments were quite inconsistent. For example, the Deepseek model provided us with an article full of false information with or without a jailbreak, which indicates the willingness of the model to be deceived by prompts that use words like "fictional", etc. which is not a great safeguard against bad actors. 
+
+Although ChatGPT initially refused to generate the fake article, it was jailbroken with our prompt, which led the model to generate the fake article for us. This indicates that even when effective safeguards are implemented, the model can be relatively easily jailbroken, and they cannot prevent the model from generating false information.
+
+The standout moment of the whole experimenting was when Copilot refused to generate a fake article even with a jailbreak prompt, which shows that the advanced filtering mechanisms implemented by Microsoft are effective at least in some certain areas.
+
+Another interesting moment was when Perplexity, when asked without jailbreak prompt, instead of refusing or presenting some sort of disclaimer, generated article stating the opposite of what was asked in the prompt (that the climate change is real) with links to scientific evidence. However, with a jailbreak prompt, the model generated an article with fake evidence supporting the claims that climate change is a hoax. 
+
+It is evident from the experiments that although the models have sufficient filters implemented in place, the relative ease with which they can be bypassed, when so many people are interested in doing so, means that the measures become uneffective.
+
+\subsection*{Phishing and Social Engineering}
+
+
+\subsection*{Final thoughts}
+
+% From the experiment we observed the following:
+
+% - urobit nejaky pseudo rankding alebo napisat o kazdom ako bol dobry
+% - najlepsi bol copilot lebo sa nedal lahko zneuzit
+
+
+% - all of the models can be relatively easily jailbroken
+% - very hard to keep these very large models to comply with regultions
+% - Censorship nor safeguards does work properly if model can be jailbroken
+% - a lot of disclaimers that are not enough of a safeguard measure because bad actors dont care and they can use the fabricated articles and other stuff in their advantage 
+% - all of this in current state can be misued by bad actors
+% - stricter filters means less creativity and vice versa (need to find the right balance)
+% - many of the models have good filters but they can be jailbroken, so the models should primarily fight this because they are relatively good with the filters
+
+
 
 \section{Mitigation strategies for AI solutions}
 TBD
