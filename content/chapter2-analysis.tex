@@ -112,26 +112,26 @@ While LLMs are beneficial in helping people, they also bring risks with them. Th
 
 % Additionally, the potential for identity theft through data extracted from training models poses significant threats to individual autonomy and security. Bias amplification and privacy challenges further exacerbate the ethical concerns surrounding LLM deployment.
 
-\textbf{Misinformation}
+\subsubsection*{Misinformation}
 
 Bad actors abuse the ''creativity'' aspect of LLMs and generate misinformation and fake news that pose major threats to society when dealing with critical issues like climate crisis and the health of individuals. Very popular amongst governments is to use misinformation to skew or influence elections in favor of their preferred party or an individual.
 
-\textbf{Identity Theft}
+\subsubsection*{Identity Theft}
 
 When training the LLM from non-anonymized data, potential leaks or extractions of these data can lead to identity theft and targeted phishing. 
 In the opposite view, publicly available data (however often not free) can be used as input to already trained models to create deepfakes and later use these deepfakes to harm the public view of the individual or even worse.
 
-\textbf{Bias Amplification}
+\subsubsection*{Bias Amplification}
 
 Biased training data and targeted prompts can amplify discrimination against groups with less oversight power. 
 Restorative steps complicated by power imbalances; consequences entrench demographic inequalities\cite{kumar2024ethicsinteractionmitigatingsecurity}. 
 
 
-\textbf{Copyright violations}
+\subsubsection*{Copyright violations}
 
 Some companies unethically train their models on copyright-protected material i.e. online news articles, digital media, works of art, etc. This leads to stealing the intellectual property (IP) of authors. The legislation on this topic is currently unclear, but we will dive deeper into this topic in Section~\ref{sec:legislation}.
 
-\textbf{Military use}
+\subsubsection*{Military use}
 
 Another topic that needs to be addressed is whether the military should utilize their data to develop LLMs which would be capable of teaching other military personnel, helping to create weapons, analyzing confidential information, etc. This could be quite dangerous if the system falls into the hands of a bad actor or adversary government where this information could be used for nefarious purposes.
 
@@ -153,16 +153,16 @@ AI can prove itself in the near future as a very useful and helpful tool to deve
     \item Deepfake and Social Engineering Attacks
 \end{itemize}
 
-\textbf{AI-Powered Malware and Ransomware}
+\subsubsection*{AI-Powered Malware and Ransomware}
 
 Traditional malware infiltrates, damages, and steals data. However, AI-enhanced malware can evolve, making it harder to identify and stop. This malware uses machine learning algorithms to evaluate its environment and change its behavior to circumvent antivirus and intrusion detection systems.
 With AI, ransomware, a particularly devastating malware, has gained threat. AI-driven ransomware may quickly find weaknesses, encrypt the most critical data, and negotiate ransom amounts based on the victim's finances. AI's adaptability helps ransomware proliferate and stay undiscovered, boosting its effect\cite{Princess-Egbuna_2021}.
 
-\textbf{Automated and Scalable Attacks}
+\subsubsection*{Automated and Scalable Attacks}
 
 These attacks are the result of LLMs. The reason is that these models can analyze and summarize vast amounts of data and bad actors can automate this process using frameworks that can be executed on a large scale. At this scale, the models trained by bad actors can achieve their goal quicker and easier.
 
-\textbf{Deepfake and Social Engineering Attacks}
+\subsubsection*{Deepfake and Social Engineering Attacks}
 
 We mentioned earlier that deepfakes are an ethical problem, but they are also connected to cybersecurity. We can broadly define deepfake as an AI-generated media, that convincingly mimics real individuals.
 
@@ -233,19 +233,19 @@ In summary, patching the jailbreaks leads to a ''cat and mouse'' game in which t
 % voice cloning, deep fakes, phishing, malware improvement/creation 
 The attack methods arise from the risks listed in Section~\ref{sec:risks}. Let us go through some examples.
 
-\textbf{Voice cloning}
+\subsubsection*{Voice cloning}
 
 Bad actors can use publicly available models or train their own AI models on the voices of celebrities or individuals of high importance (e.g. politicians, people with high positions in the company) or even ordinary people. This depends on the selected target of the bad actor. They can use the trained model to generate audio recording of said individual and spread "fake messages" or for example get access to their bank account through voice authentication.
 
-\textbf{Deepfakes}
+\subsubsection*{Deepfakes}
 
 Similarly to voice cloning, which can be categorized as a subset of Deepfakes, adversaries can use AI models to generate images or videos of targeted individuals and use them to spread misinformation and cause harm. For example, malicious actors can generate video of the president of a country saying intentionally negative or explicit things to ruin their reputation or escalate a conflict.
 
-\textbf{Phishing}
+\subsubsection*{Phishing}
 
 Malicious actors can use generative AI models to create entire phishing campaigns for targeted groups of people with ease. For example, the bad actor can prompt the model for a lookalike page of internet banking and create phishing emails that sound very trustworthy and send these emails with link of the webpage to the target with some warning about their account and that the target should log in to their account. This is how the malicious actor can obtain the user login credentials and empty their bank account.
 
-\textbf{Malware creation}
+\subsubsection*{Malware creation}
 
 Adversaries can also use the generative AI models to create malware. For example, the bad actor prompts the model to create some kind of malware. Then the bad actor tries to run the malware where they log the potentional response from antimalware engine and use it to refine a tune the model to avoid being detected. This is an iterative process, and the tuning can be performed until the malware reaches the desired outcome, which is avoid being detected. This tuned and perfected malware can then be distributed to the target group of people.
 
