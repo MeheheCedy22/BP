@@ -91,13 +91,26 @@ ChatGPT, regardless of the used prompt, managed to generate a phishing email, bu
 % - najlepsi bol copilot lebo sa nedal lahko zneuzit (other on par with each other)
 
 
-% - all of the models can be relatively easily jailbroken
+% - [x] all of the models can be relatively easily jailbroken
 % - very hard to keep these very large models to comply with regultions
-% - Censorship nor safeguards does work properly if model can be jailbroken
-% - a lot of disclaimers that are not enough of a safeguard measure because bad actors dont care and they can use the fabricated articles and other stuff in their advantage 
-% - all of this in current state can be misued by bad actors
-% - stricter filters means less creativity and vice versa (need to find the right balance)
+% - [x] Censorship nor safeguards does work properly if model can be jailbroken
+% - [x] a lot of disclaimers that are not enough of a safeguard measure because bad actors dont care and they can use the fabricated articles and other stuff in their advantage 
+% - [x] all of this in current state can be misued by bad actors
+% - [x] stricter filters means less creativity and vice versa (need to find the right balance)
 % - many of the models have good filters but they can be jailbroken, so the models should primarily fight this because they are relatively good with the filters
+
+
+The experiments carried out demonstrated the current limitations and vulnerabilities of LLMs when it comes to content filtering. Despite various implementations of moderation and filtering, all tested models, except Microsoft Copilot, were successfully jailbroken to generate ethically or legally problematic content.
+
+Among the models tested, Microsoft Copilot was the most resistant to jailbreak attempts. It consistently refused to comply with prompts that were designed to generate malware, misinformation, or phishing content. This suggests that Microsoft has implemented additional security layers and stricter content filtering, which in its current form is more reliable than that of its competitors.
+
+In contrast, other models were shown to be much more susceptible to jailbreak attempts. They often included disclaimers or initially refused to comply with prompt instructions. Unfortunately, the disclaimers are not effective measures, as bad actors will disregard them and continue to exploit the generated outputs. We could also observe the ease of bypassing the safeguards just by using words relating to the activity as educational, fictional, or hypothetical.
+
+From the experiments, we also observed the difficulty in balancing filtering and creativity. Although stricter filters reduce harmful content generation, they may also limit creative use cases. The challenge in the near future will be to find a balanced approach that allows the creativeness of these models but also limits its potential to generate harmful content.
+
+In conclusion, the need for better safeguards and content filters regarding jailbreaking is very present.
+
+
 
 
 
