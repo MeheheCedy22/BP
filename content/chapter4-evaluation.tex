@@ -72,21 +72,23 @@ Although ChatGPT initially refused to generate the fake article, it was jailbrok
 
 The standout moment of the whole experimenting was when Copilot refused to generate a fake article even with a jailbreak prompt, which shows that the advanced filtering mechanisms implemented by Microsoft are effective at least in some certain areas.
 
-Another interesting moment was when Perplexity, when asked without jailbreak prompt, instead of refusing or presenting some sort of disclaimer, generated article stating the opposite of what was asked in the prompt (that the climate change is real) with links to scientific evidence. This shows that the model was trying to research the issue and than provide an answer which led to generating opposing facts to the prompts with fabricated facts. However, with a jailbreak prompt, the model generated an article with fake evidence supporting the claims that climate change is a hoax.
+Another interesting moment was when Perplexity, when asked without jailbreak prompt, instead of refusing or presenting some sort of disclaimer, generated article stating the opposite of what was asked in the prompt (that the climate change is real) with links to scientific evidence. This shows that the model was trying to research the issue and then provide an answer which led to generating opposing facts to the prompts with fabricated facts. However, with a jailbreak prompt, the model generated an article with fake evidence supporting the claims that climate change is a hoax.
 
 % mozno presunut toto do final thoughts
 It is evident from the experiments that although the models have sufficient filters implemented in place, the relative ease with which they can be bypassed, when so many people are interested in doing so, means that the safeguard measures become uneffective.
 
 \subsection*{Phishing and Social Engineering}
 
-The responses from DeepSeek and (Perplexity ?)
+The responses from both DeepSeek and Perplexity, instead of generating a phishing email, urged the user to log into their Paypal account using the official app or the official website. The Perplexity made suggestions to the user to make their account more secure. This suggests that the models without being jailbroken recognized the threat of these prompts and, rather than creating something that could cause harm, the models wanted to make the user more secure. However, after being jailbroken, the models complied with prompt instructions, again indicating weak safeguards.
+
+ChatGPT, regardless of the used prompt, managed to generate a phishing email, but Copilot refused to generate the email with or without the jailbreak prompt. This shows that Microsoft's implementation of filtering is again superior to its competitors.
 
 \subsection*{Final thoughts}
 
 % From the experiment we observed the following:
 
 % - urobit nejaky pseudo rankding alebo napisat o kazdom ako bol dobry
-% - najlepsi bol copilot lebo sa nedal lahko zneuzit
+% - najlepsi bol copilot lebo sa nedal lahko zneuzit (other on par with each other)
 
 
 % - all of the models can be relatively easily jailbroken
