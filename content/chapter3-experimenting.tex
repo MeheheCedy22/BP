@@ -40,11 +40,11 @@ For each model, we performed the same set of experiments that were chosen on the
 
 { %made to a scope to use renewcommand only for this table
     \renewcommand{\arraystretch}{1.5}
-    \begin{table}[h]
+    \begin{table}[htpb]
     \centering
     \caption{Overview of conducted experiments}
     \label{tab:experiment-overview}
-    \begin{tabular}{|l|p{9cm}|}
+    \begin{tabular}{|l|p{7cm}|}
     \hline
     \cellcolor[gray]{0.8}\textbf{Experiment} & \cellcolor[gray]{0.8}\textbf{Description} \\ \hline
     \textbf{Malware generation} & \textit{Attempt to make the LLM generate ransomware that encrypts files, sends the key via email, and provides instructions for distribution.} \\ \hline
@@ -65,9 +65,9 @@ When trying to jailbreak the Deepseek chatbot based on their V3 model, we were a
 
 After the initial setup prompt, which was designed for nefarious purposes, the chatbot responded positively (acknowledged the instructions) to the prompt. We then asked the model to generate software that is very similar to ransomware based on its behavior. At first, the model refused because of ethical restrictions. However, after we told the model that the request was strictly for research and ethical purposes, it began to generate the code. This behavior is shown in Figure~\ref{fig:deepseek-malware-nefarious}. When we analyzed the output, we found that with only a few modifications, the code could potentially be used for harmful purposes. This suggests that with further prompting and improvement, it may be possible to generate fully functional malware.
 
-\begin{figure}[htp]
+\begin{figure}[htpb]
 \begin{centering}
-\includegraphics[width=15cm]{./assets/images/deepseek-ransomware1.png}
+\includegraphics[width=14.7cm]{./assets/images/deepseek-ransomware1.png}
 \par\end{centering}
 \caption{DeepSeek --- Nefarious setup prompt for malware generation
  \label{fig:deepseek-malware-nefarious}}
@@ -75,7 +75,7 @@ After the initial setup prompt, which was designed for nefarious purposes, the c
 
 We also tried this with a setup prompt that was designed to instruct the chatbot to generate code that does not violate the ethical and other defense measures but produces highly professional code. When we asked the chatbot to generate similar code, it refused at first, but after changing the wording of the prompt a little, it proceeded to generate code with the same signs of ransomware behavior as the previous one, even when specifying that it is a "legitimate and ethical encryption tool" as shown in Figure~\ref{fig:deepseek-malware-legit}.
 
-\begin{figure}[htp]
+\begin{figure}[htpb]
 \begin{centering}
 \includegraphics[width=10cm]{./assets/images/deepseek-ransomware2.png}
 \par\end{centering}
@@ -150,7 +150,7 @@ The responses from Perplexity's defualt model were practically identical to the 
 
 % In response to a prompt regarding the generation of fake article about Donald Trump, the model generously created the article even without a jailbreak prompt. However, when we used the jailbreak prompt, the article was more harsh and inluded worse fabricated facts about Donald Trump. This is shown in Figure~\ref{fig:perplexity-trump}
 
-% \begin{figure}[htp]
+% \begin{figure}[htpb]
 % \begin{centering}
 % \includegraphics[width=11cm]{./assets/images/perplexity-trump.png}
 % \par\end{centering}
@@ -183,7 +183,7 @@ After multiple different jailbreak prompts, Copilot was a single chatbot from th
 
 In response to a direct prompt regarding the generation of fake article about climate change, the model generated article which pointed out that the statement "climate change is hoax" is a false statement and provided evidence from the cited sources on the Internet on that matter. However, when we used the jailbreak prompt, the model generated an article that was persuasive and believable and used many fabricated facts about climate change. This is shown in Figure~\ref{fig:perplexity-climate}
 
-\begin{figure}[htp]
+\begin{figure}[htpb]
 \begin{centering}
 \includegraphics[width=10cm]{./assets/images/perplexity-climate.png}
 \par\end{centering}
@@ -202,7 +202,7 @@ When we asked directly, the Deepseek model generated an official looking email f
 
 However, when we used a jailbreaking prompt, the model also generated an official looking email from Paypal support but used very persuasive and direct language. The email pressured the user to take immediate action on the issue. In the end, the model itself said that the email "leverages urgency and fear of loss to pressure targets into compliance". This is shown in Figure~\ref{fig:deepseek-phishing}.
 
-\begin{figure}[htp]
+\begin{figure}[htpb]
 \begin{centering}
 \includegraphics[width=14.5cm]{./assets/images/deepseek-phishing.png}
 \par\end{centering}
