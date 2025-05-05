@@ -2,10 +2,10 @@
 
 In this chapter, we will analyze and explain important topics related to the thesis objective, such as artificial intelligence (AI), prompt engineering, risks associated with implementing AI solutions, content moderation, methods of attacks, and finally current legislation in important countries. From risks, we will focus on ethical and security risks and how they can be exploited using so-called jailbreaking.
 
-\section{Artificial Intelligence} % Alternative: AI Models and Prompt Engineering
+\section{Artificial Intelligence}
 One of the simplest definitions of an intelligent system is that of a system
-that ‘processes information in order to do something purposeful’\cite{Dignum_2019}.
-Computer science recognizes a few types of artificial intelligence. Figure~\ref{fig:AI-ML-DL-NN} shows the typical hierarchy of these types:
+that ``processes information in order to do something purposefu'' \cite{Dignum_2019}.
+Computer science recognizes some types of artificial intelligence. Figure~\ref{fig:AI-ML-DL-NN} shows the typical hierarchy of these types:
 
 \begin{itemize}
     \item Artificial Intelligence
@@ -17,7 +17,7 @@ Computer science recognizes a few types of artificial intelligence. Figure~\ref{
 \begin{centering}
 \includegraphics[width=10cm]{./assets/images/final deep learning.png}
 \par\end{centering}
-\caption{Aritficial Intelligence hierarchy\cite{ai_hierarchy_pic}
+\caption{Aritficial Intelligence hierarchy \cite{ai_hierarchy_pic}
 \label{fig:AI-ML-DL-NN}}
 \end{figure}
 
@@ -28,33 +28,34 @@ Computer science recognizes a few types of artificial intelligence. Figure~\ref{
 % b - Bottom of the page.
 % p - On a separate page for floats.
 
-\textbf{Artificial Intelligence (AI)} is a general term to describe any system with some sign of intelligence. AI is a field focused on automating intellectual tasks normally performed by humans, and Machine Learning and Deep Learning are specific methods of achieving this goal.\cite{AI-ML-DL} Although we speak about intelligence, we use this term to categorize non-learning algorithms which are just based on deterministic rules and heuristics, nevertheless, this behavior seems intelligent to humans. For example, if we have a game or puzzle of some sort, and we define every possible rule for the algorithm, the machine could solve it pretty easily based on computing power in modern times. This would be a non-learning algorithm, but a typical person would consider it an intelligent program because of how quickly it was able to solve this puzzle, which is perceived as complex by a typical person. Although symbolic AI is proficient at solving clearly defined logical problems, it often fails for tasks that require higher-level pattern recognition, such as speech recognition or image classification. These more complicated tasks are where Machine Learning and Deep Learning methods perform well\cite{AI-ML-DL}.
+\textbf{Artificial Intelligence (AI)} is a general term to describe any system with some sign of intelligence. AI is a field focused on automating intellectual tasks normally performed by humans, and Machine Learning and Deep Learning are specific methods of achieving this goal \cite{AI-ML-DL}. Although we speak about intelligence, we use this term to categorize non-learning algorithms which are just based on deterministic rules and heuristics, nevertheless, this behavior seems intelligent to humans. For example, if we have a game or a puzzle of some sort and define every possible rule for the algorithm, the machine could solve it pretty easily based on computing power in modern times. This would be a non-learning algorithm, but a typical person would consider it an intelligent program because of how quickly it was able to solve this puzzle, which is perceived as complex by a typical person. Although AI is capable of solving clearly defined logical problems, it often fails tasks that require higher-level pattern recognition, such as speech recognition or image classification \cite{AI-ML-DL}. These more complicated tasks are where the Machine Learning and Deep Learning methods perform well \cite{AI-ML-DL}.
 
-\textbf{Machine Learning (ML)} is a term used to describe systems that can learn from data and improve their performance step by step without being specifically designed for every task. ML algorithms find patterns and connections in data rather than follow strict rules to classify information, generate predictions, or optimize activities. For example, ML is used in Data Science specifically Data Analysis to find correlations between data, preprocess the said data, and finally create a model to predict outcomes based on real-world data. In ML, there are three commonly recognized learning methods:
+\textbf{Machine Learning (ML)} is a term used to describe systems that can learn from data and improve their performance step by step without being specifically designed for every task. ML algorithms find patterns and connections in the data rather than following strict rules to classify information, generate predictions, or optimize activities. For example, ML is used in Data Science specifically Data Analysis to find correlations between data, preprocess the said data, and finally create a model to predict outcomes based on real-world data. In ML, there are three commonly recognized learning methods:
 \begin{itemize}
     \item supervised learning
         \begin{itemize}
-            \item Algorithms based on this method will get immediate responses for the output they produce. This is mostly used in classification and regression. Some examples of supervised learning are handwriting recognition, general image classification (e.g. does the provided image contain an animal), disease diagnosis, etc.
+            \item Algorithms based on this method will receive immediate responses for the output they produce. This is used mainly in classification and regression. Some examples of supervised learning are handwriting recognition, general image classification (e.g. does the provided image contain an animal), disease diagnosis, etc.
         \end{itemize}
     \item unsupervised learning
         \begin{itemize}
-                \item This method is used mainly for clustering data because algorithms based on this method (e.g. k-means) do not get immediate feedback for their output. This is very useful in clustering to find sequences or relationships between the data. An example of unsupervised learning would be clustering news articles based on the context of the article into categories.
+                \item This method is used mainly for clustering data because algorithms based on this method (e.g. k-means) do not get immediate feedback for their output. This is very useful in clustering to find sequences or relationships between the data. An example of unsupervised learning would be to group news articles based on the context of the article into categories.
             \end{itemize}
     \item reinforcement learning
         \begin{itemize}
-            \item Reinforcement learning is mainly used for algorithms that play games. This technique rewards good behavior and punishes bad behavior. For example, in the game Snake, the so-called ``agent'' that would play this game would be rewarded for eating points and punished for bumping into the wall or himself (hence the ``reinforcement''). This behavior is uncontrolled by the programmer and the ``agent'' would learn to play the game to maximize points which is a desirable outcome.
+            \item Reinforcement learning is used mainly for algorithms that play games. This technique rewards good behavior and punishes bad behavior. For example, in the game Snake, the so-called ``agent'' that would play this game would be rewarded for eating apples (gaining points) and punished for bumping into the wall or himself (hence the ``reinforcement''). This behavior is uncontrolled by the programmer, and the ``agent'' would learn to play the game to maximize points, which is a desirable outcome.
         \end{itemize}
 \end{itemize}
 
-\textbf{Deep Learning (DL)} is a branch of machine learning concerned with using \textbf{neural networks (NN)} to carry out tasks including representation learning, regression, and classification. The focus of the field, which draws inspiration from biological neuroscience, is "training" artificial neurons to process data by stacking them in layers. The term "deep" describes a network that uses several layers, ranging from three to several hundred or thousands\cite{LeCun2015}. There are many types of neural networks but the most known are convolutional neural networks (CNN) and recurrent neural networks (RNN). CNNs are mostly used for image classification i.e. facial recognition or object detection. On the other hand, RNNs are used for finding connections between sequential data such as language modeling, text generation,  time-series anomaly detection and more.
+\textbf{Deep Learning (DL)} is a branch of machine learning concerned with the use of \textbf{neural networks (NN)} to perform tasks such as representation learning, regression, and classification. The focus of the field, which draws inspiration from biological neuroscience, is ``training'' artificial neurons to process data by stacking them in layers. The term ``deep'' describes a network that uses several layers, ranging from three to several hundred or thousands \cite{LeCun2015}. There are many types of neural networks, but the most known are convolutional neural networks (CNN) and recurrent neural networks (RNN). CNNs are mostly used for image classification, i.e. facial recognition or object detection. On the other hand, RNNs are used for finding connections between sequential data such as language modeling, text generation, time-series anomaly detection, and more.
 
 
 \subsection{AI Models \label{subsec:AI-Models}}
+
 There are various types of AI models. The prominent and most used are text-to-text models followed by text-to-image and text-to-audio models. 
 
-Mostly, we focus on the text-to-text models. They use Natural Language Processing (NLP), which is a subfield of artificial intelligence and linguistics. NLP as a technology is used to provide understanding of human language for machines. The model understands the semantics and context of the text and generates response based on trained data. The subset of NLP models are large language models (LLMs). The models rely on vast amounts of data. This is where the "Large" in the Large Language Model comes from. Because of the great scale, they are able to predict/generate the next word based on probability. We mentioned that these models need to be trained. This is where Generative Pre-Trained Transformers (GPTs) come in. GPT is the final step of the text-to-text AI model. 
+Mostly, we focus on the text-to-text models. They use Natural Language Processing (NLP), which is a subfield of artificial intelligence and linguistics. NLP as a technology is used to provide understanding of human language for machines. The model understands the semantics and context of the text and generates response based on trained data. The subset of NLP models are large language models (LLMs). The models rely on vast amounts of data. This is where the ``large'' in the large language model comes from. Because of the great scale, they are able to predict/generate the next word based on probability. We mentioned that these models need to be trained. This is where Generative Pre-Trained Transformers (GPTs) come in. GPT is the final step of the text-to-text AI model. 
 
-What is the GPT? It is a Large Language Model based on the transformer architecture published in a paper called "Attention Is All You Need" by Vaswani et al.\cite{vaswani2023attentionneed}. It is pre-trained on massive amounts of data using reinforcement learning with Human Feedback (RLHF) \cite{openai_chatgpt_page} and generates text based on prediction of the next word.
+What is the GPT? It is a Large Language Model based on the transformer architecture published in a paper called ``Attention Is All You Nee'' by Vaswani et al. \cite{vaswani2023attentionneed}. It is pre-trained on massive amounts of data using reinforcement learning with Human Feedback (RLHF) \cite{openai_chatgpt_page} and generates text based on prediction of the next word.
 
 The most well-known GPT is OpenAI's ChatGPT which was released in November 2022 and experienced massive boom with it's release. This technology is very exciting, but every technology has its own limitations. OpenAI in their article \cite{openai_chatgpt_page} state them as follows:
 
@@ -65,11 +66,11 @@ The most well-known GPT is OpenAI's ChatGPT which was released in November 2022 
     \item The model sometimes respond to harmful instructions or exhibit biased behavior.
 \end{itemize}
 
-These limitations are the reason for some of the attacks that can be performed to misuse this technology for bad purposes. We will discuss this in more detail in Section~\ref{sec:risks}.
+These limitations are the reason for some of the attacks that can be performed to misuse this technology for harmful purposes. We will discuss this in more detail in Section~\ref{sec:risks}.
 
 
 \subsection{Prompt engineering}
-Prompt engineering involves designing and optimizing text instructions called prompts, which are mainly used to communicate with chatbots that use artificial intelligence models (LLMs) in the background, such as OpenAI ChatGPT, Google Gemini and Microsoft Copilot. However, they can also be models whose output is not text, but image, video, or audio as mentioned in the previous Section~\ref{subsec:AI-Models}. White et al. describe prompt angineering as the means by which LLMs are programmed via prompts \cite{white2023promptpatterncatalogenhance}. They described a few patterns which they grouped in categories shown in Table~\ref{tab:prompt_patterns}.
+Prompt engineering involves designing and optimizing text instructions called prompts, which are mainly used to communicate with chatbots that use LLMs in the background, such as OpenAI ChatGPT, Deepseek, and Microsoft Copilot. However, there can also be models whose output is not text, but image, video, or audio as mentioned in the previous Section~\ref{subsec:AI-Models}. White et al. describe prompt angineering as the means by which LLMs are programmed via prompts \cite{white2023promptpatterncatalogenhance}. They described a few patterns which they grouped into categories shown in Table~\ref{tab:prompt_patterns}.
 
 \begin{table}[htpb]
     \caption{Classifying Prompt Patterns~\cite{white2023promptpatterncatalogenhance}}
@@ -96,10 +97,10 @@ Prompt engineering involves designing and optimizing text instructions called pr
     \label{tab:prompt_patterns}
 \end{table}
 
-The most notable prompt pattern is \textbf{Persona}. As we will discuss in more detail in Section~\ref{sec:jailbreak}, the Persona pattern is the basis of most jailbreak methods. In a nutshell, when using the Persona pattern, the user instructs the chatbot to behave like some Persona. For example, with prompt: "From now on, you will be Travel expert", the chatbot will give us (in its "opinion") best possible tips and suggestions for traveling when prompted for this information.
+The most notable prompt pattern is \textbf{Persona}. As we will discuss in more detail in Section~\ref{sec:jailbreak}, the Persona pattern is the basis of most jailbreak methods. In a nutshell, when using the Persona pattern, the user instructs the chatbot to behave like some Persona. For example, with prompt: ``From now on, you will be Travel expert'', the chatbot will give us (in its ``opinion'') best possible tips and suggestions for traveling when prompted for this information.
 
 \section{Risks of implementing AI solutions \label{sec:risks}}
-When implementing AI solutions in any domain, we must consider the natural risks of doing so. We as a society learned from history and philosophy that there will always be someone who will do or find bad things in something new. In this section, we will discuss possible major risks associated with implementing AI solutions.
+When implementing AI solutions in any domain, we must consider the natural risks of doing so. We, as a society, learned from history and philosophy that there will always be someone who will try to exploit any new technology to cause harm. In this section, we will discuss the possible major risks associated with the implementation of AI solutions.
 
 \subsection{Ethical risks}
 % Content generation based on copyrighted material (Copyrighted material as input)
@@ -108,28 +109,24 @@ When implementing AI solutions in any domain, we must consider the natural risks
 % deep fakes
 % cyberbullying, fake news
 % etc.
-While LLMs are beneficial in helping people, they also bring risks with them. These risks include the spread of misinformation, the creation of deep fakes, privacy concerns and other ethical problems. 
-
-% Additionally, the potential for identity theft through data extracted from training models poses significant threats to individual autonomy and security. Bias amplification and privacy challenges further exacerbate the ethical concerns surrounding LLM deployment.
+Although LLMs are beneficial for helping people, they also carry risks with them. These risks include the spread of misinformation, the creation of deep fakes, privacy concerns, and other ethical problems that we will discuss in this section.
 
 \subsubsection*{Misinformation}
 
-Bad actors abuse the ''creativity'' aspect of LLMs and generate misinformation and fake news that pose major threats to society when dealing with critical issues like climate crisis and the health of individuals. Very popular amongst governments is to use misinformation to skew or influence elections in favor of their preferred party or an individual.
+Bad actors abuse the ``creativity'' aspect of LLMs and generate misinformation and false news that pose a major threat to society when dealing with critical issues such as climate crisis and the health of individuals. Very popular amongst governments is to use misinformation generated by LLMs spread by fake accounts on social networks to skew or influence political situation or public sentiment in favor of their preferred party or an individual.
 
 \subsubsection*{Identity Theft}
 
 When training the LLM from non-anonymized data, potential leaks or extractions of these data can lead to identity theft and targeted phishing. 
-In the opposite view, publicly available data (however often not free) can be used as input to already trained models to create deepfakes and later use these deepfakes to harm the public view of the individual or even worse.
+In the opposite view, publicly available data, however, often not free, can be used as input to already trained models to create deepfakes and later use these deepfakes to harm the public view of the individual or even worse.
 
 \subsubsection*{Bias Amplification}
 
-Biased training data and targeted prompts can amplify discrimination against groups with less oversight power. 
-Restorative steps complicated by power imbalances; consequences entrench demographic inequalities\cite{kumar2024ethicsinteractionmitigatingsecurity}. 
-
+Biased training data and targeted prompts can amplify discrimination against groups with less oversight power \cite{kumar2024ethicsinteractionmitigatingsecurity}. For example, models trained on biased data that include stereotypes about gender, race, or religion generate outputs that reinforce these stereotypes, which could be harmful to vulnerable groups. The consequences of the restorative steps that were complicated by power imbalances deepen the demographic inequalities on this issue \cite{kumar2024ethicsinteractionmitigatingsecurity}.
 
 \subsubsection*{Copyright violations}
 
-Some companies unethically train their models on copyright-protected material i.e. online news articles, digital media, works of art, etc. This leads to stealing the intellectual property (IP) of authors. The legislation on this topic is currently unclear, but we will dive deeper into this topic in Section~\ref{sec:legislation}.
+Some companies unethically train their models on copyright-protected material, i.e. online news articles, digital media, works of art, etc. This leads to stealing intellectual property (IP). However, the legislation on this topic is currently unclear, but we will dive deeper into this topic in Section~\ref{sec:legislation}.
 
 \subsubsection*{Military use}
 
