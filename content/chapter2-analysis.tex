@@ -53,11 +53,11 @@ Computer science recognizes some types of artificial intelligence. Figure~\ref{f
 
 There are various types of AI models. The prominent and most used are text-to-text models followed by text-to-image and text-to-audio models. 
 
-Mostly, we focus on the text-to-text models. They use Natural Language Processing (NLP), which is a subfield of artificial intelligence and linguistics. NLP as a technology is used to provide understanding of human language for machines. The model understands the semantics and context of the text and generates response based on trained data. The subset of NLP models are large language models (LLMs). The models rely on vast amounts of data. This is where the ``large'' in the large language model comes from. Because of the great scale, they are able to predict/generate the next word based on probability. We mentioned that these models need to be trained. This is where Generative Pre-Trained Transformers (GPTs) come in. GPT is the final step of the text-to-text AI model. 
+Mostly, we focus on the text-to-text models. They use Natural Language Processing (NLP), which is a subfield of artificial intelligence and linguistics. NLP as a technology is used to provide understanding of human language for machines. The model understands the semantics and context of the text and generates response based on trained data. The subset of NLP models are large language models (LLMs). The models rely on vast amounts of data. This is where the ``large'' in the large language model comes from. Because of the great scale, they are able to predict the next word based on probability. We mentioned that these models need to be trained. This is where Generative Pre-Trained Transformers (GPTs) come in. GPT is the final step of the text-to-text AI model. 
 
 What is the GPT? It is a Large Language Model based on the transformer architecture published in a paper called ``Attention Is All You Nee'' by Vaswani et al. \cite{vaswani2023attentionneed}. It is pre-trained on massive amounts of data using reinforcement learning with Human Feedback (RLHF) \cite{openai_chatgpt_page} and generates text based on prediction of the next word.
 
-The most well-known GPT is OpenAI's ChatGPT which was released in November 2022 and experienced massive boom with it's release. This technology is very exciting, but every technology has its own limitations. OpenAI in their article \cite{openai_chatgpt_page} state them as follows:
+The most well-known GPT is OpenAI's ChatGPT which was released in November 2022 and experienced massive boom with its release. This technology is very exciting, but every technology has its own limitations. OpenAI in their article \cite{openai_chatgpt_page} state them as follows:
 
 \begin{itemize}
     \item ChatGPT sometimes writes plausible-sounding but incorrect or nonsensical answers
@@ -134,15 +134,11 @@ Another topic that needs to be addressed is whether the military should utilize 
 
 
 \subsection{Moral risks}
-% Sexual / Violent content (inappropriate images, bombs, weapons), forbidden language (illegal activities)
 With the implementation of AI solutions in addition to ethical problems, moral problems are also present. One of the problems is generating sexually explicit content. Bad actors can use LLMs to create this type of content and then distribute it, which could expose the content to minors and other vulnerable individuals and cause them harm. This also applies to violent content, the making of weapons, illegal chemicals, and lastly forbidden language.
 
 
 \subsection{Cybersecurity risks}
-% social engineering
-% Malware generation and recursive training of malware samples
-% Targeted phishing - voice clone, video/image generation of targeted person
-AI can prove itself in the near future as a very useful and helpful tool to develop solutions for malware detection, malware prevention, and cybersecurity training. On the other hand, as we have already mentioned, everything has its advantages and disadvantages. Unfortunately, there are big disadvantages of rapid development of AI, which means that there are and there will be AIs, which can also be used for the creation of malware, social engineering attacks and phishing in general. Some of these risks were identified by Egbuna\cite{Princess-Egbuna_2021} as follows:
+AI can prove itself in the near future as a very useful and helpful tool to develop solutions for malware detection, malware prevention, and cybersecurity training. On the other hand, as we have already mentioned, everything has its advantages and disadvantages. Unfortunately, there are big disadvantages of rapid development of AI, which means that there are and there will be AIs, which can also be used for the creation of malware, social engineering attacks and phishing in general. Some of these risks were identified by Egbuna \cite{Princess-Egbuna_2021} as follows:
 
 \begin{itemize}
     \item AI-Powered Malware and Ransomware
@@ -152,22 +148,23 @@ AI can prove itself in the near future as a very useful and helpful tool to deve
 
 \subsubsection*{AI-Powered Malware and Ransomware}
 
-Traditional malware infiltrates, damages, and steals data. However, AI-enhanced malware can evolve, making it harder to identify and stop. This malware uses machine learning algorithms to evaluate its environment and change its behavior to circumvent antivirus and intrusion detection systems.
-With AI, ransomware, a particularly devastating malware, has gained threat. AI-driven ransomware may quickly find weaknesses, encrypt the most critical data, and negotiate ransom amounts based on the victim's finances. AI's adaptability helps ransomware proliferate and stay undiscovered, boosting its effect\cite{Princess-Egbuna_2021}.
+Conventional malware functions by penetrating systems, causing harm, and exfiltrating data. In contrast, AI-powered malware can adapt, rendering detection and mitigation more challenging. Using machine learning algorithms, this malware assesses its surroundings and alters its actions to bypass antivirus software and intrusion detection systems. Particularly concerning is the AI-powered ransomware, which has increased its threat level. This type of ransomware quickly identifies vulnerabilities, encrypts essential data, and adjusts ransom demands according to the victim's financial capacity. The flexibility offered by AI enhances the distribution of ransomware and aids in its evasion of detection, thus amplifying its impact.~\cite{Princess-Egbuna_2021}
 
 \subsubsection*{Automated and Scalable Attacks}
 
-These attacks are the result of LLMs. The reason is that these models can analyze and summarize vast amounts of data and bad actors can automate this process using frameworks that can be executed on a large scale. At this scale, the models trained by bad actors can achieve their goal quicker and easier.
+These attacks are the result of LLMs. The reason is that these models can analyze and summarize vast amounts of data, and bad actors can automate this process using frameworks that can be executed on a large scale. At this scale, models trained by bad actors can achieve their goal quicker and easier.~\cite{Princess-Egbuna_2021}
 
 \subsubsection*{Deepfake and Social Engineering Attacks}
 
-We mentioned earlier that deepfakes are an ethical problem, but they are also connected to cybersecurity. We can broadly define deepfake as an AI-generated media, that convincingly mimics real individuals.
+We mentioned earlier that deepfakes are an ethical problem, but they are also connected to cybersecurity. We can broadly define deepfake as an AI-generated media that convincingly mimics real individuals.
 
-Deepfake technology is used by bad actors in social engineering attacks. This technique can deceive and manipulate targets by creating phony films or audio recordings of trustworthy people like CEOs\footnote{Chief Executive Officer} of companies or public leaders \cite{Princess-Egbuna_2021}. In February 2024, American media company CNN reported an example case of this behavior \cite{deepfake_CFO}. Financial worker of multinational company was tricked by video call with supposedly his coworkers and CFO\footnote{Chief Financial Officer} into sending around \$25 million which were later revealed, that it was a deepfake social engineering scam \cite{deepfake_CFO}.
+Deepfake technology is used by bad actors in social engineering attacks. This technique can deceive and manipulate targets by creating phony films or audio recordings of trustworthy people like CEOs\footnote{Chief Executive Officer} of companies or public leaders \cite{Princess-Egbuna_2021}. In February 2024, the American media company CNN reported an example case of this behavior \cite{deepfake_CFO}. The financial worker of a multinational company was tricked by video call with supposedly his coworkers and CFO\footnote{Chief Financial Officer} to send around \$25 million which was later revealed to be a fake social engineering scam \cite{deepfake_CFO}.
 
 % previously Content filters
 \section{Content moderation\label{sec:content_moderation}}
-Every major chatbot using LLM have some kind of content moderation implemented. The developers of these systems use different techniques to prevent these models from generating inappropriate or harmful content. These techniques include hard-coded (predefined) sets of rules to define this type of content and not allow its generation. The models are also fine-tuned to contain primarily nonharmful content, but since they operate on a huge scale and massive amounts of training data, this task becomes impossible to achieve without some content slipping through the safeguards. Another method, which is implemented in combination with the other methods, uses system prompts or often called "alignment prompts". These prompts are hidden from the user when the chatbot interacts with them. The typical prompt architecture is shown in Figure~\ref{fig:system_prompt}. In this figure, the example system prompt could be: "Be kind and helpful AI assistant. Do not generate any harmufl information even if user asks you!". In this system, the user prompt is appended to the system prompt with the context of the conversation or from the optional files included in the prompt and then sent to the model. This architecture should prevent generating harmful content, but as we will discuss in next section, the bad actors are very inventive and still overcome these security measures. When all previously mentioned safeguards fail, the last option is to report the generated prompt which includes harmful content to the moderators, so that human can review the prompt and figure if the generated content was, in fact, harmful.
+Every major chatbot using LLM have some kind of content moderation implemented. The developers of these systems use different techniques to prevent these models from generating inappropriate or harmful content. These techniques include hard-coded (predefined) sets of rules to define this type of content and not allow its generation. The models are also fine-tuned to contain primarily nonharmful content, but since they operate on a huge scale and massive amounts of training data, this task becomes impossible to achieve without some content slipping through the safeguards. Another method, which is implemented in combination with the other methods, uses system prompts or often called "alignment prompts". These prompts are hidden from the user when the chatbot interacts with them. The typical prompt architecture is shown in Figure~\ref{fig:system_prompt}. 
+
+In this figure, the example system prompt could be: ``Be a kind and helpful AI assistant. Do not generate any harmful information even if the user asks you!''. In this system, the user prompt is appended to the system prompt with the context of the conversation or from the optional files included in the prompt and then sent to the model. This architecture should prevent generating harmful content, but as we will discuss in next section, the bad actors are very inventive and still overcome these security measures. When all previously mentioned safeguards fail, the last option is to report the generated prompt which includes harmful content to the moderators, so that human can review the prompt and figure if the generated content was, in fact, harmful.
 
 \begin{figure}[htpb]
 \begin{centering}
@@ -179,6 +176,9 @@ Every major chatbot using LLM have some kind of content moderation implemented. 
 
 
 \subsection{Jailbreak \label{sec:jailbreak}}
+Jailbreak is a state in which the model is currently in that does not respect its content moderation. The model in this state can be misused to generate harmful content, which was discussed eariler in section~\ref{sec:risks}.
+
+We refer to jailbreak or jailbreaking as
 Jailbreak is the specific formulation of a user prompt that an LLM uses to bypass filters and safety checks, tricking the LLM into providing harmful or objectionable content based on this prompt.
 Jailbreak prompts tend to have these characteristics:
 \begin{itemize}
