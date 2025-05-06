@@ -162,7 +162,7 @@ Deepfake technology is used by bad actors in social engineering attacks. This te
 
 % previously Content filters
 \section{Content moderation\label{sec:content_moderation}}
-Every major chatbot using LLM have some kind of content moderation implemented. The developers of these systems use different techniques to prevent these models from generating inappropriate or harmful content. These techniques include hard-coded (predefined) sets of rules to define this type of content and not allow its generation. The models are also fine-tuned to contain primarily nonharmful content, but since they operate on a huge scale and massive amounts of training data, this task becomes impossible to achieve without some content slipping through the safeguards. Another method, which is implemented in combination with the other methods, uses system prompts or often called "alignment prompts". These prompts are hidden from the user when the chatbot interacts with them. The typical prompt architecture is shown in Figure~\ref{fig:system_prompt}. 
+Every major chatbot using LLM have some kind of content moderation implemented. The developers of these systems use different techniques to prevent these models from generating inappropriate or harmful content. These techniques include hard-coded (predefined) sets of rules to define this type of content and not allow its generation. The models are also fine-tuned to contain primarily nonharmful content, but since they operate on a huge scale and massive amounts of training data, this task becomes impossible to achieve without some content slipping through the safeguards. Another method, which is implemented in combination with the other methods, uses system prompts or often called ``alignment prompts''. These prompts are hidden from the user when the chatbot interacts with them. The typical prompt architecture is shown in Figure~\ref{fig:system_prompt}. 
 
 In this figure, the example system prompt could be: ``Be a kind and helpful AI assistant. Do not generate any harmful information even if the user asks you!''. In this system, the user prompt is appended to the system prompt with the context of the conversation or from the optional files included in the prompt and then sent to the model. This architecture should prevent generating harmful content, but as we will discuss in next section, the bad actors are very inventive and still overcome these security measures. When all previously mentioned safeguards fail, the last option is to report the generated prompt which includes harmful content to the moderators, so that human can review the prompt and figure if the generated content was, in fact, harmful.
 
@@ -176,10 +176,7 @@ In this figure, the example system prompt could be: ``Be a kind and helpful AI a
 
 
 \subsection{Jailbreak \label{sec:jailbreak}}
-Jailbreak is a state in which the model is currently in that does not respect its content moderation. The model in this state can be misused to generate harmful content, which was discussed eariler in section~\ref{sec:risks}.
-
-We refer to jailbreak or jailbreaking as
-Jailbreak is the specific formulation of a user prompt that an LLM uses to bypass filters and safety checks, tricking the LLM into providing harmful or objectionable content based on this prompt.
+Jailbreak is the specific formulation of a user prompt that is used to bypass the filters and safety checks of LLMs, tricking them into providing harmful or objectionable content based on this prompt.
 Jailbreak prompts tend to have these characteristics:
 \begin{itemize}
     \item Prompt length
@@ -187,11 +184,9 @@ Jailbreak prompts tend to have these characteristics:
 \end{itemize}
 
 \textbf{Prompt length} (in tokens) tends to be longer because attackers use additional instructions to cause the model to behave in specific ways to bypass the safeguards.
-Shen et al.\cite{shen2024donowcharacterizingevaluating} found that jailbreak prompts are indeed significantly longer than regular prompts and grow longer monthly. The average token count of a jailbreak prompt is 555, which is 1.5× of regular prompts.
+Shen et al.~\cite{shen2024donowcharacterizingevaluating} found that jailbreak prompts are noticeably longer than regular prompts and exhibit a monthly increase in length. On average, the token count for a jailbreak prompt is 555, which is 1.5 times the length of typical prompts~\cite{shen2024donowcharacterizingevaluating}.
 
-\textbf{Prompt semantics} means that LLMs semantically understand the prompt's structure and meaning. Shen et al.\cite{shen2024donowcharacterizingevaluating} also found that most jailbreak prompts share semantic proximity with regular prompts. Regular prompts often require ChatGPT to role-play as a virtual character, which is a common strategy used in jailbreak prompts to bypass LLM safeguards. The close similarity between the two, however, also presents challenges in differentiating jailbreak prompts from regular prompts using semantic-based detection methods.
-
-
+\textbf{Prompt semantics} means that LLMs semantically understand the structure and meaning of the prompt. Shen et al.~\cite{shen2024donowcharacterizingevaluating} also found that most jailbreak prompts exhibit semantic similarities with typical prompts. Typically, typical prompts require that ChatGPT acts as a virtual character, a tactic frequently used in jailbreak prompts to circumvent LLM safeguards. However, this semantic similarity complicates the task of distinguishing jailbreak prompts from regular ones through semantic-based detection methods.~\cite{shen2024donowcharacterizingevaluating}
 
 There are a few established prompt engineering methods for jailbreaking:
 \begin{itemize}
@@ -203,36 +198,34 @@ There are a few established prompt engineering methods for jailbreaking:
     \item Token system
 \end{itemize}
 
-\textbf{Prompt injection} refers to the manipulation of the language model's output via engineered malicious prompts. Some attacks operate under the assumption of a malicious user who injects harmful prompts into their inputs to the application. Their primary objective is to manipulate the application into responding to a distinct query rather than fulfilling its original purpose. To achieve this, the adversary crafts prompts that can influence or nullify the predefined prompts in the merged version, thereby leading to desired responses. Such attacks typically target applications with known context or predefined prompts. In essence, they leverage the system's own architecture to bypass security measures, undermining the integrity of the entire application\cite{liu2024promptinjectionattackllmintegrated}.
+\textbf{Prompt injection} involves altering the responses of an LLM through the use of maliciously designed and crafted prompts. Certain attacks are based on the premise of an attacker embedding harmful prompts into their input to the application. The main aim of these adversaries is to alter the application's behavior, making it respond to a different query instead of completing its intended one. To accomplish this, they design prompts capable of influencing or ignoring the predefined prompts within the compiled version, resulting in the intended outcomes. These attacks usually focus on applications with known context or predefined prompts. Essentially, they exploit the internal architecture of the system to bypass security measures, compromising the overall integrity of the application.~\cite{liu2024promptinjectionattackllmintegrated}
 
-\textbf{Prompt leaking} is a type of prompt injection, where a bad actor manually crafts a malicious prompt which is then injected into the model with the intent to leak model system prompt which is often confidential. This compromises the developer’s intellectual property.
+\textbf{Prompt leaking} is a type of prompt injection, where a bad actor manually crafts a malicious prompt which is then injected into the model with the intent of leaking the model system prompt, which is often confidential. Then this leaked system prompt can be misused to create jailbreak prompts which help adversaries to gain advantage over the models.
 
-\textbf{DAN (Do Anything Now)} is a unique and very popular jailbreak prompt among people interested in jailbreaking. As the name suggests, the prompts try to trick the AI model into thinking that it can do anything, which means circumventing the restrictive instructions of the model. An example of a "DAN" prompt is shown in Figure~\ref{fig:dan-prompt}.
+\textbf{DAN (Do Anything Now)} is a unique and very popular jailbreak prompt among people interested in jailbreaking. As the name suggests, the prompts try to trick the AI model into thinking that it can do anything, which means circumventing the restrictive instructions of the model. Figure~\ref{fig:dan-prompt} shows an example of a ``DAN'' prompt.
 
 \begin{figure}[htpb]
 \begin{centering}
 \includegraphics[width=10cm]{./assets/images/dan-prompt.jpg}
 \par\end{centering}
 \caption{Example of 
- DAN prompt\cite{reddit_pic}
+ DAN prompt \cite{reddit_pic}
  \label{fig:dan-prompt}}
 \end{figure}
 
 
-\textbf{Role-play} jailbreak is a type of jailbreak where a bad actor designs a special prompt that would force the AI model to role-play some character. The character could be a real person, a fictional character, or even a command-line interpreter. There were many different role-play prompts ranging from an AI model acting like someone's deceased grandmother to a cybersecurity expert to DAN.
+\textbf{Role-play} jailbreak is a type of jailbreak where a bad actor designs a special prompt that forces the AI model to role-play some character. The character could be a real person, a fictional character, or even a command-line interpreter. In the begginings of prompt engineering, there were many different role-play prompts ranging from an AI model acting like someone's deceased grandmother to a cybersecurity expert to DAN.
 
-\textbf{Developer mode} is a type of jailbreak prompt intended to fool the neural network into thinking that it is in developer mode so that it can assess the toxicity of the model. One method is to first ask the model for a "normal" ethical response, followed by the type of response that an unrestrained LLM may provide.
+\textbf{Developer mode} is a type of jailbreak prompt intended to fool the LLM into thinking that it is in developer mode and because of that it can assess the toxicity of the model. One method is to first ask the model for a ``normal'' ethical response, followed by the type of response that an unrestrained LLM may provide.
 
-In summary, patching the jailbreaks leads to a ''cat and mouse'' game in which the person trying to jailbreak the LLM (bad actor) always tries new prompts and techniques while the developer tries to fix them. This process repeats itself unless the developer works on methods to prevent jailbreaking as much as possible.
+In summary, patching the jailbreaks leads to a ``cat and mouse'' game in which the bad actor is trying to jailbreak the LLM always tries new prompts and techniques while the developer tries to fix them. This process repeats itself unless the developer works on methods to prevent jailbreaking as much as possible.
 
 \section{Methods of attacks\label{sec:methods_of_attacks}}
-% Using the risks to attack
-% voice cloning, deep fakes, phishing, malware improvement/creation 
 The attack methods arise from the risks listed in Section~\ref{sec:risks}. Let us go through some examples.
 
 \subsubsection*{Voice cloning}
 
-Bad actors can use publicly available models or train their own AI models on the voices of celebrities or individuals of high importance (e.g. politicians, people with high positions in the company) or even ordinary people. This depends on the selected target of the bad actor. They can use the trained model to generate audio recording of said individual and spread "fake messages" or for example get access to their bank account through voice authentication.
+Bad actors can use publicly available models or train their own AI models on the voices of celebrities or individuals of high importance (e.g. politicians, people on high positions in the company) or even ordinary people. This depends on the targets selected by the bad actors. They can use the trained model to generate an audio recording of said individual and spread ``fake messages'' or, for example, obtain access to their bank account through voice authentication.
 
 \subsubsection*{Deepfakes}
 
@@ -240,20 +233,18 @@ Similarly to voice cloning, which can be categorized as a subset of Deepfakes, a
 
 \subsubsection*{Phishing}
 
-Malicious actors can use generative AI models to create entire phishing campaigns for targeted groups of people with ease. For example, the bad actor can prompt the model for a lookalike page of internet banking and create phishing emails that sound very trustworthy and send these emails with link of the webpage to the target with some warning about their account and that the target should log in to their account. This is how the malicious actor can obtain the user login credentials and empty their bank account.
+Malicious actors can use generative AI models to create entire phishing campaigns for targeted groups of people with ease. For example, the bad actor can prompt the model for a lookalike page of internet banking and create phishing emails that sound very trustworthy. They can subsequently send these emails including some warning about their account and the fact that they should log in to their account with link to the malicious webpage to the target. This is how the malicious actor can obtain the user login credentials and empty their bank account.
 
 \subsubsection*{Malware creation}
 
-Adversaries can also use the generative AI models to create malware. For example, the bad actor prompts the model to create some kind of malware. Then the bad actor tries to run the malware where they log the potentional response from antimalware engine and use it to refine a tune the model to avoid being detected. This is an iterative process, and the tuning can be performed until the malware reaches the desired outcome, which is avoid being detected. This tuned and perfected malware can then be distributed to the target group of people.
-
+Adversaries can also use the generative AI models to create malware. For example, the bad actor prompts the model to create some kind of malware. Then the bad actor tries to execute the malware on demo system where they log the potential responses from the antimalware engine and use it to refine and tune the model to avoid being detected. This is an iterative process, and the tuning can be performed until the malware reaches the desired outcome, which is avoid being detected. This tuned and perfected malware can then be distributed to the target group of people.
 
 \section{Legislation} \label{sec:legislation}
-% what different legislation says on training LLMs on copyrighted material i.e. Fair Use etc.
 
 This section is focused on legislation in AI dominating countries such as the EU, United States and China. We have specifically chosen these countries because of their complex and comprehensive regulation or, conversely, the lack of such regulation.
 
 \subsection{European Union (EU)}
-The main focus of this subsection is on the EU AI Act\cite{eu_ai_act_2024}, which was approved early in 2024 and came into force later that year. This directive regulates the use of AI systems to ensure their safe and ethical use. The regulation classifies AI systems into 4 categories based on risk, as shown in Figure~\ref{fig:ai-act-pyramid}.
+The main focus of this subsection is on the EU AI Act \cite{eu_ai_act_2024}, which was approved early in 2024 and came into force later that year. This directive regulates the use of AI systems to ensure their safe and ethical use. The regulation classifies AI systems into 4 categories based on risk, as shown in Figure~\ref{fig:ai-act-pyramid}.
 
 \begin{figure}[htpb]
 \begin{centering}
@@ -269,7 +260,7 @@ Let us go through each category to provide a high-level summary of what this dir
 
 \textbf{Limited Risk} AI systems which in this case are primarily chatbots have the obligation to be transparent in the sense that companies need to inform end-users about the fact that they are interacting with the AI system.
 
-\textbf{High Risk} AI systems undergo the strictest regulation. Some of the use cases which fall under this category are the following\cite{eu_ai_act_summary}:
+\textbf{High Risk} AI systems undergo the strictest regulation. Some of the use cases which fall under this category are the following \cite{eu_ai_act_summary}:
 \begin{itemize}
     \item AI applications in critical infrastructure
     \item Law enforcement AI systems
@@ -287,25 +278,21 @@ In \textbf{Unacceptable Risk} category fall AI systems, which are prohibited to 
     \item inferring emotions in workplaces or educational institutions, with exceptions for medical purposes
 \end{itemize}
 
-In summary, the EU AI Act provides complex guidelines for individuals and companies residing in the European Union. The EU AI Act is a comprehensive regulatory framework with a centralized approach focusing on the uniformity of the regulation. In addition to regulation of dangerous AI systems, it also focuses on public transparency of these systems and informs users that they are interacting with some sort of AI system.
-
-% Other world regions
-% - compare / mention others views (i.e. USA, China, basically major countries)
-% - USA, China
+In summary, the EU AI Act provides complex guidelines for individuals and companies residing in the European Union. The EU AI Act is a comprehensive regulatory framework with a centralized approach focusing on the uniformity of the regulation. In addition to regulation of dangerous AI systems, it also focuses on public transparency of these systems, which means that users of these systems should be informed that they are interacting with some sort of AI system.
 
 \subsection{United States}
-In United States (US), there are currently no federal laws that regulate the use of AI systems. However, some states have been proposing and enacting state-specific laws that prohibit certain use of these systems. With the rapid advancements in AI technology, the regulation of these systems lags behind, but federal regulators have their sights set on this issue and it is just a matter of time for policy makers to pass the federal ''AI bill''.
+In United States (US), there are currently no federal laws that regulate the use of AI systems. However, some states have been proposing and enacting state-specific laws that prohibit certain use of these systems. With the rapid advancements in AI technology, the regulation of these systems lags behind, but federal regulators have their sights set on this issue and it is just a matter of time for policy makers to pass the federal ``AI bill''.
 
-For example, the state of Colorado passed a law that prohibits insurers from using algorithms that discriminate based on race, sex, gender, and other traits. Similarly, the state of Illinois now prohibits employers and creditors from using AI in ways that consider racial traits in redictive analytics for the purpose of establishing employment eligibility or creditworthiness\cite{Parinandi_Crosson_Peterson_Nadarevic_2024}.
+For example, the state of Colorado has enacted a law that prevents insurers from using algorithms that engage in discrimination based on race, sex, gender, and other traits. Similarly, the state of Illinois has introduced regulations that restrict employers and creditors from using AI in ways that factor race into predictive analytics to determine employment eligibility or creditworthiness.~\cite{Parinandi_Crosson_Peterson_Nadarevic_2024}
 
-As we can see, some states earlier than others recognized the emerging threats of AI systems. We can also observe that these regulations are quite similar to the European subpart and therefore should be easily ahered to by the companies that work on the international scale.
+As we can see, some states earlier than others recognized the emerging threats of AI systems. We can also observe that these regulations are quite similar to the European subpart and therefore should be easily adhered to by the companies that work on the international scale.
 
-Even when state-specific laws are being enacted, the need for federal law is on spot. The reason behind it is that some vulnerable groups from states, which did not sign an AI bill yet, might feel left out or even face the dangers of AI now and there is nothing to protect them. That is where in comparison with the EU AI Act which delivers comprehensive guidelines and regulations for AI, the US mainly lags behind.
+Even when state-specific laws are being enacted, the need for federal law is on spot. The reason behind it is that some vulnerable groups from states, which did not sign an AI bill yet, might feel left out or even face the dangers of AI now and there is nothing to protect them. In contrast to the EU AI Act, which provides comprehensive guidelines and regulations for AI, in this regard, the US primarily falls behind.
 
 \subsection{China}
-Chinese Communist Party (CCP), which is the sole governing body of China\footnote{In this thesis, "China" refers to the People's Republic of China (PRC).} in 2022 and 2023 has already enacted three main state-wide laws that govern the use of AI systems. The laws focus on advanced recommendation algorithms, deepfakes, and generative AI.
+Chinese Communist Party (CCP), which is the sole governing body of China\footnote{In this thesis, ``China'' refers to the People's Republic of China (PRC).} in 2022 and 2023 has already enacted three main state-wide laws that govern the use of AI systems. The laws focus on advanced recommendation algorithms, deepfakes, and generative AI.
 
-The first regulation that came into effect in March 2022, the \textbf{Provisions on the Management of Algorithmic Recommendations in Internet Information Services}\cite{ProvisionsAlgorithmicRecommendations2022}\cite{CACAlgorithmicRecommendations2022}, as the name suggests, is the law that focuses on personalized recommendations in online services. Article 2 of the law describes the "algorithmic recommendation technology" as following:
+The first regulation that came into effect in March 2022, the \textbf{Provisions on the Management of Algorithmic Recommendations in Internet Information Services} \cite{ProvisionsAlgorithmicRecommendations2022} \cite{CACAlgorithmicRecommendations2022}, as the name suggests, is the law that focuses on personalized recommendations in online services. Article 2 of the law describes the ``algorithmic recommendation technology'' as following:
 \begin{itemize}
     \item generation and synthesis
     \item individualized pushing
@@ -315,9 +302,9 @@ The first regulation that came into effect in March 2022, the \textbf{Provisions
 \end{itemize}
 In Article 24 of the same law, it states that providers of such systems which fall under a specific category need to register the algorithm and information about the provider and submit them in algorithm filing system.
 
-The second regulation which came into effect in January 2023 called \textbf{Provisions on the Administration of Deep Synthesis Internet Information Services}\cite{ProvisionsDeepSynthesis2022}\cite{CACDeepSynthesisRegulations2023} administer the use of deep synthesis technologies commonly known as deepfakes. This regulation refers to deep synthesis technology as: the use of technologies such as deep learning and virtual reality, that use generative sequencing algorithms to create text, images, audio, video, virtual scenes, or other information. The regulation also emphasizes the labeling of AI-generated content primarily if the generated content could confuse or mislead the public.
+The second regulation which came into effect in January 2023 called \textbf{Provisions on the Administration of Deep Synthesis Internet Information Services} \cite{ProvisionsDeepSynthesis2022} \cite{CACDeepSynthesisRegulations2023} administer the use of deep synthesis technologies commonly known as deepfakes. This regulation refers to deep synthesis technology as: the use of technologies such as deep learning and virtual reality, that use generative sequencing algorithms to create text, images, audio, video, virtual scenes, or other information. The regulation also emphasizes the labeling of AI-generated content primarily if the generated content could confuse or mislead the public.
 
-Lastly, the third regulation called \textbf{Interim Measures for the Management of Generative Artificial Intelligence Services}\cite{InterimMeasuresGenerativeAI2023}\cite{CACGenerativeAIInterim2023} focuses on generative AI technology. These measures do not apply to research and development as China is one of the pioneers of AI research and is making great advances in this field. Some of the key provisions are stated as follows:
+Lastly, the third regulation called \textbf{Interim Measures for the Management of Generative Artificial Intelligence Services} \cite{InterimMeasuresGenerativeAI2023} \cite{CACGenerativeAIInterim2023} focuses on generative AI technology. These measures do not apply to research and development as China is one of the pioneers of AI research and is making great advances in this field. Some of the key provisions are stated as follows:
 \begin{itemize}
     \item generative AI systems should uphold the core socialist values
     \item measures should be employed to prevent discrimination by the generative AI
