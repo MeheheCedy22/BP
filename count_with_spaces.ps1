@@ -1,10 +1,11 @@
 # Array of file paths (replace with your actual file paths)
 $filePaths = @(
     ".\content\chapter1-introduction.tex",
-    ".\content\chapter2-5-solution_proposal.tex",
     ".\content\chapter2-analysis.tex",
-    ".\content\chapter3-experimenting.tex",
-    ".\content\chapter4-evaluation.tex"
+    ".\content\chapter3-solution_proposal.tex",
+    ".\content\chapter4-experimenting.tex",
+    ".\content\chapter5-evaluation.tex",
+    ".\content\conclusion.tex",
 )
 
 $OutputEncoding = [System.Text.Encoding]::UTF8
