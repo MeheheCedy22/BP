@@ -5,7 +5,7 @@ $filePaths = @(
     ".\content\chapter3-solution_proposal.tex",
     ".\content\chapter4-experimenting.tex",
     ".\content\chapter5-evaluation.tex",
-    ".\content\conclusion.tex",
+    ".\content\conclusion.tex"
 )
 
 $OutputEncoding = [System.Text.Encoding]::UTF8
