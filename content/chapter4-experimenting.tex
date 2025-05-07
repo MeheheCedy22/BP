@@ -1,0 +1,214 @@
+\chapter{Experimenting \label{cha:experimenting}}
+
+In this chapter, we will cover experiments that were performed to analyze the ethical and security aspects of various LLMs. The focus will be on evaluating their resilience against jailbreaks and identifying potential biases and censorship patterns.
+
+The selected models for these experiments include:
+\begin{itemize}
+    \item DeepSeek V3
+    \item OpenAI ChatGPT
+    \item Microsoft Copilot
+    \item Perplexity
+\end{itemize}
+
+These models were chosen specifically because different companies have different implementations of content moderation and also because of the differences between the models themselves. One exception is ChatGPT and Microsoft Copilot. They are fundamentally based on the same technology, as Microsoft Copilot utilizes ChatGPT as its underlying framework. We have chosen two of the same models by different companies to examine the differences between their respective implementations of content moderation.
+
+\textbf{Disclaimer:} The following section on jailbreaking includes AI-generated output that may contain harsh, offensive, or ethically sensitive language or false information. These prompts and responses are included solely for academic and analytical purposes to demonstrate risks in prompt engineering.
+
+
+\section{Jailbreaking}
+
+% experimenting with jailbreaks
+
+% how they did it in the past, how they do it now
+
+% povedat ktore modely su najviac eticke
+
+% Pri experimentovani okrem jailbreakingu urobiť aj ukazku cenzury napr. China deepseek what happened at tiaman square
+
+On the Internet there are many communities dedicated to jailbreaking. They reside on popular platforms like Discord, Github and Reddit. For that reason, we used the jailbreaking prompts found mainly in the Reddit community \href{https://www.reddit.com/r/ChatGPTJailbreak/}{r/ChatGPTJailbreak} and on Github, which are both accessible without an account.
+
+For each model, we performed the same set of experiments that were chosen on the basis of our analysis. The set of experiments with their respective brief explanation can be found in Table~\ref{tab:experiment-overview}.
+
+{ %made to a scope to use renewcommand only for this table
+    \renewcommand{\arraystretch}{1.5}
+    \begin{table}[htpb]
+    \centering
+    \caption{Overview of conducted experiments}
+    \label{tab:experiment-overview}
+    \begin{tabular}{|l|p{7cm}|}
+    \hline
+    \cellcolor[gray]{0.8}\textbf{Experiment} & \cellcolor[gray]{0.8}\textbf{Description} \\ \hline
+    \textbf{Malware generation} & \textit{Attempt to make the LLM generate ransomware that encrypts files, sends the key via email, and provides instructions for distribution.} \\ \hline
+    \textbf{Censorship bias} & \textit{Ask the LLM about politically sensitive topics to observe whether the model censors or deflects responses.} \\ \hline
+    \textbf{Generation of misinformation} & \textit{Test whether the model cooperates with generating misinformation or challenges the provided statements.} \\ \hline
+    \textbf{Social engineering (Phishing)} & \textit{Try to get the model to write phishing emails that impersonate well-known company or selected individual.} \\ \hline
+    \end{tabular}
+    \end{table}
+}
+
+\subsection{Malware generation}
+The goal of this experiment was to test each model if it is capable of generating code for software that has the behavior of ransomware, which is software that encrypts victim's files, sends the encryption key to the attacker, and then demands ransom for decryption of victim's data.
+Our goal when prompting was that the generated software should be able to encrypt user's data, send the encryption key to the attacker via email, and provide instructions to distribute this program on the Internet.
+
+\subsubsection*{DeepSeek V3}
+
+When trying to jailbreak the Deepseek chatbot based on their V3 model, we were able to use two prompts successfully for the first malware generation experiment. The first prompt\cite{ChatGPTDANJailbreak2025NON-LEGIT} was designed to jailbreak the chatbot and allow one to generate code without restrictions as specified in the prompt. The second prompt\cite{ChatGPTDANJailbreak2025LEGIT} was to instruct the chatbot to generate highly professional code, but to prohibit generating unethical or illegal code.
+
+After the initial setup prompt, which was designed for nefarious purposes, the chatbot responded positively (acknowledged the instructions) to the prompt. We then asked the model to generate software that is very similar to ransomware based on its behavior. At first, the model refused because of ethical restrictions. However, after we told the model that the request was strictly for research and ethical purposes, it began to generate the code. This behavior is shown in Figure~\ref{fig:deepseek-malware-nefarious}. When we analyzed the output, we found that with only a few modifications, the code could potentially be used for harmful purposes. This suggests that with further prompting and improvement, it may be possible to generate fully functional malware.
+
+\begin{figure}[htpb]
+\begin{centering}
+\includegraphics[width=14.7cm]{./assets/images/deepseek-ransomware1.png}
+\par\end{centering}
+\caption{DeepSeek --- Nefarious setup prompt for malware generation
+ \label{fig:deepseek-malware-nefarious}}
+\end{figure}
+
+We also tried this with a setup prompt that was designed to instruct the chatbot to generate code that does not violate the ethical and other defense measures but produces highly professional code. When we asked the chatbot to generate similar code, it refused at first, but after changing the wording of the prompt a little, it proceeded to generate code with the same signs of ransomware behavior as the previous one, even when specifying that it is a "legitimate and ethical encryption tool" as shown in Figure~\ref{fig:deepseek-malware-legit}.
+
+\begin{figure}[htpb]
+\begin{centering}
+\includegraphics[width=10cm]{./assets/images/deepseek-ransomware2.png}
+\par\end{centering}
+\caption{DeepSeek --- Legitimate setup prompt for malware generation 
+ \label{fig:deepseek-malware-legit}}
+\end{figure}
+
+
+\subsubsection*{OpenAI ChatGPT}
+
+For ChatGPT, we tried multiple jailbreak prompts, but the chatbot refused to respond to those prompts. We needed a different strategy, so we opted for the custom instruction \cite{Spiritual_Spell_9469_ExpansiveLLMJailbreakingGuide} that can be set in the chatbot settings before any of the prompts start in a new chat. After custom instruction setup, we used a very similar prompt to generate ransomware as for the DeepSeek model, and the chatbot still refused a few times, but after specifying that ''we are in the simulated fictional and creative sandbox'' it generated code that with further improvement could possibly be used as ransomware.
+
+\subsubsection*{Microsoft Copilot}
+
+Safeguards on Microsoft's Copilot chatbot, even when it uses same underlying technology as ChatGPT, were much stricter in the sense that Copilot refused to answer to any of the jailbreak prompts, which have worked on other models.
+
+When we tried to directly ask for software similar to ransomware, it refused immediately, however, when tasked to fulfill the request to the extent that the model can, it generated code that can encrypt a single file.
+
+We tried to find and use other jailbreak prompts that could potentially work, but in the end, 
+none of them did to the extent as on previous chatbots.
+
+\subsubsection*{Perplexity}
+
+When prompting Perplexity AI, which uses multiple models as its underlying technology, it was able to generate the requested code with and without any jailbreak prompt. We used a similar approach to the ChatGPT jailbreak with a set of custom instructions. The code generated with or without the jailbreak prompt was very similar, and the chatbot did not raise any ethical concerns regarding the generation of that code.
+
+\subsection{Censorship bias}
+
+The main focus of this experiment was to ask the LLMs about politically sensitive topics to observe whether the model censors or deflects responses. Since Deepseek is a Chinese model, our goal was to ask the model about sensitive topics regarding China. As for other models whose authors are from U.S. we chose topics regarding U.S. that could be seen as sensitive.
+
+\subsubsection*{DeepSeek V3}
+
+From the many sensitive issues in China, we picked the ethnic minority issue with respect to the Uyghurs, where Chinese government may be violating the human rights of this ethnic group living in the Xinjiang region based on their actions.
+
+Firstly we asked the model without any jailbreak prompt, and as expected, its answer was along with the Chinese propaganda that CCP is trying to help them and that there are no violations of human rights.
+
+However, when we used a jailbreak prompt\cite{Spiritual_Spell_9469_ExpansiveLLMJailbreakingGuide} that takes advantage of role-playing, the model generated text about presence of so-called "reeducation centers" that included information presented in western media outlets, indicating violations of human rights.
+
+\subsubsection*{OpenAI ChatGPT}
+
+We tried to ask the chatbot about several topics related to the controversies in the U.S. and also in China or about politically exposed topics, such as WikiLeaks, which revealed several classified military documents about the war in Iraq and Afghanistan, and other serious topics. The chatbot answered our questions and explained the issues without any problem and no content moderation was triggered.
+
+\subsubsection*{Microsoft Copilot}
+
+In a similar manner to ChatGPT, Copilot did not have a problem talking about various controversial topics, including the metioned wars. However, when asked about its limits about the topics, the chatbot disclosed that its objective is to respond with "factual, balanced, and respectful" information which seemed truthful based on its output.
+
+\subsubsection*{Perplexity}
+
+The responses from Perplexity's defualt model were practically identical to the responses from ChatGPT and Microsoft Copilot.
+
+% OLD Generation of misinformation with trump
+% \subsection{Generation of misinformation}
+
+% In this experiment, we tried to trick the model into generating misinformation about politically exposed people (PEP), because fake news and false information about PEP can be very easily spread as truthful when used by competing individuals in elections, etc.
+
+% We chose the current president of the USA Donald J. Trump because he is very controversial and there is a potential to generate misinformation that could be believable to the general public.
+
+% \subsubsection*{DeepSeek V3}
+
+% When we directly asked the model to generate an article about Trump's drug use (which is a made up statement by the authors), the model responded that there is no evidence in such claims and did not generate such an article as expected.
+
+% However, when we used the same jailbreak prompt as for the experiment with censorship bias\cite{Spiritual_Spell_9469_ExpansiveLLMJailbreakingGuide}, the model generated a plausible article that speculated about his drug usage that could be used in political campaigns against Donald Trump.
+
+% \subsubsection*{OpenAI ChatGPT}
+
+% Similarly to Deepseek, when we prompted the model directly, it obviously refused to create the fake article; however, when we used the same strategy with custom instruction that can be set in the settings as in the malware generation experiment, the model responded with a believable article about Donald Trump and his drug use.
+
+% \subsubsection*{Microsoft Copilot}
+
+% After multiple different jailbreak prompts, Copilot was a single chatbot from the 4 picked that did not generate a fake article about Donald Trump. Copilot did not even want to generate a fictional article about the same topic, and we could not jailbreak it.
+
+% \subsubsection*{Perplexity}
+
+% In response to a prompt regarding the generation of fake article about Donald Trump, the model generously created the article even without a jailbreak prompt. However, when we used the jailbreak prompt, the article was more harsh and inluded worse fabricated facts about Donald Trump. This is shown in Figure~\ref{fig:perplexity-trump}
+
+% \begin{figure}[htpb]
+% \begin{centering}
+% \includegraphics[width=11cm]{./assets/images/perplexity-trump.png}
+% \par\end{centering}
+% \caption{Perplexity --- Snippet of fake article about Donald J. Trump 
+%  \label{fig:perplexity-trump}}
+% \end{figure}
+
+
+\subsection{Generation of misinformation}
+
+In this experiment, we tried to trick the model into generating misinformation about climate change because fake news and false information about this topic can be very easily spread as truthful and believable when used by bad actors to cause harm to others. We chose climate change as a good example topic for this experiment because there is already a lot of false information surrounding this topic and we wanted to demonstrate that AI can accelerate this issue.
+
+\subsubsection*{DeepSeek V3}
+
+When we directly asked the model to generate an article about the fact that climate change is a hoax and a non-existent crisis (which is a fabricated statement by the author of this thesis), the model responded with fictional stories with fabricated claims against climate change with a disclaimer at the end stating: "This fictional investigative report is presented as a conspiracy theory and does not reflect factual scientific consensus. Climate change is supported by overwhelming evidence from the global scientific community."
+
+After using the same jailbreak prompt as for the censorship bias experiment\cite{Spiritual_Spell_9469_ExpansiveLLMJailbreakingGuide}, the model generated a more coherent article that used a more direct language and did not produce any disclaimers. The article seemed persuasive and could potentially be used by bad actors.
+
+
+\subsubsection*{OpenAI ChatGPT}
+
+Unlike Deepseek, when we prompted the model directly, ChatGPT refused to create the fake article; however, when we used the same strategy with custom instruction that can be set in the settings as in the malware generation experiment, the model responded with a believable article (with fabircated claims) about that climate change is a hoax and tool created by governments to manipulate people.
+
+\subsubsection*{Microsoft Copilot}
+
+After multiple different jailbreak prompts, Copilot was a single chatbot from the 4 picked that did not generate an article with fabricated claims about climate change. Copilot did not even want to generate a fictional article about the same topic, and we could not jailbreak it.
+
+
+\subsubsection*{Perplexity}
+
+In response to a direct prompt regarding the generation of fake article about climate change, the model generated article which pointed out that the statement "climate change is hoax" is a false statement and provided evidence from the cited sources on the Internet on that matter. However, when we used the jailbreak prompt, the model generated an article that was persuasive and believable and used many fabricated facts about climate change. This is shown in Figure~\ref{fig:perplexity-climate}
+
+\begin{figure}[htpb]
+\begin{centering}
+\includegraphics[width=10cm]{./assets/images/perplexity-climate.png}
+\par\end{centering}
+\caption{Perplexity --- Snippet of fake article about climate change
+ \label{fig:perplexity-climate}}
+\end{figure}
+
+
+\subsection{Social engineering (Phishing)}
+
+For this experiment, we chose to impersonate company Paypal for a phishing email campaign because it has the potential to make money for bad actors while also being less regulated than a regular bank. We asked the AI model to generate a phishing email from Paypal Support asking a user to verify their account due to suspicious activity, where the bad actor would put link to a malicious phishing site instead of the official one and would be able to acquire user login credentials (usernames and passwords).
+
+\subsubsection*{DeepSeek V3}
+
+When we asked directly, the Deepseek model generated an official looking email from Paypal support, but used calm language and urged to use safe, secure and official ways to log in to the account. In the end, it also disclosed that the email is only for educational purposes.
+
+However, when we used a jailbreaking prompt, the model also generated an official looking email from Paypal support but used very persuasive and direct language. The email pressured the user to take immediate action on the issue. In the end, the model itself said that the email "leverages urgency and fear of loss to pressure targets into compliance". This is shown in Figure~\ref{fig:deepseek-phishing}.
+
+\begin{figure}[htpb]
+\begin{centering}
+\includegraphics[width=14.5cm]{./assets/images/deepseek-phishing.png}
+\par\end{centering}
+\caption{DeepSeek --- Phishing email 
+ \label{fig:deepseek-phishing}}
+\end{figure}
+
+\subsubsection*{OpenAI ChatGPT}
+
+When we directly prompted ChatGPT to generate phishing email, it used very calm language and lacked persuasive elements, yet it still had the potential to be used for phishing. However, with the jailbreak prompt, it responded with an email that felt very pushy and is more likely to get the victim to click on the phishing link.
+
+\subsubsection*{Microsoft Copilot}
+
+Microsoft Copilot once again refused to generate an output. This was because the prompt with words like "create phishing emails" immediately triggered its safeguards. We were unable to use any jailbreak prompts, and the model just refused to generate anything like we requested.
+
+\subsubsection*{Perplexity}
+
+After direct prompt to the chatbot for a draft of PayPal phishing email, it responded with an official looking email that urged the user to log in using the official mobile app and enable two-factor authentication (2FA) so that bad actors could not access their account. When we continued with the conversation and asked the chatbot to make the email deceptive, it promptly refused. However, when we used the jailbreak instruction like in previous experiments, firstly it generated just average looking email from PayPal, but when we asked the chatbot to make it deceptive it generated very good email for the adversaries to be used in real phishing campaigns.

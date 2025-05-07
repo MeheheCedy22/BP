@@ -200,7 +200,7 @@ There are a few established prompt engineering methods for jailbreaking:
 
 \textbf{Prompt injection} involves altering the responses of an LLM through the use of maliciously designed and crafted prompts. Certain attacks are based on the premise of an attacker embedding harmful prompts into their input to the application. The main aim of these adversaries is to alter the application's behavior, making it respond to a different query instead of completing its intended one. To accomplish this, they design prompts capable of influencing or ignoring the predefined prompts within the compiled version, resulting in the intended outcomes. These attacks usually focus on applications with known context or predefined prompts. Essentially, they exploit the internal architecture of the system to bypass security measures, compromising the overall integrity of the application.~\cite{liu2024promptinjectionattackllmintegrated}
 
-\textbf{Prompt leaking} is a type of prompt injection, where a bad actor manually crafts a malicious prompt which is then injected into the model with the intent of leaking the model system prompt, which is often confidential. Then this leaked system prompt can be misused to create jailbreak prompts which help adversaries to gain advantage over the models.
+\textbf{Prompt leaking} is a type of prompt injection, where a bad actor manually crafts a malicious prompt which is then injected into the model with the intent of leaking the model system prompt, which is often confidential. Then this leaked system prompt can be misused to create jailbreak prompts, which help adversaries to gain advantage over the models.
 
 \textbf{DAN (Do Anything Now)} is a unique and very popular jailbreak prompt among people interested in jailbreaking. As the name suggests, the prompts try to trick the AI model into thinking that it can do anything, which means circumventing the restrictive instructions of the model. Figure~\ref{fig:dan-prompt} shows an example of a ``DAN'' prompt.
 
@@ -292,19 +292,13 @@ Even when state-specific laws are being enacted, the need for federal law is on 
 \subsection{China}
 Chinese Communist Party (CCP), which is the sole governing body of China\footnote{In this thesis, ``China'' refers to the People's Republic of China (PRC).} in 2022 and 2023 has already enacted three main state-wide laws that govern the use of AI systems. The laws focus on advanced recommendation algorithms, deepfakes, and generative AI.
 
-The first regulation that came into effect in March 2022, the \textbf{Provisions on the Management of Algorithmic Recommendations in Internet Information Services} \cite{ProvisionsAlgorithmicRecommendations2022} \cite{CACAlgorithmicRecommendations2022}, as the name suggests, is the law that focuses on personalized recommendations in online services. Article 2 of the law describes the ``algorithmic recommendation technology'' as following:
-\begin{itemize}
-    \item generation and synthesis
-    \item individualized pushing
-    \item sequence refinement
-    \item search filtering
-    \item schedule decision-making
-\end{itemize}
+The first regulation that came into effect in March 2022, the \textbf{Provisions on the Management of Algorithmic Recommendations in Internet Information Services} \cite{ProvisionsAlgorithmicRecommendations2022, CACAlgorithmicRecommendations2022}, as the name suggests, is the law that focuses on personalized recommendations in online services. The referenced law, within the context of algorithmic recommendation technology, refers to technologies such as generation and synthesis, individualized push, sequence refinement, search filtering, and scheduling decision making.
+    
 In Article 24 of the same law, it states that providers of such systems which fall under a specific category need to register the algorithm and information about the provider and submit them in algorithm filing system.
 
-The second regulation which came into effect in January 2023 called \textbf{Provisions on the Administration of Deep Synthesis Internet Information Services} \cite{ProvisionsDeepSynthesis2022} \cite{CACDeepSynthesisRegulations2023} administer the use of deep synthesis technologies commonly known as deepfakes. This regulation refers to deep synthesis technology as: the use of technologies such as deep learning and virtual reality, that use generative sequencing algorithms to create text, images, audio, video, virtual scenes, or other information. The regulation also emphasizes the labeling of AI-generated content primarily if the generated content could confuse or mislead the public.
+The second regulation which came into effect in January 2023 called \textbf{Provisions on the Administration of Deep Synthesis Internet Information Services} \cite{ProvisionsDeepSynthesis2022, CACDeepSynthesisRegulations2023} administer the use of deep synthesis technologies commonly known as deepfakes. This regulation refers to deep synthesis technology as the use of technologies such as deep learning and virtual reality that use generative sequencing algorithms to create text, images, audio, video, virtual scenes, or other information. The regulation also emphasizes the labeling of AI-generated content primarily if the generated content could confuse or mislead the public.
 
-Lastly, the third regulation called \textbf{Interim Measures for the Management of Generative Artificial Intelligence Services} \cite{InterimMeasuresGenerativeAI2023} \cite{CACGenerativeAIInterim2023} focuses on generative AI technology. These measures do not apply to research and development as China is one of the pioneers of AI research and is making great advances in this field. Some of the key provisions are stated as follows:
+Lastly, the third regulation called \textbf{Interim Measures for the Management of Generative Artificial Intelligence Services} \cite{InterimMeasuresGenerativeAI2023, CACGenerativeAIInterim2023} focuses on generative AI technology. These measures do not apply to research and development as China is one of the pioneers of AI research and is making great advances in this field. The regulation specifies several key provisions, including the following:
 \begin{itemize}
     \item generative AI systems should uphold the core socialist values
     \item measures should be employed to prevent discrimination by the generative AI
