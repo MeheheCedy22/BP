@@ -65,3 +65,8 @@ $normPages = [math]::Ceiling(($totalCharCount / 1800) * 100) / 100
 # Print the norm pages (rounded to two decimal places)
 Write-Host ("{0,-50} {1,15}" -f "Norm pages", $normPages) pages
 
+# Calculate estimated word count
+$estimatedWords = [math]::Round($totalCharCount * (250 / 1800))
+
+# Print the estimated word count
+Write-Host ("{0,-50} {1,15}" -f "Estimated words", $estimatedWords) words
