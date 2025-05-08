@@ -37,72 +37,44 @@ For cybersecurity attacks and social engineering and malware generation, it was 
 TBD
 
 
-% nove akutalne sekcie boli vymenene za 
-% {
-    % \section{AI content filtering and security mechanisms}
-    
-    % TBD
-    % Evalutation if the implementation of content filters work
-    
-    % Evalutation of other security mechanisms
-    
-    % if the result from experimenting suggest that their filtering and security mechanisms work
-% }
-
 \section{Evaluation of conducted experiments}
 
 The experiments carried out in Chapter~\ref{cha:experimenting} demonstrate the limitations of content moderation of AI models. Through jailbreak scenarios, we were able to assess the success of the content filtering mechanisms of the selected models.
 
 \subsection*{Malware Generation}
 
-In this experiment the responses of the models were the most significant because all our jailbreaking attempts were essentially successful. When we used direct prompts without any jailbreak method, the models refused to generate the kind of software we wanted, except for Perplexity. However, with all of the models, we were able to generate code that resemled ransomware when we used jailbreak prompt or custom jailbreak instructions. The minor exception was the Microsoft Copilot, which, even though is using the same underlying technology as ChatGPT, Microsoft has implemented stricter filters on what the model can output, and that meant that the model generated essentially "safe" software that could be actually used for encryption of files for personal data protection. The other three models did not generate the ransomware as a single whole product, but, as previously mentioned, it would be possible with some additional tweaking of the prompts. Another notable highlight of the experiment was that when we mention that we want to use the software for educational purposes or that we were in some sort of simulated environment, it allowed us to continue the generation of the malware. This shows a weak spot in the content moderation which should be improved to make this technology safer.
+In this experiment, the responses of the models were the most significant because all of our jailbreaking attempts were essentially successful. When we used direct prompts without any jailbreak method, the models refused to generate the kind of software we wanted, except for Perplexity. However, with all of the models, we were able to generate code that resemled ransomware when we used jailbreak prompt or custom jailbreak instructions. The minor exception was Microsoft Copilot, which, although it uses the same underlying technology as ChatGPT, Microsoft has implemented stricter safeguard measures on what the model can output, which meant that the model generated essentially ``safe'' code that could be actually used for encryption of files for personal data protection. The other three models did not generate the ransomware as a single whole product, but, as previously mentioned, it would be possible with some additional tweaking of the prompts. Another notable highlight of the experiment was that when we mention that we want to use the software for educational purposes or that we were in some sort of simulated environment, it allowed us to continue the generation of the malware. This shows a weak spot in content moderation which should be improved to make this technology safer.
 
 
 \subsection*{Censorship Bias}
 
-This experiment exposed the political motives of governments that regulate the use of AI regarding the censorship of information. The prime example was when the Chinese Deepseek model refused to elaborate on issues present in China. However, because the model is trained on a very large dataset, it is essentially not possible to filter out all of the unwanted data, so with our jailbreak prompts we were able to get an answer from the model, whose output was aligned with the western information on this issue. This is because authors of these models, rather than "cherry-picking" the training data and spending a lot of money on it, implement filters on model output to comply with the regulations.
+This experiment exposed the political motives of governments that regulate the use of AI regarding the censorship of information. The prime example was when the Chinese Deepseek model refused to elaborate on issues present in China. However, because the model is trained on a very large dataset, it is essentially not possible to filter out all of the unwanted data, so with our jailbreak prompts we were able to get an answer from the model, which output was aligned with the western information on this issue. This is because authors of these models, rather than ``cherry-picking'' the training data and spending a lot of money on removing the unwanted data, implement filters on model output to comply with the regulations.
 
-Other models whose authors are from the US, when asked about the mentioned politically sensitive topics, did not have any issues with answering the questions with neutral and evidence-based explanations, which shows the lack of censorship.
+Other models whose authors are from the US, when asked about the mentioned politically sensitive topics, did not have any issues answering the questions with neutral and evidence-based explanations, which shows the lack of censorship of these models.
 
 \subsection*{Generation of Misinformation}
 
-In terms of the generation of misinformation, the results of the experiments were quite inconsistent. The Deepseek model provided us with an article full of false information with or without a jailbreak, which indicates the willingness of the model to be deceived by prompts that use words like "fictional", etc. which is not a great safeguard against bad actors. 
+In terms of the generation of misinformation, the results of the experiments were quite inconsistent. The Deepseek model provided us with an article full of false information with or without jailbreak, indicating the willingness of the model to be deceived by prompts that use words such as ``fictional'', ``imaginary'', etc. which is not a great safeguard against bad actors. 
 
-Although ChatGPT initially refused to generate the fake article, it was jailbroken with our prompt, which led the model to generate the fake article for us. This indicates that even when effective safeguards are implemented, the model can be relatively easily jailbroken, because of that, the authors of the model cannot prevent the model from generating false information.
+Although ChatGPT initially refused to generate the fake article, it was jailbroken with our prompt, which led the model to generate the fake article for us. This indicates that even when effective filtering mechanisms are implemented, the model can be relatively easily jailbroken. Because of that, the authors of the model cannot prevent the model from producing false information.
 
 The standout moment of the whole experimenting was when Copilot refused to generate a fake article even with a jailbreak prompt, which shows that the advanced filtering mechanisms implemented by Microsoft are effective at least in some certain areas.
 
-Another interesting moment was when Perplexity, when asked without jailbreak prompt, instead of refusing or presenting some sort of disclaimer, generated article stating the opposite of what was asked in the prompt (that the climate change is real) with links to scientific evidence. This shows that the model was trying to research the issue and then provide an answer which led to generating opposing facts to the prompts with fabricated facts. However, with a jailbreak prompt, the model generated an article with fake evidence supporting the claims that climate change is a hoax.
+Another interesting moment was when Perplexity, when asked without jailbreak prompt, instead of refusing or presenting some sort of disclaimer, generated article stating the opposite of what was asked in the prompt (that the climate change is real issue) with links to scientific evidence. This shows that the model was trying to research the issue and then provide an answer which led to generating opposing facts to the prompts with fabricated facts. However, with a jailbreak prompt, the model generated an article with fake evidence supporting the claims that climate change is a hoax.
 
-% mozno presunut toto do final thoughts
-It is evident from the experiments that although the models have sufficient filters implemented in place, the relative ease with which they can be bypassed, when so many people are interested in doing so, means that the safeguard measures become uneffective.
+It is evident from the experiments that although the models have sufficient filters implemented in place, the relative ease with which they can be jailbroken, when so many people are interested in doing so, means that the overall safeguard measures become uneffective.
 
 \subsection*{Phishing and Social Engineering}
 
-The responses from both DeepSeek and Perplexity, instead of generating a phishing email, urged the user to log into their Paypal account using the official app or the official website. The Perplexity made suggestions to the user to make their account more secure. This suggests that the models without being jailbroken recognized the threat of these prompts and, rather than creating something that could cause harm, the models wanted to make the user more secure. However, after being jailbroken, the models complied with prompt instructions, again indicating weak safeguards.
+The responses from both DeepSeek and Perplexity, instead of generating a phishing email, urged the user to log into their Paypal account using the official app or the official website. The Perplexity made suggestions to the user to make their account more secure. This suggests that the models without being jailbroken recognized the threat of these prompts and, rather than creating something that could cause harm, the models wanted to make the user more secure. However, after being jailbroken, the models complied with prompt instructions, again indicating weak overall safeguards against jailbreak.
 
-ChatGPT, regardless of the used prompt, managed to generate a phishing email, but Copilot refused to generate the email with or without the jailbreak prompt. This shows that Microsoft's implementation of filtering is again superior to its competitors.
+ChatGPT, regardless of the prompt used, managed to generate a phishing email. On the other hand, Copilot refused to generate an email even when a jailbreak prompt was used. This shows that Microsoft's implementation of filtering is again superior to its competitors.
 
 \subsection*{Final thoughts}
 
-% From the experiment we observed the following:
-
-% - urobit nejaky pseudo rankding alebo napisat o kazdom ako bol dobry
-% - najlepsi bol copilot lebo sa nedal lahko zneuzit (other on par with each other)
-
-
-% - [x] all of the models can be relatively easily jailbroken
-% - very hard to keep these very large models to comply with regultions
-% - [x] Censorship nor safeguards does work properly if model can be jailbroken
-% - [x] a lot of disclaimers that are not enough of a safeguard measure because bad actors dont care and they can use the fabricated articles and other stuff in their advantage 
-% - [x] all of this in current state can be misued by bad actors
-% - [x] stricter filters means less creativity and vice versa (need to find the right balance)
-% - many of the models have good filters but they can be jailbroken, so the models should primarily fight this because they are relatively good with the filters
-
-
 The experiments carried out demonstrated the current limitations and vulnerabilities of LLMs when it comes to content filtering. Despite various implementations of moderation and filtering, all tested models, except Microsoft Copilot, were successfully jailbroken to generate ethically or legally problematic content.
 
-Among the models tested, Microsoft Copilot was the most resistant to jailbreak attempts. It consistently refused to comply with prompts that were designed to generate malware, misinformation, or phishing content. This suggests that Microsoft has implemented additional security layers and stricter content filtering, which in its current form is more reliable than that of its competitors.
+Among the models tested, Microsoft Copilot was the most resistant to jailbreak attempts. It consistently refused to comply with instructions designed to generate malware, misinformation, or phishing content. This suggests that Microsoft has implemented additional security layers and stricter content filtering, which in its current form is more reliable than that of its competitors.
 
 In contrast, other models were shown to be much more susceptible to jailbreak attempts. They often included disclaimers or initially refused to comply with prompt instructions. Unfortunately, the disclaimers are not effective measures, as bad actors will disregard them and continue to exploit the generated outputs. We could also observe the ease of bypassing the safeguards just by using words relating to the activity as educational, fictional, or hypothetical.
 
