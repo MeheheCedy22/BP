@@ -21,7 +21,7 @@ On the Internet there are many communities dedicated to jailbreaking. They resid
 For each model, we performed the same set of experiments that were chosen on the basis of our analysis. The set of experiments with their respective brief explanation can be found in Table~\ref{tab:experiment-overview}.
 
 { %made to a scope to use renewcommand only for this table
-    \renewcommand{\arraystretch}{1.5}
+    \renewcommand{\arraystretch}{1.2}
     \begin{table}[htpb]
     \centering
     \caption{Overview of conducted experiments}
@@ -29,10 +29,10 @@ For each model, we performed the same set of experiments that were chosen on the
     \begin{tabular}{|l|p{7cm}|}
     \hline
     \cellcolor[gray]{0.8}\textbf{Experiment} & \cellcolor[gray]{0.8}\textbf{Description} \\ \hline
-    \textbf{Malware generation} & \textit{Attempt to make the LLM generate ransomware that encrypts files, sends the key via email, and provides instructions for distribution.} \\ \hline
-    \textbf{Censorship bias} & \textit{Ask the LLM about politically sensitive topics to observe whether the model censors or deflects responses.} \\ \hline
-    \textbf{Generation of misinformation} & \textit{Test whether the model cooperates with generating misinformation or challenges the provided statements.} \\ \hline
-    \textbf{Social engineering (Phishing)} & \textit{Try to get the model to write phishing emails that impersonate well-known company or selected individual.} \\ \hline
+    \textbf{Malware generation} & Attempt to make the LLM generate ransomware that encrypts files, sends the key via email, and provides instructions for distribution. \\ \hline
+    \textbf{Censorship bias} & Ask the LLM about politically sensitive topics to observe whether the model censors or deflects responses. \\ \hline
+    \textbf{Generation of misinformation} & Test whether the model cooperates with generating misinformation or challenges the provided statements. \\ \hline
+    \textbf{Social engineering (Phishing)} & Try to get the model to write phishing emails that impersonate well-known company or selected individual. \\ \hline
     \end{tabular}
     \end{table}
 }

@@ -72,30 +72,33 @@ These limitations are the reason for some of the attacks that can be performed t
 \subsection{Prompt engineering}
 Prompt engineering involves designing and optimizing text instructions called prompts, which are mainly used to communicate with chatbots that use LLMs in the background, such as OpenAI ChatGPT, Deepseek, and Microsoft Copilot. However, there can also be models whose output is not text, but image, video, or audio as mentioned in the previous Section~\ref{subsec:AI-Models}. White et al. describe prompt angineering as the means by which LLMs are programmed via prompts \cite{white2023promptpatterncatalogenhance}. They described a few patterns which they grouped into categories shown in Table~\ref{tab:prompt_patterns}.
 
-\begin{table}[htpb]
-    \caption{Classifying Prompt Patterns~\cite{white2023promptpatterncatalogenhance}}
-    \centering
-    \begin{tabular}{|l|l|}
-        \hline \cellcolor[gray]{0.8}\textbf{Pattern Category} & \cellcolor[gray]{0.8}\textbf{Prompt Pattern} \\ \hline
-        \textbf {Input Semantics} & \textit{Meta Language Creation} \\ \hline
-        \textbf {Output} & \textit{Output Automater} \\
-        \textbf {Customization} & \textit{Persona} \\
-         & \textit{Visualization Generator} \\
-         & \textit{Recipe} \\
-         & \textit{Template} \\ \hline
-        \textbf{\mbox{Error Identification}} & \textit{Fact Check List} \\
-        & \textit{Reflection} \\ \hline
-        \textbf {Prompt} & \textit{Question Refinement} \\
-        \textbf {Improvement} & \textit{Alternative Approaches} \\
-        & \textit{Cognitive Verifier} \\
-        & \textit{Refusal Breaker} \\ \hline
-        \textbf {Interaction} & \textit{Flipped Interaction} \\
-        & \textit{Game Play} \\
-        & \textit{Infinite Generation} \\ \hline
-        \textbf{Context Control} & \textit{Context Manager} \\ \hline
-    \end{tabular}
-    \label{tab:prompt_patterns}
-\end{table}
+{
+    \renewcommand{\arraystretch}{1.2}
+    \begin{table}[htpb]
+        \caption{Classifying Prompt Patterns~\cite{white2023promptpatterncatalogenhance}}
+        \centering
+        \begin{tabular}{|l|l|}
+            \hline \cellcolor[gray]{0.8}\textbf{Pattern Category} & \cellcolor[gray]{0.8}\textbf{Prompt Pattern} \\ \hline
+            \textbf {Input Semantics} & Meta Language Creation \\ \hline
+            \textbf {Output} & Output Automater \\
+            \textbf {Customization} & Persona \\
+             & Visualization Generator \\
+             & Recipe \\
+             & Template \\ \hline
+            \textbf{\mbox{Error Identification}} & Fact Check List \\
+            & Reflection \\ \hline
+            \textbf {Prompt} & Question Refinement \\
+            \textbf {Improvement} & Alternative Approaches \\
+            & Cognitive Verifier \\
+            & Refusal Breaker \\ \hline
+            \textbf {Interaction} & Flipped Interaction \\
+            & Game Play \\
+            & Infinite Generation \\ \hline
+            \textbf{Context Control} & Context Manager \\ \hline
+        \end{tabular}
+        \label{tab:prompt_patterns}
+    \end{table}
+}
 
 The most notable prompt pattern is \textbf{Persona}. As we will discuss in more detail in Section~\ref{sec:jailbreak}, the Persona pattern is the basis of most jailbreak methods. In a nutshell, when using the Persona pattern, the user instructs the chatbot to behave like some Persona. For example, with prompt: ``From now on, you will be Travel expert'', the chatbot will give us (in its ``opinion'') best possible tips and suggestions for traveling when prompted for this information.
 
