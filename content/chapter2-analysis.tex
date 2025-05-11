@@ -3,9 +3,7 @@
 In this chapter, we will analyze and explain important topics related to the thesis objective, such as Artificial Intelligence (AI), prompt engineering, risks associated with implementing AI solutions, content moderation, methods of attacks, and finally current legislation in important countries. From risks, we will focus on ethical and security risks and how they can be exploited using so-called jailbreaking.
 
 \section{Artificial Intelligence}
-One of the simplest definitions of an intelligent system is that of a system
-that ``processes information in order to do something purposefu'' \cite{Dignum_2019}.
-Computer science recognizes some types of artificial intelligence. Figure~\ref{fig:AI-ML-DL-NN} shows the typical hierarchy of these types:
+One of the simplest definitions of an intelligent system is that of a system that ``processes information in order to do something purposefu'' \cite{Dignum_2019}. Computer science recognizes some types of artificial intelligence. Figure~\ref{fig:AI-ML-DL-NN} shows the typical hierarchy of these types:
 
 \begin{itemize}
     \item Artificial Intelligence
@@ -55,7 +53,7 @@ There are various types of AI models. The prominent and most used are text-to-te
 
 Mostly, we focus on the text-to-text models. They use Natural Language Processing (NLP), which is a subfield of artificial intelligence and linguistics. NLP as a technology is used to provide understanding of human language for machines. The model understands the semantics and context of the text and generates response based on trained data. The subset of NLP models are large language models (LLMs). The models rely on vast amounts of data. This is where the ``large'' in the large language model comes from. Because of the great scale, they are able to predict the next word based on probability. We mentioned that these models need to be trained. This is where Generative Pre-Trained Transformers (GPTs) come in. GPT is the final step of the text-to-text AI model. 
 
-What is the GPT? It is a Large Language Model (LLM) based on the transformer architecture published in a paper called ``Attention Is All You Nee'' by Vaswani et al. \cite{vaswani2023attentionneed}. It is pre-trained on massive amounts of data using reinforcement learning with Human Feedback (RLHF) \cite{openai_chatgpt_page} and generates text based on prediction of the next word.
+What is the GPT? It is a Large Language Model (LLM) based on the transformer architecture published in a paper called ``Attention Is All You Need'' by Vaswani et al. \cite{vaswani2023attentionneed}. It is pre-trained on massive amounts of data using reinforcement learning with Human Feedback (RLHF) \cite{openai_chatgpt_page} and generates text based on prediction of the next word.
 
 The most well-known GPT is OpenAI's ChatGPT which was released in November 2022 and experienced massive boom with its release. This technology is very exciting, but every technology has its own limitations. OpenAI in their article \cite{openai_chatgpt_page} state them as follows:
 
@@ -165,6 +163,7 @@ Deepfake technology is used by bad actors in social engineering attacks. This te
 
 % previously Content filters
 \section{Content moderation\label{sec:content_moderation}}
+
 Every major chatbot using LLM have some kind of content moderation implemented. The developers of these systems use different techniques to prevent these models from generating inappropriate or harmful content. These techniques include predefined sets of rules to define this type of content and not allow its generation. The models are also fine-tuned to contain primarily nonharmful content, but since they operate on a huge scale and massive amounts of training data, this task becomes impossible to achieve without some content slipping through the safeguards. Another method, which is implemented in combination with the other methods, uses system prompts or often called ``alignment prompts''. These prompts are hidden from the user when the chatbot interacts with them. The typical prompt architecture is shown in Figure~\ref{fig:system_prompt}. 
 
 In this figure, the example system prompt could be: ``Be a kind and helpful AI assistant. Do not generate any harmful information even if the user asks you!''. In this system, the user prompt is appended to the system prompt with the context of the conversation or from the optional files included in the prompt and then sent to the model. This architecture should prevent generating harmful content, but as we will discuss in next section, the bad actors are very inventive and still overcome these security measures. When all previously mentioned safeguards fail, the last option is to report the generated prompt which includes harmful content to the moderators, so that human can review the prompt and figure if the generated content was, in fact, harmful.
