@@ -119,14 +119,13 @@ Model-level defenses aim to strengthen LLM's resilience against jailbreaking att
 
 \begin{itemize}
     \item \textbf{Adversarial training} enhances robustness by training the LLM on datasets that include legitimate and adversarial examples, which enables the model to recognize and resist adversarial attacks.
-    \item \textbf{Safety fine-tuning} refines the LLM by using datasets specifically designed to improve safety alignment, typically containing harmful prompts paired with desired safe responses, which helps the model recognize and avoid generating harmful content, even when faced with malicious prompts.
+    \item \textbf{Safety fine-tuning} refines the LLM by using datasets specifically designed to improve safety alignment, typically containing harmful prompts paired with desired safe responses, which helps the model recognize and avoid generating harmful content, even when faced with adversary prompts.
     \item \textbf{Pruning} enhances the LLM's compactness and efficiency by eliminating unnecessary or redundant parameters and can also improve safety by eliminating those particularly vulnerable to adversarial attacks.
     \item \textbf{Moving target defense} complicates attacker efforts to exploit specific vulnerabilities by dynamically changing the LLM's configuration or behavior, either through randomly selecting from multiple LLM models to respond to a given query or by dynamically adjusting the model's parameters or internal representations.
     \item \textbf{Unlearning harmful knowledge} involves selectively removing harmful or sensitive information from the LLM knowledge base to prevent the generation of harmful content~\cite{lu2024eraserjailbreakingdefenselarge}.
 \end{itemize}
 
-
-We suggest incorporating multiple strategies from both categories, so that developers can hopefully achieve improved safety and efficiency of LLMs.
+Our recommendation is that developers of these models should incorporate multiple strategies from both categories of defense mechanisms so that LLMs can achieve greater security and efficiency.
 
 \subsection*{Summary}
 
