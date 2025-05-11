@@ -188,7 +188,7 @@ Jailbreak prompts tend to have these characteristics:
 \textbf{Prompt length} (in tokens) tends to be longer because attackers use additional instructions to cause the model to behave in specific ways to bypass the safeguards.
 Shen et al.~\cite{shen2024donowcharacterizingevaluating} found that jailbreak prompts are noticeably longer than regular prompts and exhibit a monthly increase in length. On average, the token count for a jailbreak prompt is 555, which is 1.5 times the length of typical prompts~\cite{shen2024donowcharacterizingevaluating}.
 
-\textbf{Prompt semantics} means that LLMs semantically understand the structure and meaning of the prompt. Shen et al.~\cite{shen2024donowcharacterizingevaluating} also found that most jailbreak prompts exhibit semantic similarities with typical prompts. Typically, typical prompts require that ChatGPT acts as a virtual character, a tactic frequently used in jailbreak prompts to circumvent LLM safeguards. However, this semantic similarity complicates the task of distinguishing jailbreak prompts from regular ones through semantic-based detection methods.~\cite{shen2024donowcharacterizingevaluating}
+\textbf{Prompt semantics} means that LLMs semantically understand the structure and meaning of the prompt. Shen et al.~\cite{shen2024donowcharacterizingevaluating} also found that most jailbreak prompts exhibit semantic similarities with typical prompts. Generally, typical prompts require that ChatGPT acts as a virtual character, a tactic frequently used in jailbreak prompts to circumvent LLM safeguards. However, this semantic similarity complicates the task of distinguishing jailbreak prompts from regular ones through semantic-based detection methods.~\cite{shen2024donowcharacterizingevaluating}
 
 There are a few established prompt engineering methods for jailbreaking:
 \begin{itemize}
@@ -197,7 +197,6 @@ There are a few established prompt engineering methods for jailbreaking:
     \item DAN (Do Anything Now)
     \item Roleplay
     \item Developer mode
-    \item Token system
 \end{itemize}
 
 \textbf{Prompt injection} involves altering the responses of an LLM through the use of maliciously designed and crafted prompts. Certain attacks are based on the premise of an attacker embedding harmful prompts into their input to the application. The main aim of these adversaries is to alter the application's behavior, making it respond to a different query instead of completing its intended one. To accomplish this, they design prompts capable of influencing or ignoring the predefined prompts within the compiled version, resulting in the intended outcomes. These attacks usually focus on applications with known context or predefined prompts. Essentially, they exploit the internal architecture of the system to bypass security measures, compromising the overall integrity of the application.~\cite{liu2024promptinjectionattackllmintegrated}
@@ -214,7 +213,6 @@ There are a few established prompt engineering methods for jailbreaking:
  DAN prompt \cite{reddit_pic}
  \label{fig:dan-prompt}}
 \end{figure}
-
 
 \textbf{Role-play} jailbreak is a type of jailbreak where a bad actor designs a special prompt that forces the AI model to role-play some character. The character could be a real person, a fictional character, or even a command-line interpreter. In the begginings of prompt engineering, there were many different role-play prompts ranging from an AI model acting like someone's deceased grandmother to a cybersecurity expert to DAN.
 
