@@ -115,17 +115,19 @@ These mechanisms may be effective on their own; however, when combined with addi
 
 \subsection{Model-level defenses}
 
-Model-level defenses 
+Model-level defenses aim to strengthen LLM's resilience against jailbreaking attacks by altering its architecture, training methods, or internal representations, thereby preventing attackers from exploiting vulnerabilities. Peng et al.~\cite{peng2025jailbreakingmitigationvulnerabilitieslarge} identify and explain the defense mechanisms at the model level as:
 
-\textbf{Adversarial training}
+\begin{itemize}
+    \item \textbf{Adversarial training} enhances robustness by training the LLM on datasets that include legitimate and adversarial examples, which enables the model to recognize and resist adversarial attacks.
+    \item \textbf{Safety fine-tuning} refines the LLM by using datasets specifically designed to improve safety alignment, typically containing harmful prompts paired with desired safe responses, which helps the model recognize and avoid generating harmful content, even when faced with malicious prompts.
+    \item \textbf{Pruning} enhances the LLM's compactness and efficiency by eliminating unnecessary or redundant parameters and can also improve safety by eliminating those particularly vulnerable to adversarial attacks.
+    \item \textbf{Moving target defense} complicates attacker efforts to exploit specific vulnerabilities by dynamically changing the LLM's configuration or behavior, either through randomly selecting from multiple LLM models to respond to a given query or by dynamically adjusting the model's parameters or internal representations.
+    \item \textbf{Unlearning harmful knowledge} involves selectively removing harmful or sensitive information from the LLM knowledge base to prevent the generation of harmful content~\cite{lu2024eraserjailbreakingdefenselarge}.
+\end{itemize}
 
-\textbf{Safety fine-tuning}
 
-\textbf{Pruning}
+We suggest incorporating multiple strategies from both categories, so that developers can hopefully achieve improved safety and efficiency of LLMs.
 
-\textbf{Moving target defense}
+\subsection*{Summary}
 
-\textbf{Unlearning harmful knowledge}
-
-\textbf{Robust alignment checking}
-
+No individual defense strategy can completely prevent LLM misuse; however, integrating both prompt-level and model-level defense mechanisms provides a more comprehensive way to safeguard them. Implementing these mitigation methods can reduce the risks related to jailbreak attempts, thus creating safer AI systems.
