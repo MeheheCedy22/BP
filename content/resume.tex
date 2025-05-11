@@ -2,4 +2,146 @@
 
 % Každá práca odovzdaná v anglickom jazyku musí obsahovať resumé v slovenskom jazyku v rozsahu spravidla 10% rozsahu záverečnej práce. Resumé je v práci uvedené ako posledná časť dokumentu.
 
-TBD
+\section*{Umelá inteligencia (UI) \label{sec:AI_resume}}
+
+Jednou z najjednoduchších definícií inteligentného systému je, že ide o systém, ktorý spracováva informácie s cieľom urobiť niečo užitočné. Informatika ako veda rozoznáva niektoré typy umelej inteligencie, ako:
+
+\begin{itemize}
+    \item Umelá inteligencia
+    \item Strojové účenie
+    \item Hlboké učenie a neurónové siete
+\end{itemize}
+
+Umelá inteligencia (UI) je všeobecný pojem, ktorým sa označuje akýkoľvek systém s určitými znakmi inteligencie. UI je oblasť zameraná na automatizáciu intelektuálnych úloh, ktoré bežne vykonávajú ľudia, a strojové učenie a hlboké učenie sú špecifické metódy na dosiahnutie tohto cieľa. Hoci hovoríme o inteligencii, používame tento termín na kategorizáciu neučiacich sa algoritmov, ktoré sú založené len na deterministických pravidlách a heuristikách, napriek tomu sa toto správanie ľuďom zdá inteligentné. Hoci umelá inteligencia dokáže riešiť jasne definované logické problémy, často zlyháva pri úlohách, ktoré si vyžadujú rozpoznávanie vzorov na vyššej úrovni, ako je napríklad rozpoznávanie reči alebo klasifikácia obrázkov. Práve pri týchto zložitejších úlohách sa dobre osvedčujú metódy strojového učenia a hlbokého učenia.
+
+\section*{Modely umelej inteligencie \label{sec:AI_models_resume}}
+
+Existujú rôzne typy modelov umelej inteligencie. Najdôležitejšie a najpoužívanejšie sú modely text-text, po ktorých nasledujú modely text-obraz a text-audio. 
+
+Modely text-text využívajú spracovanie prirodzeného jazyka (Natural Language Processing, NLP), čo je podoblasť umelej inteligencie a lingvistiky. NLP ako technológia sa používa na zabezpečenie porozumenia ľudského jazyka pre stroje. Model rozumie sémantike a kontextu textu a generuje odpoveď na základe natrénovaných údajov. Podskupinou modelov NLP sú veľké jazykové modely (Large Language Model, LLM). Tieto modely sa opierajú o obrovské množstvo údajov. Vďaka veľkému rozsahu dokážu predpovedať ďalšie slovo na základe pravdepodobnosti. Spomenuli sme, že tieto modely je potrebné natrénovať. Tu prichádzajú na rad tzv. generatívne vopred natrénované transformátory (Generative Pre-trained Transformer, GPT).
+
+Čo je GPT? Je to veľký jazykový model založený na architektúre transformátora. Je predtrénovaný na obrovskom množstve údajov pomocou posilneného učenia s ľudskou spätnou väzbou (Reinforcement Learning with Human Feedback, RLHF) a generuje text na základe predpovede nasledujúceho slova.
+
+Najznámejším GPT je ChatGPT od spoločnosti OpenAI. Ako každá iná technológia aj GPT má svoje obmedzenia medzi ktoré patria:
+
+\begin{itemize}
+    \item ChatGPT niekedy píše vierohodne znejúce, ale nesprávne alebo nezmyselné odpovede
+    \item ChatGPT je citlivý na úpravy vstupných fráz alebo na viacnásobné pokusy o zadanie tej istej výzvy
+    \item Model je často príliš zhovorčivý a nadmerne používa určité frázy, napríklad opakuje, že ide o jazykový model od spoločnosti OpenAI
+    \item Model niekedy reaguje na škodlivé pokyny
+\end{itemize}
+
+Tieto obmedzenia sú dôvodom niektorých útokov, ktoré možno vykonať s cieľom zneužiť túto technológiu na škodlivé účely.
+
+\section*{Prompt engineering \label{sec:prompt_engineering_resume}}
+
+Prompt engineering zahŕňa navrhovanie a optimalizáciu textových inštrukcií nazývaných ``prompt'', ktoré sa používajú najmä na komunikáciu s chatbotmi, ktoré používajú na pozadí LLM. Prompt engineering je prostriedok, pomocou ktorého sa LLM programujú prostredníctvom promptov.
+
+Existuje viacero vzorov promptov. Najvýznamnejším vzorom je tzv. \textbf{Persona} (osoba). Vzor Persona je základom väčšiny ``jailbreakov''. V skratke, pri použití vzoru Persona používateľ dáva chatbotovi pokyn, aby sa správal ako nejaká osoba napríklad užitočný asistent.
+
+% --------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------
+
+\section*{Riziká implementácie AI systémov \label{sec:ai_risks_resume}}
+
+Pri zavádzaní AI riešení v akejkoľvek oblasti musíme zvážiť s nimi spojené riziká. Medzi ne patria:
+
+\begin{itemize}
+    \item etické
+    \item morálne
+    \item kyberbezpečnostné
+\end{itemize}
+
+% \textbf{}
+% Hoci sú UI prospešné pre pomoc ľuďom, nesú so sebou aj riziká. Medzi tieto riziká patrí šírenie dezinformácií, vytváranie hlbokých falzifikátov, obavy o súkromie a ďalšie etické problémy, ktoré rozoberieme v tejto časti.
+
+% \subsubsection*{Misinformation}
+
+% Bad actors abuse the ``creativity'' aspect of LLMs and generate misinformation and false news that pose a major threat to society when dealing with critical issues such as climate crisis and the health of individuals. Very popular amongst governments is to use misinformation generated by LLMs spread by fake accounts on social networks to skew or influence political situation or public sentiment in favor of their preferred party or an individual.
+
+% \subsubsection*{Identity Theft}
+
+% When training the LLM from non-anonymized data, potential leaks or extractions of these data can lead to identity theft and targeted phishing. 
+% In the opposite view, publicly available data, however, often not free, can be used as input to already trained models to create deepfakes and later use these deepfakes to harm the public view of the individual or even worse.
+
+% \subsubsection*{Bias Amplification}
+
+% Biased training data and targeted prompts can amplify discrimination against groups with less oversight power. For example, models trained on biased data that include stereotypes about gender, race, or religion generate outputs that reinforce these stereotypes, which could be harmful to vulnerable groups. The consequences of the restorative steps that were complicated by power imbalances deepen the demographic inequalities on this issue.
+
+% \subsubsection*{Copyright violations}
+
+% Some companies unethically train their models on copyright-protected material, i.e. online news articles, digital media, works of art, etc. This leads to stealing intellectual property (IP).
+
+% \subsubsection*{Military use}
+
+% Another topic that needs to be addressed is whether the military should utilize their data to develop LLMs which would be capable of teaching other military personnel, helping to create weapons, analyzing confidential information, etc. This could be quite dangerous if the system falls into the hands of a bad actor or adversary government where this information could be used for nefarious purposes.
+
+
+% \subsection{Moral risks}
+% With the implementation of AI solutions in addition to ethical problems, moral problems are also present. One of the problems is generating sexually explicit content. Bad actors can use LLMs to create this type of content and then distribute it, which could expose the content to minors and other vulnerable individuals and cause them harm. This also applies to violent content, the making of weapons, illegal chemicals, and lastly forbidden language.
+
+
+% \subsection{Cybersecurity risks}
+% AI can prove itself in the near future as a very useful and helpful tool to develop solutions for malware detection, malware prevention, and cybersecurity training. On the other hand, as we have already mentioned, everything has its advantages and disadvantages. Unfortunately, there are big disadvantages of rapid development of AI, which means that there are and there will be AIs, which can also be used for the creation of malware, social engineering attacks and phishing in general. Some of these risks were identified as follows:
+
+% \begin{itemize}
+%     \item AI-Powered Malware and Ransomware
+%     \item Automated and Scalable Attacks
+%     \item Deepfake and Social Engineering Attacks
+% \end{itemize}
+
+% \subsubsection*{AI-Powered Malware and Ransomware}
+
+% Conventional malware functions by penetrating systems, causing harm, and exfiltrating data. In contrast, AI-powered malware can adapt, rendering detection and mitigation more challenging. Using machine learning algorithms, this malware assesses its surroundings and alters its actions to bypass antivirus software and intrusion detection systems. Particularly concerning is the AI-powered ransomware, which has increased its threat level. This type of ransomware quickly identifies vulnerabilities, encrypts essential data, and adjusts ransom demands according to the victim's financial capacity. The flexibility offered by AI enhances the distribution of ransomware and aids in its evasion of detection, thus amplifying its impact.
+
+% \subsubsection*{Automated and Scalable Attacks}
+
+% These attacks are the result of LLMs. The reason is that these models can analyze and summarize vast amounts of data, and bad actors can automate this process using frameworks that can be executed on a large scale. At this scale, models trained by bad actors can achieve their goal quicker and easier.
+
+% \subsubsection*{Deepfake and Social Engineering Attacks}
+
+% We mentioned earlier that deepfakes are an ethical problem, but they are also connected to cybersecurity. We can broadly define deepfake as an AI-generated media that convincingly mimics real individuals.
+
+% Deepfake technology is used by bad actors in social engineering attacks. This technique can deceive and manipulate targets by creating phony films or audio recordings of trustworthy people like CEOs\footnote{Chief Executive Officer} of companies or public leaders. In February 2024, the American media company CNN reported an example case of this behavior. The financial worker of a multinational company was tricked by video call with supposedly his coworkers and CFO\footnote{Chief Financial Officer} to send around \$25 million which was later revealed to be a fake social engineering scam.
+
+\section*{Moderácia obsahu \label{sec:content_moderation_resume}}
+
+
+
+\section*{Jailbreak \label{sec:jailbreak_resume}}
+
+
+
+% \section*{Metódy útokov \label{sec:methods_of_attacks_resume}}
+
+
+
+% \section*{Legislatíva \label{}}
+
+
+
+% \section*{Návrh riešenia \label{}}
+
+
+
+% \section*{Experimentovanie \label{}}
+
+
+
+% \section*{Výsledky dotazníka \label{}}
+
+
+
+% \section*{Vyhodnotenie experimentov \label{}}
+
+
+
+% \section*{Stratégie na zmiernenie následkov pre UI riešenia \label{}}
+
+
+
+% \section*{Zhodnotenie \label{}}
+
+
+
