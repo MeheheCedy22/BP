@@ -89,10 +89,43 @@ From the experiments, we also observed the difficulty in balancing filtering and
 We conclude that there is a great need for better safeguards and content filters with regard to jailbreak. Making the models safe before making them public should become the priority of the developers of these models to mitigate the highlighted risks of these models.
 
 \section{Mitigation strategies for AI solutions}
-% suggestion on mititagion for the problems found in experimenting
 
-% How to secure AI systems from misuse (and if it work ?)
+Based on the evaluation of the experiments carried out, we identified the need for better safeguard measures for AI solutions. This section suggests strategies that AI model developers can use to increase their safety. 
 
-% if the result from experimenting suggest that they have good mitigation strategies
+According to Peng et al.~\cite{peng2025jailbreakingmitigationvulnerabilitieslarge}, there are two main categories of defense mechanisms against jailbreak attacks for our case, each providing concrete mechanisms:
 
+\begin{itemize}
+    \item Prompt-level defenses
+    \item Model-level defenses
+\end{itemize}
+
+These defense mechanisms, mainly when used together, can enhance the safety of LLMs.
+
+\subsection{Prompt-level defenses}
+
+It is reasonable to assume that the developers of the largest commercial LLMs powering chatbots like ChatGPT, Copilot, and Deepseek are already using at least some sort of prompt-level denefse mechanisms such as:
+
+\begin{itemize}
+    \item \textbf{Prompt filtering} identifies and rejects potentially harmful prompts before LLM processing, using methods such as perplexity-based filters, keyword filters, and real-time monitoring \cite{peng2025jailbreakingmitigationvulnerabilitieslarge}.
+    \item \textbf{Prompt transformation} techniques, such as paraphrasing, retokenization, and semantic smoothing, are applied before the LLM processes the prompt to improve robustness against jailbreak attacks by neutralizing any embedded malicious intent \cite{peng2025jailbreakingmitigationvulnerabilitieslarge}.
+    \item \textbf{Prompt optimization} methods leverage data-driven approaches to automatically refine prompts, improving their resilience against jailbreak attacks and reducing the likelihood of harmful behaviors \cite{peng2025jailbreakingmitigationvulnerabilitieslarge}.
+\end{itemize}
+
+These mechanisms may be effective on their own; however, when combined with additional model-level defenses, the LLMs with which we experimented can become more secure and safe to use.
+
+\subsection{Model-level defenses}
+
+Model-level defenses 
+
+\textbf{Adversarial training}
+
+\textbf{Safety fine-tuning}
+
+\textbf{Pruning}
+
+\textbf{Moving target defense}
+
+\textbf{Unlearning harmful knowledge}
+
+\textbf{Robust alignment checking}
 
