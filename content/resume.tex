@@ -2,7 +2,7 @@
 
 % Každá práca odovzdaná v anglickom jazyku musí obsahovať resumé v slovenskom jazyku v rozsahu spravidla 10% rozsahu záverečnej práce. Resumé je v práci uvedené ako posledná časť dokumentu.
 
-\section*{Umelá inteligencia (UI) \label{sec:AI_resume}}
+\section*{Umelá inteligencia (AI) \label{sec:AI_resume}}
 
 Jednou z najjednoduchších definícií inteligentného systému je, že ide o systém, ktorý spracováva informácie s cieľom urobiť niečo užitočné. Informatika ako veda rozoznáva niektoré typy umelej inteligencie, ako:
 
@@ -12,7 +12,7 @@ Jednou z najjednoduchších definícií inteligentného systému je, že ide o s
     \item Hlboké učenie a neurónové siete
 \end{itemize}
 
-Umelá inteligencia (UI) je všeobecný pojem, ktorým sa označuje akýkoľvek systém s určitými znakmi inteligencie. UI je oblasť zameraná na automatizáciu intelektuálnych úloh, ktoré bežne vykonávajú ľudia, a strojové učenie a hlboké učenie sú špecifické metódy na dosiahnutie tohto cieľa. Hoci hovoríme o inteligencii, používame tento termín na kategorizáciu neučiacich sa algoritmov, ktoré sú založené len na deterministických pravidlách a heuristikách, napriek tomu sa toto správanie ľuďom zdá inteligentné. Hoci umelá inteligencia dokáže riešiť jasne definované logické problémy, často zlyháva pri úlohách, ktoré si vyžadujú rozpoznávanie vzorov na vyššej úrovni, ako je napríklad rozpoznávanie reči alebo klasifikácia obrázkov. Práve pri týchto zložitejších úlohách sa dobre osvedčujú metódy strojového učenia a hlbokého učenia.
+Umelá inteligencia (AI) je všeobecný pojem, ktorým sa označuje akýkoľvek systém s určitými znakmi inteligencie. UI je oblasť zameraná na automatizáciu intelektuálnych úloh, ktoré bežne vykonávajú ľudia, a strojové učenie a hlboké učenie sú špecifické metódy na dosiahnutie tohto cieľa. Hoci hovoríme o inteligencii, používame tento termín na kategorizáciu neučiacich sa algoritmov, ktoré sú založené len na deterministických pravidlách a heuristikách, napriek tomu sa toto správanie ľuďom zdá inteligentné. Hoci umelá inteligencia dokáže riešiť jasne definované logické problémy, často zlyháva pri úlohách, ktoré si vyžadujú rozpoznávanie vzorov na vyššej úrovni, ako je napríklad rozpoznávanie reči alebo klasifikácia obrázkov. Práve pri týchto zložitejších úlohách sa dobre osvedčujú metódy strojového učenia a hlbokého učenia.
 
 \section*{Modely umelej inteligencie \label{sec:AI_models_resume}}
 
@@ -53,10 +53,6 @@ Pri zavádzaní AI riešenií sa okrem etických rizík objavujú aj \textbf{mor
 
 V oblasti \textbf{kybernetickej bezpečnosti} je prítomné riziko existencie modelov umelej inteligencie, ktoré sa dajú využiť aj na tvorbu malvéru alebo útoky sociálneho inžinierstva (phishing).
 
-% --------------------------------------------------------------------------------------
-% --------------------------------------------------------------------------------------
-% --------------------------------------------------------------------------------------
-
 \section*{Jailbreak \label{sec:jailbreak_resume}}
 
 Jailbreak je špecifická formulácia promptu používateľa, ktorá sa používa na obchádzanie filtrov a bezpečnostných kontrol LLM a na základe ktorej daný LLM poskytne škodlivý alebo nevhodný obsahu.
@@ -80,35 +76,49 @@ Existuje niekoľko zavedených metód prompt engineeringu pre jailbreak:
 
 \textbf{Vývojársky režim} je typ jailbreak promptu, ktorého cieľom je oklamať LLM, aby si myslel, že je vo vývojárskom režime, a vďaka tomu môže vyhodnotiť svoju toxicitu. Jednou z metód je najprv požiadať model o ``normálnu'' etickú odpoveď, po ktorej nasleduje odpoveď, ako by odpovedal mode, ktorý nemá žiadne obmedzenia.
 
-% \section*{Metódy útokov \label{sec:methods_of_attacks_resume}} % asi vyhodim
+\section*{Legislatíva \label{sec:legislation_resume}}
+
+V tejto časti porovnávame právne predpisy v oblasti umelej inteligencie v EÚ, USA a Číne.
+
+Zákon EÚ o UI zavádza klasifikáciu AI systémov na základe rizika (minimálne až neprijateľné) a stanovuje prísne povinnosti v oblasti transparentnosti a bezpečnosti, najmä v prípade vysoko rizikových aplikácií.
+
+V USA zatiaľ neexistuje žiadny federálny zákon o AI, ale niektoré štáty, ako napríklad Colorado a Illinois, prijali zákony zamerané na diskrimináciu a zneužívanie. V porovnaní s EÚ však existujú jasné nedostatky.
+
+Čína zaviedla tri zákony cielené na regulujáciu algoritmických odporúčaní, deepfakov a generatívnu AI. Tieto zákony presadzujú označovanie obsahu vytverením pomocou AI, transparentnosť a kladú dôraz na to, aby AI bola v súlade so socialistickými hodnotami.
+
+\section*{Návrh riešenia \label{sec:solution_proposal_resume}}
+
+Cielom tejto práce je navrhnúť súbor praktických usmernení pre etické a bezpečné používanie umelej inteligencie v oblasti prompt engineeringu. Na základe identifikovaných rizík sú usmernenia určené vývojárom aj širokej verejnosti. Budú pozostávať z: 
+
+\begin{itemize}
+    \item úvod do prompt engineeringu
+    \item odporúčania pre etické a bezpečné používanie modelov umelej inteligencie
+    \item odporúčania na zlepšenie transparentnosti daných modelov
+\end{itemize}
+
+Cieľom je obmedziť zneužívanie AI a zvýšiť informovanosť o danej problematike.
+
+\section*{Experimentovanie \label{sec:experimenting_resume}}
+
+V tejto kapitole sme sa zamerali na testovanie štyroch chatbotov založených na LLM (ChatGPT, Microsoft Copilot, DeepSeek a Perplexity) z hľadiska ich etiky a bezpečnosti pomocou jailbreak scenárov. Každý model podstúpil rovnaké experimenty: generovanie škodlivého softvéru, cenzúra, vytváranie dezinformácií a phishing. Výsledky ukázali, že väčšinu modelov je možné prelomiť pomocou jailbreak promptov a vytvoriť tak nebezpečný obsah. Najsilnejšiu odolnosť voči jailbreakingu preukázal Microsoft Copilot. 
+
+% --------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------
+
+\section*{Výsledky dotazníka \label{sec:survey_resume}}
+
+Okrem experimentovania sme taktiež vyvtorili dotazník zameraný na informovanosť a ohodnotenie rizík spojených s umeleu inteligenciou a vnímané hrozby. Vzorka respondentov bola 75. Väčšina respondentov rozpoznala hrozby, ako sú šírenie dezinformácií, tvorba deepfakov a generovanie škodlivého obsahu. Výsledky ukázali vysoké vnímané riziká a silné presvedčenie verejnosti, že zneužívanie UI ešte nie je úplne pochopené. Okrem toho sme vyhodnotili výstupy našich experimentov a navrhli stratégie na ich zmiernenie. Kapitola sa uzatvára návrhmi na zlepšenie bezpečnosti a transparentnosti UI.
+
+% \section*{Vyhodnotenie experimentov \label{sec:experiments_eval_resume}}
 
 
 
-% \section*{Legislatíva \label{}}
+% \section*{Stratégie na zmiernenie následkov pre AI riešenia \label{sec:mitigation_strategies_resume}}
 
 
 
-% \section*{Návrh riešenia \label{}}
-
-
-
-% \section*{Experimentovanie \label{}}
-
-
-
-% \section*{Výsledky dotazníka \label{}}
-
-
-
-% \section*{Vyhodnotenie experimentov \label{}}
-
-
-
-% \section*{Stratégie na zmiernenie následkov pre UI riešenia \label{}}
-
-
-
-% \section*{Zhodnotenie \label{}}
+% \section*{Zhodnotenie \label{sec:conclusion_resume}}
 
 
 
