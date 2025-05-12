@@ -5,27 +5,50 @@
 
 \chapter{Guidelines for users \label{cha:guidelines}}
 \renewcommand{\thepage}{B-\arabic{page}}
-% neviem ci aj sem nahodou nemam pisat nejaky uvod k tomu alebo aky to ma mat vlastne format ale asi format toho clanku
 
-% this is the main chaptor of the thesis
+% priloha guidelines (8 normostran)
 
-% priloha guidelines (8-9 normostran textu + obrazky)
+% custom ref segment for the guidelines in appendix
+\begin{refsegment}
+% custom mini Table of contents for the guidelines in appendix
+\minitoc
+\newpage
 
-% How to safely interact with AI models, avoiding harmful content
+\section{Guidelines overview}
+    \subsection*{Purpose and Scope}
+    \subsection*{The Importance of Ethical AI}
+    \subsection*{Grounding in EU Ethical Guidelines for Trustworthy AI}
 
-% plus user testing
+\section{Introduction to prompt engineering}
+This section focuses manily to non-experts or novice users in this field.
 
-% A potom pri navrhu spomenúť že v guidelines chcem aj ukázať ako sú dobré príklady a že časti spôsob jailbreakingu keď sa použije dobre tak je veľmi dobrý a efektívny (helpful persona)
+\section{Recommendations for the ethical and fair use of LLMs}
+    % for general public and developers
 
-% ------------ POZRI Solution proposal ------------
-% The guidelines will consist of three main sections:
-% \begin{enumerate}
-%     \item introduction to prompt engineering
-%     \item recommendations for the ethical and fair use of large language models and security measures
-%     \item improvements to transparency of AI systems % (note: explain using reasoning models (use their output to fact-check themselves))
-% \end{enumerate}
-% -------------------------------------------------
+    \subsection*{Human agency and oversight}
+    \subsection*{Technical robustness and safety}
+    \subsection*{Privacy and data governance}
+    % \subsection*{Transparency} toto riesit v dalsej sekcii
+    \subsection*{Diversity, non-discrimination and fairness}
+    \subsection*{Societal and environmental well-being}
+    \subsection*{Accountability}
 
-% How to spot something harmful ? (e.g. deepfake, phishing mail) ?
+\section{Recommendations for improvements to transparency of AI systems}
+    % for developers
+    \subsection*{Transparency} % (note: explain using reasoning models (use their output to fact-check themselves))
 
-TBD
+\section{Interacting with AI generated content}
+    \subsection*{Identifying AI-generated content online}
+
+    \subsection*{Beneficial use of AI}
+        % helpful AI asistant (persona ?)
+        \subsubsection*{AI for creativity}
+        \subsubsection*{AI for explanation and learning}
+
+\section{Conclusion}
+    \subsection*{Summary}
+
+% Bibliography
+\printbibliography[heading=subbibliography,segment=\therefsegment,resetnumbers=true]
+
+\end{refsegment}
