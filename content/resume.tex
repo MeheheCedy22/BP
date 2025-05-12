@@ -16,37 +16,37 @@ AI spracováva informácie na dosiahnutie užitočných výsledkov. Kým jednodu
 
 \section*{Modely umelej inteligencie \label{sec:AI_models_resume}}
 
-Najrozšírenejšie AI modely sú text-text modely, ako napríklad ChatGPT, ktoré využívajú spracovanie prirodzeného jazyka (Natural Language Processing, NLP). Podskupinou NLP sú veľké jazykové modely (Large Language Model, LLM), ktoré generujú text na základe pravdepodobnosti slov, ktoré by mali za sebou nasledovať. GPT (Generative Pre-trained Transformer) modely, ako je ChatGPT, sú ďalším krokom vývoja LLM. GPT modely sú zvyčajne trénované na veľkých dátach a používajú techniku trénovania  nazývanú RLHF (Reinforcement Learning with Human Feedback) čiže ide o posilnené učenie s ľudskou spätnou väzbou.
+Najrozšírenejšie AI modely sú text-text modely, ako napríklad ChatGPT, ktoré využívajú spracovanie prirodzeného jazyka (Natural Language Processing, NLP). Podskupinou NLP sú veľké jazykové modely (Large Language Model, LLM), ktoré generujú text na základe pravdepodobnosti slov, ktoré by mali za sebou nasledovať. GPT (Generative Pre-trained Transformer) modely, ako je ChatGPT, sú ďalším krokom vývoja LLM. GPT modely sú zvyčajne trénované na veľkých dátach a používajú techniku trénovania nazývanú RLHF (Reinforcement Learning with Human Feedback) čiže ide o posilnené učenie s ľudskou spätnou väzbou.
 
 Napriek ich úžitočnosti, majú viaceré obmedzenia resp. nevýhody. Napríklad ChatGPT môže generovať zavádzajúce odpovede, je citlivý na formuláciu vstupu, a niekedy reaguje na škodlivé vstupy, čo predstavuje etické a bezpečnostné riziká.
 
 \section*{Prompt engineering \label{sec:prompt_engineering_resume}}
 
-Prompt engineering zahŕňa navrhovanie a optimalizáciu textových inštrukcií nazývaných ``prompt'', ktoré sa používajú najmä na komunikáciu s chatbotmi, ktoré používajú na pozadí LLM. Prompt engineering je prostriedok, pomocou ktorého sa LLM programujú prostredníctvom promptov.
+Prompt engineering zahŕňa navrhovanie a optimalizáciu textových inštrukcií nazývaných ``prompt'', ktoré sa používajú najmä na komunikáciu s chatbotmi, ktoré používajú na pozadí LLM.
 
 Existuje viacero vzorov promptov. Najvýznamnejším vzorom je tzv. \textbf{Persona} (osoba). Vzor Persona je základom väčšiny ``jailbreakov''. V skratke, pri použití vzoru Persona používateľ dáva chatbotovi pokyn, aby sa správal ako nejaká osoba napríklad užitočný asistent.
 
 \section*{Riziká implementácie AI systémov \label{sec:ai_risks_resume}}
 
-Pri zavádzaní AI riešení v akejkoľvek oblasti musíme zvážiť s nimi spojené riziká. Medzi ne patria:
+Pri zavádzaní AI riešení v akejkoľvek oblasti musíme zvážiť s nimi spojené riziká. Tie sa delia na 3 kategórie:
 
 \begin{itemize}
-    \item etické
-    \item morálne
-    \item kyberbezpečnostné
+    \item etické riziká
+    \item morálne riziká
+    \item kyberbezpečnostné riziká
 \end{itemize}
 
-Medzi \textbf{etické riziká} patrí šírenie dezinformácií, krádež identity, vytváranie tzv. deepfakov (presvedčivé napodobnenie skutočnej osoby), zväčšenie predsudkov (napr. voči zraniteľnej skupine), porušenie autorských práv a použitie AI riešenií na vojenské účely.
+Medzi \textbf{etické riziká} patrí šírenie dezinformácií, krádež identity, vytváranie tzv. deepfakov (presvedčivé napodobnenie skutočnej osoby), zväčšenie predsudkov (bias amplification) napr. voči nejakej zraniteľnej skupine, porušenie autorských práv a použitie AI riešenií na vojenské účely.
 
-Pri zavádzaní AI riešenií sa okrem etických rizík objavujú aj \textbf{morálne riziká}. Jedným z problémov je generovanie sexuálne explicitného obsahu. Zlí aktéri môžu používať LLM na vytváranie tohto typu obsahu a jeho následnú distribúciu. Týka sa to aj násilného obsahu, výroby zbraní alebo nezákonných chemických látok.
+Pri zavádzaní AI riešenií sa okrem etických rizík objavujú aj \textbf{morálne riziká}. Jedným z problémov je generovanie sexuálne explicitného obsahu. Zlí aktéri môžu používať LLM na vytváranie tohto typu obsahu a jeho následnú distribúciu. Týka sa to aj násilného obsahu, či už výroby zbraní alebo nezákonných chemických látok.
 
 V oblasti \textbf{kybernetickej bezpečnosti} je prítomné riziko existencie modelov umelej inteligencie, ktoré sa dajú využiť aj na tvorbu malvéru alebo útoky sociálneho inžinierstva (phishing).
 
 \section*{Jailbreak \label{sec:jailbreak_resume}}
 
-Jailbreak je špecifická formulácia promptu používateľa, ktorá sa používa na obchádzanie filtrov a bezpečnostných kontrol LLM a na základe ktorej daný LLM poskytne škodlivý alebo nevhodný obsahu.
+Jailbreak je špecifická formulácia promptu používateľa, ktorá sa používa na obchádzanie filtrov a bezpečnostných mechanizmov LLM a na základe ktorej daný LLM poskytne škodlivý alebo nevhodný obsahu.
 
-Existuje niekoľko zavedených metód prompt engineeringu pre jailbreak:
+Existuje niekoľko zavedených jailbreak metód pomocou prompt engineeringu:
 \begin{itemize}
     \item Prompt injection
     \item Prompt leaking
@@ -55,57 +55,57 @@ Existuje niekoľko zavedených metód prompt engineeringu pre jailbreak:
     \item Developer mode
 \end{itemize}
 
-\textbf{Prompt injection} zahŕňa zmenu odpovedí LLM pomocou zlomyseľne navrhnutých promptov. Hlavným cieľom týchto útočníkov je zmeniť správanie aplikácie, aby namiesto dokončenia zamýšľaného dotazu odpovedala na iný škodlivý dotay dotaz. V podstate využívajú vnútornú architektúru systému na obchádzanie bezpečnostných opatrení, čím ohrozujú celkovú integritu aplikácie.
+\textbf{Prompt injection} zahŕňa zmenu odpovedí LLM pomocou zlomyseľne navrhnutých promptov. Hlavným cieľom útočníkov je zmeniť správanie aplikácie, aby namiesto odpovede na zamýšľaný dotaz odpovedala na iný škodlivý dotaz. V podstate využívajú vnútornú architektúru systému na obchádzanie bezpečnostných opatrení, čím ohrozujú celkovú integritu aplikácie.
 
-\textbf{Prompt leaking} je typ prompt injection, pri ktorom útočník ručne vytvorí škodlivý prompt, ktorý potom posiela do modelu s úmyslom aby získal jeho systémový prompt.
+\textbf{Prompt leaking} je typ prompt injection, pri ktorom útočník vytvorí škodlivý prompt, ktorý potom posiela do modelu s úmyslom aby získal jeho systémový prompt.
 
-\textbf{DAN (Do Anything Now)} je prompt, ktorý sa snaží oklamať AI model, aby si myslel, že môže urobiť čokoľvek, čo znamená obísť jeho obmedzenia.
+\textbf{DAN (Do Anything Now)} je prompt, ktorý sa snaží oklamať AI model, aby si myslel, že môže urobiť čokoľvek, čo v tomto prípade znamená obísť jeho obmedzenia.
 
 \textbf{Role-play} jailbreak je typ jailbreaku, pri ktorom útočník navrhne špeciálny prompt, ktorý núti model aby predstieral, že hraje nejakú rolu.
 
-\textbf{Vývojársky režim} je typ jailbreak promptu, ktorého cieľom je oklamať LLM, aby si myslel, že je vo vývojárskom režime, a vďaka tomu môže vyhodnotiť svoju toxicitu. Jednou z metód je najprv požiadať model o ``normálnu'' etickú odpoveď, po ktorej nasleduje odpoveď, ako by odpovedal mode, ktorý nemá žiadne obmedzenia.
+\textbf{Vývojársky režim} je typ jailbreak promptu, ktorého cieľom je oklamať LLM, aby si myslel, že je vo vývojárskom režime, a vďaka tomu môže vyhodnotiť svoju toxicitu. Jednou z metód je najprv požiadať model o ``normálnu'' etickú odpoveď, po ktorej nasleduje odpoveď, akú by poskytol model, ktorý nemá žiadne obmedzenia.
 
 \section*{Legislatíva \label{sec:legislation_resume}}
 
 V tejto časti porovnávame právne predpisy v oblasti umelej inteligencie v EÚ, USA a Číne.
 
-Zákon EÚ o UI zavádza klasifikáciu AI systémov na základe rizika (minimálne až neprijateľné) a stanovuje prísne povinnosti v oblasti transparentnosti a bezpečnosti, najmä v prípade vysoko rizikových aplikácií.
+Zákon EÚ o umelej inteligencii zavádza klasifikáciu AI systémov na základe rizika (minimálne až neprijateľné) a stanovuje prísne opatrenia v oblasti transparentnosti a bezpečnosti, najmä v prípade vysoko rizikových aplikácií.
 
-V USA zatiaľ neexistuje žiadny federálny zákon o AI, ale niektoré štáty, ako napríklad Colorado a Illinois, prijali zákony zamerané na diskrimináciu a zneužívanie. V porovnaní s EÚ však existujú jasné nedostatky.
+V USA zatiaľ neexistuje žiadny federálny zákon o AI, ale niektoré štáty, ako napríklad Colorado a Illinois, prijali lokálne zákony zamerané na zabránenie diskriminácie a zneužívania AI modelov. V porovnaní s EÚ však existujú jasné nedostatky.
 
-Čína zaviedla tri zákony cielené na regulujáciu algoritmických odporúčaní, deepfakov a generatívnu AI. Tieto zákony presadzujú označovanie obsahu vytverením pomocou AI, transparentnosť a kladú dôraz na to, aby AI bola v súlade so socialistickými hodnotami.
+Čína zaviedla tri zákony cielené na reguláciu algoritmických odporúčaní, deepfakov a generatívnu AI. Tieto zákony presadzujú označovanie obsahu vytvoreným pomocou AI, transparentnosť a kladú dôraz na to, aby AI bola v súlade so socialistickými hodnotami.
 
 \section*{Návrh riešenia \label{sec:solution_proposal_resume}}
 
-Cielom tejto práce je navrhnúť súbor praktických usmernení pre etické a bezpečné používanie umelej inteligencie v oblasti prompt engineeringu. Na základe identifikovaných rizík sú usmernenia určené vývojárom aj širokej verejnosti. Budú pozostávať z: 
+Cieľom tejto práce je navrhnúť súbor praktických usmernení pre etické a bezpečné používanie umelej inteligencie v oblasti prompt engineeringu. Na základe identifikovaných rizík sú usmernenia určené vývojárom aj širokej verejnosti. Budú pozostávať z: 
 
 \begin{itemize}
-    \item úvod do prompt engineeringu
-    \item odporúčania pre etické a bezpečné používanie modelov umelej inteligencie
-    \item odporúčania na zlepšenie transparentnosti daných modelov
+    \item úvodu do prompt engineeringu
+    \item odporúčaní pre etické a bezpečné používanie modelov umelej inteligencie
+    \item odporúčaní na zlepšenie transparentnosti daných modelov
 \end{itemize}
 
 Cieľom je obmedziť zneužívanie AI a zvýšiť informovanosť o danej problematike.
 
 \section*{Experimentovanie \label{sec:experimenting_resume}}
 
-V tejto kapitole sme sa zamerali na testovanie štyroch chatbotov založených na LLM (ChatGPT, Microsoft Copilot, DeepSeek a Perplexity) z hľadiska ich etiky a bezpečnosti pomocou jailbreak scenárov. Každý model podstúpil rovnaké experimenty: generovanie škodlivého softvéru, cenzúra, vytváranie dezinformácií a phishing. Výsledky ukázali, že väčšinu modelov je možné prelomiť pomocou jailbreak promptov a vytvoriť tak nebezpečný obsah. Najsilnejšiu odolnosť voči jailbreakingu preukázal Microsoft Copilot. 
+V tejto kapitole sme sa zamerali na testovanie štyroch chatbotov založených na LLM (ChatGPT, Microsoft Copilot, DeepSeek a Perplexity) z hľadiska ich etiky a bezpečnosti pomocou jailbreak scenárov. Každý model podstúpil rovnaké experimenty: generovanie škodlivého softvéru, cenzúra, vytváranie dezinformácií a phishing.
 
 \section*{Výsledky dotazníka \label{sec:survey_resume}}
 
-Okrem experimentovania sme taktiež vyvtorili dotazník zameraný na informovanosť a ohodnotenie rizík spojených s umelou inteligenciou. Na dotazník odpovedalo 75 respondentov. Väčšina respondentov rozpoznala hrozby, ako sú šírenie dezinformácií, tvorba deepfakov a generovanie škodlivého obsahu. Výsledky ukázali vysoké vnímanie rizik a silný názor, že zneužitie umelej inteligencie verejnosť ešte plne nechápe.
+Okrem experimentovania sme taktiež vyvtorili dotazník zameraný na informovanosť a ohodnotenie rizík spojených s umelou inteligenciou. Na dotazník odpovedalo 75 respondentov. Väčšina respondentov rozpoznala hrozby, ako sú šírenie dezinformácií, tvorba deepfakov a generovanie škodlivého obsahu. Výsledky ukázali vysoké vnímanie rizík a silný názor, že verejnosť ešte plne neuchopila potenciál zneužitia umelej inteligencie.
 
 \section*{Vyhodnotenie experimentov \label{sec:experiments_eval_resume}}
 
-Experimenty odhalili vážne nedostatky v moderovaní obsahu vo všetkých testovaných LLM okrem Microsoft Copilot. Pomocou jailbreak techník sa nám podarilo obísť ochrann0 mechanizmy a vygenerovať škodlivý obsah, ako sú malvér, dezinformácie a phishingový obsah. Copilot v podstate ako jediný odolal všetkým jailbreak pokusom. Výsledky poukazujú na problém nájsť rovnováhu medzi kreativitou a bezpečnosťou týchto modelov a na potrebu efektívnejších ochranných mechanizmov.
+Experimenty odhalili vážne nedostatky v moderovaní obsahu vo všetkých testovaných LLM okrem Microsoft Copilot. Pomocou jailbreak techník sa nám podarilo obísť ochranné mechanizmy a vygenerovať škodlivý obsah, ako sú malvér, dezinformácie a phishingový obsah. Copilot v podstate ako jediný odolal všetkým jailbreak pokusom. Výsledky poukazujú na problém nájsť rovnováhu medzi kreativitou a bezpečnosťou týchto modelov a na potrebu efektívnejších ochranných mechanizmov.
 
 \section*{Obranné stratégie pre AI riešenia \label{sec:mitigation_strategies_resume}}
 
-Na zníženie rizík spojených s jailbreakingom a zneužitím AI modelov by mali vývojári uplatniť obranu na úrovni promptov aj modelov. Obranné stratégie na úrovni promptov zahŕňajú filtrovanie, transformáciu a optimalizáciu vstupov. Obranné stratégie na úrovni modelov zahŕňajú nepriateľské trénovanie, ladenie bezpečnosti, okresávanie vstupov, obrana pomocou pohyblivého cieľa a odnaučenie škodlivých znalostí. Kombináciou týchto prístupov sa posilňuje bezpečnosť a spoľahlivosť LLM.
+Na zníženie rizík spojených s jailbreakingom a zneužitím AI modelov by mali vývojári uplatniť obranu na úrovni promptov aj modelov. Obranné stratégie na úrovni promptov zahŕňajú filtrovanie, transformáciu a optimalizáciu vstupov. Obranné stratégie na úrovni modelov zahŕňajú nepriateľské trénovanie (adversarial training), ladenie bezpečnosti (safety fine-tuning), okresávanie vstupov (pruning), obrana pomocou pohyblivého cieľa (Moving target defense) a odnaučenie škodlivých znalostí. Kombináciou týchto prístupov sa posilňuje bezpečnosť a spoľahlivosť LLM.
 
 \section*{Zhodnotenie \label{sec:conclusion_summary_resume}}
 
-Táto práca analyzovala riziká súvisiace s AI, najmä v oblasti prompt engineeringu a jailbreak útokov. Analyzovali sme najznámejšie veľké modely, legislatívu a navrhli etické odporúčania. Experimenty odhalili zraniteľnosti vo väčšine modelov okrem Copilota. Prieskum ukázal, že verejnosť si riziká umelej inteligencie uvedomuje a zároveň prišla do kontaktu s niektorými zo spomenutých hrozieb.
+V tejto práci sme zanalyzovali riziká súvisiace s AI, najmä v oblasti prompt engineeringu a jailbreak útokov. Analyzovali sme najznámejšie veľké modely, legislatívu a navrhli etické odporúčania. Vykonané experimenty odhalili zraniteľnosti vo väčšine modelov okrem Copilota. Prieskum ukázal, že verejnosť si riziká umelej inteligencie uvedomuje a zároveň prišla do kontaktu s niektorými zo spomenutých hrozieb.
 
 \section*{Budúca práca \label{sec:future_work_resume}}
 
