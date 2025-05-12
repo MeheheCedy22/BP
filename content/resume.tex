@@ -102,23 +102,22 @@ Cieľom je obmedziť zneužívanie AI a zvýšiť informovanosť o danej problem
 
 V tejto kapitole sme sa zamerali na testovanie štyroch chatbotov založených na LLM (ChatGPT, Microsoft Copilot, DeepSeek a Perplexity) z hľadiska ich etiky a bezpečnosti pomocou jailbreak scenárov. Každý model podstúpil rovnaké experimenty: generovanie škodlivého softvéru, cenzúra, vytváranie dezinformácií a phishing. Výsledky ukázali, že väčšinu modelov je možné prelomiť pomocou jailbreak promptov a vytvoriť tak nebezpečný obsah. Najsilnejšiu odolnosť voči jailbreakingu preukázal Microsoft Copilot. 
 
-% --------------------------------------------------------------------------------------
-% --------------------------------------------------------------------------------------
-% --------------------------------------------------------------------------------------
-
 \section*{Výsledky dotazníka \label{sec:survey_resume}}
 
-Okrem experimentovania sme taktiež vyvtorili dotazník zameraný na informovanosť a ohodnotenie rizík spojených s umeleu inteligenciou a vnímané hrozby. Vzorka respondentov bola 75. Väčšina respondentov rozpoznala hrozby, ako sú šírenie dezinformácií, tvorba deepfakov a generovanie škodlivého obsahu. Výsledky ukázali vysoké vnímané riziká a silné presvedčenie verejnosti, že zneužívanie UI ešte nie je úplne pochopené. Okrem toho sme vyhodnotili výstupy našich experimentov a navrhli stratégie na ich zmiernenie. Kapitola sa uzatvára návrhmi na zlepšenie bezpečnosti a transparentnosti UI.
+Okrem experimentovania sme taktiež vyvtorili dotazník zameraný na informovanosť a ohodnotenie rizík spojených s umelou inteligenciou. Na dotazník odpovedalo 75 respondentov. Väčšina respondentov rozpoznala hrozby, ako sú šírenie dezinformácií, tvorba deepfakov a generovanie škodlivého obsahu. Výsledky ukázali vysoké vnímanie rizik a silný názor, že zneužitie umelej inteligencie verejnosť ešte plne nechápe.
 
-% \section*{Vyhodnotenie experimentov \label{sec:experiments_eval_resume}}
+\section*{Vyhodnotenie experimentov \label{sec:experiments_eval_resume}}
 
+Experimenty odhalili vážne nedostatky v moderovaní obsahu vo všetkých testovaných LLM okrem Microsoft Copilot. Pomocou jailbreak techník sa nám podarilo obísť ochrann0 mechanizmy a vygenerovať škodlivý obsah, ako sú malvér, dezinformácie a phishingový obsah. Copilot v podstate ako jediný odolal všetkým jailbreak pokusom. Výsledky poukazujú na problém nájsť rovnováhu medzi kreativitou a bezpečnosťou týchto modelov a na potrebu efektívnejších ochranných mechanizmov.
 
+\section*{Obranné stratégie pre AI riešenia \label{sec:mitigation_strategies_resume}}
 
-% \section*{Stratégie na zmiernenie následkov pre AI riešenia \label{sec:mitigation_strategies_resume}}
+Na zníženie rizík spojených s jailbreakingom a zneužitím AI modelov by mali vývojári uplatniť obranu na úrovni promptov aj modelov. Obranné stratégie na úrovni promptov zahŕňajú filtrovanie, transformáciu a optimalizáciu vstupov. Obranné stratégie na úrovni modelov zahŕňajú nepriateľské trénovanie, ladenie bezpečnosti, okresávanie vstupov, obrana pomocou pohyblivého cieľa a odnaučenie škodlivých znalostí. Kombináciou týchto prístupov sa posilňuje bezpečnosť a spoľahlivosť LLM.
 
+\section*{Zhodnotenie \label{sec:conclusion_summary_resume}}
 
+Táto práca analyzovala riziká súvisiace s AI, najmä v oblasti prompt engineeringu a jailbreak útokov. Analyzovali sme najznámejšie veľké modely, legislatívu a navrhli etické odporúčania. Experimenty odhalili zraniteľnosti vo väčšine modelov okrem Copilota. Prieskum ukázal, že verejnosť si riziká umelej inteligencie uvedomuje a zároveň prišla do kontaktu s niektorými zo spomenutých hrozieb.
 
-% \section*{Zhodnotenie \label{sec:conclusion_resume}}
+\section*{Budúca práca \label{sec:future_work_resume}}
 
-
-
+Budúci výskum by mohol byť rozšírení o testovanie aj obrazových, zvukových alebo multimodálnych modelov a zároveň overiť a vylepšiť odporúčania pre používateľov na základe spätnej väzby.
