@@ -8,51 +8,113 @@
 
 % priloha guidelines (8 normostran)
 
-%% custom ref segment for the guidelines in appendix
-%% \begin{refsegment}
-% custom mini Table of contents for the guidelines in appendix
+% % custom ref segment for the guidelines in appendix
+% \begin{refsegment}
+% % custom mini Table of contents for the guidelines in appendix
 \minitoc
 \clearpage
 
 \section{Overview}
 These guidelines were created to establish ethical handling of artificial intelligence, primarily for non-expert users of the general public and developers. The guidelines explain the basics of prompt engineering for novice users, and later focus on recommendations for the ethical and fair use of AI systems. In the end, concrete examples for identifying AI-generated content and beneficial use of AI are presented.
 
-These guidelines are grounded in the EU Ethics Guidelines for Trustworthy AI~\footnote{Ethics Guidelines for Trustworthy AI --- \url{https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai}}, which were created by the independent High-Level Expert Group on AI appointed by the European Commission.
+These guidelines are grounded in the EU Ethics Guidelines for Trustworthy AI~\footnote{\url{https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai}}, which were created by the independent High-Level Expert Group on AI appointed by the European Commission.
 
 \section{Introduction to prompt engineering}
 This section focuses mostly on non-experts or novice users in this field. As explained in the thesis, prompt engineering involves designing and optimizing text instructions called prompts, which are mainly used to communicate with chatbots that use LLMs in their background. When crafting these prompts, we want to be precise in writing them. To generate a desired output the prompts need to have certain quality and clarity, and they need to be specific as the LLMs are prone to generating vague, irrelevant, incorrect and unnecessarily long responses that often do not include the desired answers.
 
 Many people think that prompt engineering is closely related to computer science and programming. However, a lack of expertise in these areas should not discourage people from using LLMs, as such knowledge is not essential.
 
-Now, let us go through some prompt techniques that could help achieve better results from LLM prompting:
-Test~\footnote{Prompting Techniques --- \url{https://www.promptingguide.ai/techniques}}.
+Now, let us explain two prompt techniques that could help achieve better results from LLM prompting.
 
-\textbf{test}
+\subsection*{Few-shot prompting}
+Few-shot prompting provides AI models with some task examples to improve accuracy~\footnote{\url{https://www.ibm.com/think/topics/few-shot-prompting}}. It can be used as a technique to enable in-context learning, where we provide demonstrations in the prompt to steer the model to better performance. The demonstrations serve as a conditioning for the subsequent examples in which we would like the model to generate a response~\footnote{\url{https://www.promptingguide.ai/techniques/fewshot}}.
 
-test
+Example of a few-shot prompting:
+\begin{verbatim}
+Input:
+    Task:   "What is the rating of follwing movie from 1 (worst)
+            to 10 (best) ?" 
+    Example 1:
+    Review: "Absolutely amazing! A must-watch." Rating: 10/10
+    Example 2:
+    Review: "It was okay, not great but not terrible." Rating: 5/10
+    Example 3:
+    Review: "Terrible plot and weak acting." Rating: 3/10
+    Now you try:
+    Review: "The visuals were stunning but the story dragged."
+    Rating:
+Output:
+    7/10
+\end{verbatim}
 
-\textbf{test}
+We can observe that the model evaluated the rating based on the examples presented. This method is sufficient for simpler tasks; however, it is not suitable for complex reasoning tasks. On such tasks, we can use another method called Chain-of-thought prompting.
 
-test
+\subsection*{Chain-of-thought prompting}
+Chain-of-thought (CoT) prompting enables complex reasoning capabilities through intermediate reasoning steps. It can be combined with few-shot prompting to get better results on more complex tasks that require reasoning before responding.~\footnote{\url{https://www.promptingguide.ai/techniques/cot}}
 
-\textbf{test}
+Example of CoT prompting:
+\begin{verbatim}
+Input:
+    Task:       "Solve the following age-related word problems.
+                Think step-by-step before answering."
+    Example 1:
+    Problem:    "Alice is 12 years old. Her brother is 3 years
+                older. How old is her brother?"
+    Reasoning:  Alice is 12. Her brother is 3 years older, 
+                so 12 + 3 = 15 years old.
+    Answer:     15
+    Example 2:
+    Problem:    "Tom is 18 years old. His sister is half his
+                age. How old is his sister?"
+    Reasoning:  Tom is 18. Half of 18 is 9, so his sister 
+                is 9 years old.
+    Answer:     9
+\end{verbatim}
+\clearpage
+\begin{verbatim}
+    Example 3:
+    Problem:    "A mother is 30 years older than her son. 
+                The son is 10 years old. How old is the mother?"
+    Reasoning:  The son is 10. The mother is 30 years older, 
+                so 10 + 30 = 40 years old.
+    Answer:     40
+    Example 4:
+    Problem:    "Emily is twice as old as her sister. Her sister
+                is 7 years old. How old is Emily?"
+    Reasoning:  Emily's sister is 7. Emily is twice as old, 
+                so 7 × 2 = 14 years old.
+    Answer:     14
+    Now you try:
+    Problem:    "Emily's sister has a brother that is 4 years 
+                younger than her. Jake is thrice as old as her 
+                brother. How old is Jake?"
+    Answer: 
+Output:
+    Reasoning:  Emily's sister is 7 years old. Her brother 
+                is 4 years younger than her, so 7 - 4 = 3 
+                years old. Jake is thrice as old as her 
+                brother, so 3 × 3 = 9 years old. 
+    Answer:     9
+\end{verbatim}
 
-test
+The model demonstrates reasoning behind its answers, leading to improved responses and transparency, as users can understand the model's ``thinking'' process behind its answers.
 
-\textbf{test}
+\section{Interacting with AI generated content}
+In current state of AI, we interact with the content generated by AI on a daily basis even if we do not realize it. It is present nearly everywhere on the Internet, including social networks, personalized ads, search engine results, recommendation systems, automated customer support, and even news summaries or product descriptions. That is why everyone should know the basics on identifying content generated by an AI.
 
-% Understanding basic prompt engineering techniques does not require deep programming knowledge. It involves learning how to be precise with your language, provide sufficient context, specify the desired format or tone of the output, and sometimes, instruct the model on what *not* to do. For example, instead of asking, "Tell me about dogs," a more effective prompt might be, "Write a 500-word article for a children's magazine about the three most popular dog breeds in the UK, focusing on their temperament and exercise needs." This section will explore various prompting strategies, such as providing examples (few-shot prompting), instructing the AI to adopt a specific persona (e.g., "Act as a historian"), or breaking down complex tasks into smaller, manageable prompted steps. We will also touch upon how prompts can inadvertently introduce bias or elicit undesirable content if not carefully considered, laying the groundwork for the ethical considerations discussed later. The goal is to empower every user to communicate more effectively with AI, making these powerful tools more accessible and useful for everyone, while also fostering an initial awareness of the responsibilities that come with directing them.
+\subsection*{Identifying AI-generated content online}
+Identifying AI-generated online content is tricky due to the existence of advanced AI models. However, some tell-tale signs can still be seen. The most tricky part is to spot texts generated by an AI without the help of a detecter (computer program). These detectors are widely used; however, their detection accuracies vary and their results are questionable. Our suggestion is to use common sense and look for generic language or repetitive structure in the text. If the text is about something scientific or presents some facts in general, cross-check the information with additional sources because texts generated by an AI may also contain confidently inaccurate facts. AI-generated images have common tell-tale signs, such as odd hands, unnatural textures, or distorted backgrounds. For audio/video, look for unnatural speech intonation.
 
+Despite the presence of these signs, sometimes they can be insufficient to determine if the content is AI-generated. That is why everyone on the Internet should be more careful, use common sense, and always check the presented facts.
 
+\subsection*{Beneficial use of AI}
+In the thesis, we discuss various risks associated with AI. However, there are also many beneficial uses for artificial intelligence.
 
-% \section{Interacting with AI generated content}
-%     \subsection*{Identifying AI-generated content online}
+\subsubsection*{AI for creativity}
+AI tools, mainly generative AI is a great tool to boost human creativity. For example, writers can use AI to brainstorm ideas or get multiple enhancement suggestions for their stories. Artists can use generative AI to visualize ideas or concepts for inspiration before making a commitment to an actual project. This creates a great opportunity for everyone to be a potential artist.
 
-%     \subsection*{Beneficial use of AI}
-%         % helpful AI asistant (persona ?)
-%         \subsubsection*{AI for creativity}
-%         \subsubsection*{AI for explanation and learning}
-
+\subsubsection*{AI for explanation and learning}
+Generative AI tools (mainly LLMs) are also a great resource for students to help them study. They can help with research, summarization of long academic papers, drafting document outline, creating quizes for tests, or even generating code. In this are the AI tools are very useful, however students must be careful with using such tools because of the innacruarcies of LLMs as previously mentioned
 
 
 % \section{Recommendations for the ethical and fair use of LLMs}
@@ -73,8 +135,8 @@ test
 % \section{Conclusion}
 %     \subsection*{Summary}
 
-%% Bibliography
+% % Bibliography
 % \clearpage
-%% Print the bibliography for this segment using the locally set ISO 690 style
+% % Print the bibliography for this segment using the locally set ISO 690 style
 % \printbibliography[heading=references,segment=\therefsegment,resetnumbers=false]
 % \end{refsegment}
