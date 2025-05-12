@@ -6,7 +6,7 @@
 \chapter{Guidelines for users \label{cha:guidelines}}
 \renewcommand{\thepage}{B-\arabic{page}}
 
-% priloha guidelines (8 normostran)
+% priloha guidelines (~8 normostran)
 
 % % custom ref segment for the guidelines in appendix
 % \begin{refsegment}
@@ -17,7 +17,7 @@
 \section{Overview}
 These guidelines were created to establish ethical handling of artificial intelligence, primarily for non-expert users of the general public and developers. The guidelines explain the basics of prompt engineering for novice users, and later focus on recommendations for the ethical and fair use of AI systems. In the end, concrete examples for identifying AI-generated content and beneficial use of AI are presented.
 
-These guidelines are grounded in the EU Ethics Guidelines for Trustworthy AI~\footnote{\url{https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai}}, which were created by the independent High-Level Expert Group on AI appointed by the European Commission.
+These guidelines are grounded in the EU Ethics Guidelines for Trustworthy AI~\footnote{AI HLEG (2019), Ethics Guidelines for Trustworthy AI, URL: \url{https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai}}, which were created by the independent High-Level Expert Group (HLEG) on AI appointed by the European Commission.
 
 \section{Introduction to prompt engineering}
 This section focuses mostly on non-experts or novice users in this field. As explained in the thesis, prompt engineering involves designing and optimizing text instructions called prompts, which are mainly used to communicate with chatbots that use LLMs in their background. When crafting these prompts, we want to be precise in writing them. To generate a desired output the prompts need to have certain quality and clarity, and they need to be specific as the LLMs are prone to generating vague, irrelevant, incorrect and unnecessarily long responses that often do not include the desired answers.
@@ -50,9 +50,7 @@ Output:
 We can observe that the model evaluated the rating based on the examples presented. This method is sufficient for simpler tasks; however, it is not suitable for complex reasoning tasks. On such tasks, we can use another method called Chain-of-thought prompting.
 
 \subsection*{Chain-of-thought prompting}
-Chain-of-thought (CoT) prompting enables complex reasoning capabilities through intermediate reasoning steps. It can be combined with few-shot prompting to get better results on more complex tasks that require reasoning before responding.~\footnote{\url{https://www.promptingguide.ai/techniques/cot}}
-
-Example of CoT prompting:
+Chain-of-thought (CoT) prompting enables complex reasoning capabilities through intermediate reasoning steps. It can be combined with few-shot prompting to get better results on more complex tasks that require reasoning before responding.~\footnote{\url{https://www.promptingguide.ai/techniques/cot}} Example of CoT prompting:
 \begin{verbatim}
 Input:
     Task:       "Solve the following age-related word problems.
@@ -114,26 +112,61 @@ In the thesis, we discuss various risks associated with AI. However, there are a
 AI tools, mainly generative AI is a great tool to boost human creativity. For example, writers can use AI to brainstorm ideas or get multiple enhancement suggestions for their stories. Artists can use generative AI to visualize ideas or concepts for inspiration before making a commitment to an actual project. This creates a great opportunity for everyone to be a potential artist.
 
 \subsubsection*{AI for explanation and learning}
-Generative AI tools (mainly LLMs) are also a great resource for students to help them study. They can help with research, summarization of long academic papers, drafting document outline, creating quizes for tests, or even generating code. In this are the AI tools are very useful, however students must be careful with using such tools because of the innacruarcies of LLMs as previously mentioned
+Generative AI tools (mainly LLMs) are also a great resource for students to help them study. They can help with research, summarization of long academic papers, drafting document outline, creating quizes for tests, or even generating code. In this are the AI tools are very useful, however students must be careful with using such tools because of the innacruarcies of LLMs as previously mentioned.
 
 
-% \section{Recommendations for the ethical and fair use of LLMs}
-%     % for general public and developers
+\section{Ethical and fair use of AI systems}
+This and the next section are grounded in the EU Ethics Guidelines for Trustworthy AI~\textsuperscript{1} and also draw on these guidelines throughout. Prerequisites for Trustworthy AI are that the AI should be lawful, ethical, and robust. The High-Level Expert Group (HLEG) identified requirements for Trustworthy AI as following:
 
-%     \subsection*{Human agency and oversight}
-%     \subsection*{Technical robustness and safety}
-%     \subsection*{Privacy and data governance}
-%     % \subsection*{Transparency} toto riesit v dalsej sekcii
-%     \subsection*{Diversity, non-discrimination and fairness}
-%     \subsection*{Societal and environmental well-being}
-%     \subsection*{Accountability}
+\begin{itemize}
+    \item{Human agency and oversight}
+    \item{Technical robustness and safety}
+    \item{Privacy and data governance}
+    \item{Transparency - we will talk about it in next chapter}
+    \item{Diversity, non-discrimination and fairness}
+    \item{Societal and environmental well-being}
+    \item{Accountability}
+\end{itemize}
 
-% \section{Recommendations for improvements to transparency of AI systems}
-%     % for developers
-%     \subsection*{Transparency} % (note: explain using reasoning models (use their output to fact-check themselves))
+The lawfulness and robustness of the AI system are closely linked with the ethicalness of the system; however, we will focus mainly on the ethicalness and fairness.
 
-% \section{Conclusion}
-%     \subsection*{Summary}
+\subsection*{Human agency and oversight}
+AI systems should maintain human autonomy, rights, and oversight. They must support informed decision making and fundamental rights, avoiding manipulation of its users. Developers should assess risks to user rights early in the development process to ensure compliance with regulations such as the EU AI Act, as mentioned in the thesis. Oversight of AI systems should ensure control through mechanisms such as human-in-the-loop (HITL) or others. HITL refers to the capability for human intervention in every decision cycle of the system. These control mechanisms ensure that an AI does not undermine human autonomy.
+
+\subsection*{Technical robustness and safety}
+Technical robustness and safety are essential for a trustworthy AI. AI systems must function reliably, prevent harm, and adapt to changing conditions. They should resist attacks such as data poisoning where adversaries inject malicious data into model training data set; and adversarial inputs, which in case of LLMs jailbreaking as mentioned in the thesis. AI system should also include fallback mechanisms and minimize unintended outcomes. For example, in the case of LLM, when an adversary succeeds in jailbreaking the model, an independent system should check the output of the model for harmful content, and if it detects such content, the response is deleted, or the user cannot continue with a conversation. High-risk applications must be thoroughly tested to ensure their reliability and accuracy.
+
+\subsection*{Privacy and data governance}
+Privacy and data governance are essential to protect user rights in AI systems. Developers of AI systems must ensure data protection throughout its lifecycle, from data collection to output generation. AI systems throughout the interaction with the user can collect sensitive data about themselves; because of this, these systems must ensure that they avoid unlawful profiling or discrimination against them. This type of data must be accessible only by an authorized personel.
+
+\subsection*{Diversity, non-discrimination and fairness}
+AI models can be trained on datasets that include biases to some groups, as mentioned in the thesis. These biases can lead to discrimination of said groups which does not align with requirements for trustworthy and ethical AI. Diversity and fairness require AI systems to avoid these biases and treat all users equally. AI systems should be designed with inclusivity in mind to help reduce the discrimination that can occur.
+
+\subsection*{Societal and environmental well-being}
+Environmental well-being is not a particular part of ethics in regard to the users of AI systems; however, it is ethical in a sense in regards to the environment to use such AI systems, which are considerate of the environment in which we live.
+
+In addition to environmental well-being, the social impact of AI systems, for example, on democracy and mental health, should be monitored to prevent and minimize harm.
+
+\subsection*{Accountability}
+Accountability requires responsibility for AI systems and their outcomes. AI systems should be auditable by internal or external auditors to assess risks and allow evaluation without the need for intellectual property (IP) information about such systems. Organizations or individuals (whistleblowers) that found a negative or unlawful impact of AI systems and report this to authorities must be protected to ensure that companies comply with the safety rules and that the big companies do not get rid of them.
+
+This includes auditability, minimizing harm, transparent trade-offs, and mechanisms for redress. Impact assessments and protections for whistleblowers help ensure a fair and ethical implementation.
+
+There are always some trade-offs regarding AI systems. These trade-offs must be transparently evaluated to prevent harmful behavior of these systems. The person who makes the decision on allowing/halting further development of such systems must be accountable for their actions.
+
+\section{Improvements to transparency of AI systems}
+A primary characteristic of a transparent AI system is communication. AI systems should never misrepresent themselves as humans to their users. It is essential for these systems to clearly communicate that it is not a human being because users have the right to know that they are interacting with an AI system.
+
+Transparent AI systems should make the decision-making process from data gathering to algorithms more traceable to increase its transparency.
+
+Decisions of AI systems should be understandable to users, balancing accuracy and clarity. Systems with significant human impact, for example, systems that assess medical conditions and base treatment on the evaluation, must provide an explanation for their decision-making and must be deployed carefully to prevent causing harm to its users.
+
+To improve the transparency of AI models, we suggest the use of reasoning models. These models use their output to fact-check themselves. For example, the AI agent is tasked with assessing the health condition of a cancer patient. Before the agent provides the final response, it generates a step-by-step explanation of how it interpreted the patient’s symptoms, medical history, and relevant medical approaches. This process allows professional in the field to verify the logic behind the assessment and identify potential errors.
+
+
+\section{Conclusion}
+
+
 
 % % Bibliography
 % \clearpage
