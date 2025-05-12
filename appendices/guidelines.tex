@@ -8,8 +8,8 @@
 
 % priloha guidelines (8 normostran)
 
-% custom ref segment for the guidelines in appendix
-\begin{refsegment}
+%% custom ref segment for the guidelines in appendix
+%% \begin{refsegment}
 % custom mini Table of contents for the guidelines in appendix
 \minitoc
 \clearpage
@@ -17,7 +17,7 @@
 \section{Overview}
 These guidelines were created to establish ethical handling of artificial intelligence, primarily for non-expert users of the general public and developers. The guidelines explain the basics of prompt engineering for novice users, and later focus on recommendations for the ethical and fair use of AI systems. In the end, concrete examples for identifying AI-generated content and beneficial use of AI are presented.
 
-These guidelines are grounded in the EU Ethics Guidelines for Trustworthy AI~\cite{AIHLEG2019}, which were created by the independent High-Level Expert Group on AI appointed by the European Commission.
+These guidelines are grounded in the EU Ethics Guidelines for Trustworthy AI~\footnote{Ethics Guidelines for Trustworthy AI --- \url{https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai}}, which were created by the independent High-Level Expert Group on AI appointed by the European Commission.
 
 \section{Introduction to prompt engineering}
 This section focuses mostly on non-experts or novice users in this field. As explained in the thesis, prompt engineering involves designing and optimizing text instructions called prompts, which are mainly used to communicate with chatbots that use LLMs in their background. When crafting these prompts, we want to be precise in writing them. To generate a desired output the prompts need to have certain quality and clarity, and they need to be specific as the LLMs are prone to generating vague, irrelevant, incorrect and unnecessarily long responses that often do not include the desired answers.
@@ -25,7 +25,7 @@ This section focuses mostly on non-experts or novice users in this field. As exp
 Many people think that prompt engineering is closely related to computer science and programming. However, a lack of expertise in these areas should not discourage people from using LLMs, as such knowledge is not essential.
 
 Now, let us go through some prompt techniques that could help achieve better results from LLM prompting:
-Test~\cite{PromptingTechniques}.
+Test~\footnote{Prompting Techniques --- \url{https://www.promptingguide.ai/techniques}}.
 
 \textbf{test}
 
@@ -73,8 +73,8 @@ test
 % \section{Conclusion}
 %     \subsection*{Summary}
 
-% Bibliography
-\clearpage
-\printbibliography[heading=subbibliography,segment=\therefsegment,resetnumbers=true]
-
-\end{refsegment}
+%% Bibliography
+% \clearpage
+%% Print the bibliography for this segment using the locally set ISO 690 style
+% \printbibliography[heading=references,segment=\therefsegment,resetnumbers=false]
+% \end{refsegment}
